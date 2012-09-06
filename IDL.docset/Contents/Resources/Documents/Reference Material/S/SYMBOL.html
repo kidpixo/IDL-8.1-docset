@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: S" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>SYMBOL</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/S/SYMBOL.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="S_TEST.html">Routines: S</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">SYMBOL</span>
+        </div>
+        <h1 class="ClassRoutine">SYMBOL</h1>
+        <p>The <a name="kanchor2499"></a>SYMBOL function adds a symbol (with an optional text label) to the current IDL graphic at the <i>x</i>,<i>y</i> location.</p>
+        <h2>Example<img src="../images/symbol.gif" class="ImgFloatRight" /></h2>
+        <p>This example draws a map of Colorado along with symbols and names for two of its cities.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The symbol location is specified with lat/lon coordinates, and is automatically transformed to the data space.</p>
+        <p class="Code">m = MAP('orthographic', $</p>
+        <p class="Code">&#160;&#160;LIMIT=[35.86, -110.51, 42.58, -100.01], $</p>
+        <p class="Code">&#160;&#160;CENTER_LONGITUDE=-105, CENTER_LATITUDE=40)</p>
+        <p class="Code">c = MAPCONTINENTS(/USA, /HIRES)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">grid = m.MAPGRID</p>
+        <p class="Code">grid.HIDE = 1</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">s1 = SYMBOL(-104.98, 39.74, 'Star', /SYM_FILLED, $</p>
+        <p class="Code">&#160;&#160;SYM_COLOR='red', LABEL_STRING='Boulder', /DATA)</p>
+        <p class="Code">s2 = SYMBOL(-107.82, 37.94, 'Star', /SYM_FILLED, $</p>
+        <p class="Code">&#160;&#160;SYM_COLOR='red', LABEL_STRING='Telluride', /DATA)</p>
+        <h2>Additional Examples</h2>
+        <p>See <a href="#Addition" target="" title="" alt="" class="MCXref">Additional Examples</a> for more examples using the SYMBOL function.</p>
+        <h2>Syntax</h2>
+        <p><i>Result </i>= SYMBOL( <i>X</i>, <i>Y</i>, <i>Symbol</i>)</p>
+        <h2>Methods</h2>
+        <p class="Method"><a href="../../IDL Graphics/Close Method.html">Close</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/ConvertCoord Method.html">ConvertCoord</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/CopyWindow Method.html">CopyWindow</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Delete Method.html">Delete</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Order Method.html">Order</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Print Method.html">Print</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Refresh Method.html">Refresh</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Rotate Method.html">Rotate</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Save Method.html">Save</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Select Method.html">Select</a><a href="../../IDL Graphics/SetData Method.html">&#160;</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Translate Method.html">Translate</a>
+        </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>To resize or scale a symbol, use the <a href="#SYM_SIZE">SYM_SIZE</a> or <a href="#SYM_FONT">SYM_FONT_SIZE</a> <![CDATA[ ]]>properties rather than the SCALE method.</p>
+        <h2>Return Value</h2>
+        <p>Returns a reference to the created symbol. Use the reference to manipulate the symbol after creation by changing properties or calling methods.</p>
+        <h2>Arguments</h2>
+        <h3 class="Argument">X</h3>
+        <p>The scalar value describing the <i>x</i> location where the symbol will be placed. The <i>x</i> coordinate may be specified in data, normal (the default), or device coordinates.</p>
+        <h3 class="Argument">Y</h3>
+        <p>The scalar value describing the <i>y</i> location where the symbol will be placed. The <i>y</i> coordinate may be specified in data, normal (the default), or device coordinates.</p>
+        <h3 class="Argument">Symbol</h3>
+        <p>A string giving the symbol name. See <a href="../../IDL Graphics/FormattingSymsAndLines.html#Plot" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>for a list of valid symbol strings.</p>
+        <p>If  SYM_FONT_NAME is set, this string is displayed in that font.</p>
+        <p>Use the             <![CDATA[ ]]><i>Symbol </i>argument when creating a graphic symbol. Use the SYMBOL property to modify a previously-created symbol.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Symbol names of more than one character are case insensitive, while single-character names are case sensitive.</p>
+        <h2>Properties</h2>
+        <h3 class="Keyword">DATA (Init)</h3>
+        <p>Set this property to 1 if the input arguments are specified in data coordinates. Setting this property inserts the symbol into the data space. Otherwise, the symbol is added to the annotation layer.</p>
+        <p>If the data space has a map projection, the <i>X</i> and <i>Y</i> arguments are automatically transformed to the projection.</p>
+        <h3 class="Keyword">DEVICE (Init)</h3>
+        <p>Set this property if the <i>X</i> and <i>Y</i> coordinates are specified in device coordinates (pixels).</p>
+        <h3 class="Keyword">LABEL_COLOR</h3>
+        <p>Set this property to a string or RGB vector giving the text color. The default value is 'black'.</p>
+        <h3 class="Keyword">LABEL_FILL_BACKGROUND</h3>
+        <p>Set this property to 1 to fill the area inside the text box.</p>
+        <h3 class="Keyword">LABEL_FILL_COLOR</h3>
+        <p>Set this property to the fill color inside the text box.</p>
+        <h3 class="Keyword">LABEL_FONT_NAME</h3>
+        <p>Set this property to a string specifying the name of the IDL or system font to use for the text string. The default value is 'Helvetica'.</p>
+        <h3 class="Keyword">LABEL_FONT_SIZE</h3>
+        <p>Set this property to an integer or floating-point value giving the font size in points. The default value is 16.</p>
+        <h3 class="Keyword">LABEL_FONT_STYLE</h3>
+        <p>Set this property to an integer or string specifying the font style to be used for the text string. Allowed values are:</p>
+        <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col style="width: 63px;" />
+            <col style="width: 137px;" />
+            <col style="width: 146px;" />
+            <caption>
+                <p>&#160;</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Integer</p>
+                    </th>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">String</p>
+                    </th>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Resulting Style</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">0</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Normal' or 'rm'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Default (Roman)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">1</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">'Bold' or 'bf'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">2</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Italic' or 'it'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Italic</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered">3</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">'Bold italic' or 'bi'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Bold italic</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Keyword">LABEL_ORIENTATION</h3>
+        <p>Set this property to the angle of the label. The angle rotates counterclockwise from the positive x axis. If not supplied, the default value 0 is used.</p>
+        <h3 class="Keyword">LABEL_POSITION</h3>
+        <p>Set this property to a string that specifies the location of the label string with respect to the symbol. Possible values are:</p>
+        <table style="caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: 0;margin-right: auto;" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col style="width: 104px;" />
+            <col style="width: 109px;" />
+            <caption>
+                <p>&#160;</p>
+            </caption>
+            <thead>
+                <tr>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">String</p>
+                    </th>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Abbreviation</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Center'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">'C'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">'Right'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCentered">'R'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Bottom Right'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">'BR'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">'Top Right'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCentered">'TR'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Top'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">'T'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">'Bottom'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCentered">'B'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">'Left'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">'L'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">'Top Left'</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCentered">'TL'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColSep">'Bottom Left'</td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellCentered">'BL'</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Keyword">LABEL_SHIFT</h3>
+        <p>Set this property to a 2-element array specifying an amount to shift the location of the label in the X and Y directions. If the symbol is in the data space, these values should be specified using data coordinates. If the symbol is in the annotation layer, these values should be specified in normal coordinates.</p>
+        <h3 class="Keyword">LABEL_STRING</h3>
+        <p>Set this property to a string or an array of strings containing the label text. If LABEL_STRING is an array of strings, each string is placed on a separate line.</p>
+        <h3 class="Keyword">LABEL_TRANSPARENCY</h3>
+        <p>Set this property to an integer between 0 and 100 that specifies the percent transparency of the text. The default value is 0.</p>
+        <h3 class="Keyword">NORMAL (Init)</h3>
+        <p>Set this property if the input arguments are specified in normalized (0, 1) coordinates (the default coordinate system).</p>
+        <h3 class="Keyword">SYM_COLOR</h3>
+        <p>Set this property to the symbol color. See <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>for a list of the valid color strings.</p>
+        <h3 class="Keyword">SYM_FILLED</h3>
+        <p>Set this property to fill the symbols.</p>
+        <h3 class="Keyword">SYM_FILL_COLOR</h3>
+        <p>Set this property to the color of the filled portion of the symbol.  See <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>for a list of valid color strings.</p>
+        <p>If this property is not set, the symbol fill color will match the SYM_COLOR.</p>
+        <h3 class="Keyword">SYM_FONT_FILL_BACKGROUND</h3>
+        <p>Set this property to 1 to fill the area inside the text box when using a text string as the symbol. If the text symbol is not displayed, this property is ignored.</p>
+        <h3 class="Keyword">SYM_FONT_FILL_COLOR</h3>
+        <p>Set this property to the color inside the text box. If the text symbol is not displayed, this property is ignored. See <a href="../../IDL Graphics/FormattingSymsAndLines.html#Color" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>for a list of the valid color strings.</p>
+        <h3 class="Keyword">SYM_FONT_NAME</h3>
+        <p>Set this property to a string specifying the name of the IDL or system font to use for the text symbol. The default value is the NULL string. If this property is specified, the value of <i>Symbol </i>should be set to a string that serves as the symbol when displayed in the specified font. Setting this value automatically displays the text symbol. Set this value to a NULL string ('') to hide the text symbol.</p>
+        <h3 class="Keyword"><a name="SYM_FONT"></a>SYM_FONT_SIZE</h3>
+        <p>Set this property to an integer or floating-point value giving the font size (in points). The default value is 12. If the text symbol is not displayed, this property is ignored.</p>
+        <h3 class="Keyword">SYM_FONT_STYLE</h3>
+        <p>An integer or string specifying the text symbol's font style. The valid values are:</p>
+        <table class="TableStyle_Keyword_Table" style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css'); margin-left: 0; margin-right: auto;" cellspacing="0">
+            <col style="width: 70px;" />
+            <col style="width: 119px;" />
+            <col style="width: 163px;" />
+            <thead>
+                <tr>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Integer</p>
+                    </th>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">String</p>
+                    </th>
+                    <th class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Resulting Style</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">0</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Normal" or "rm" </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Default (Roman)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">1</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">"Bold" or "bf" </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">2</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Italic" or "it" </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Italic </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered">3</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">"Bold italic" or "bi"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Bold italic </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Keyword">SYM_ROTATE</h3>
+        <p>Set this property to an integer specifying the angle (in degrees) to rotate the symbol only (not the text and symbol together).</p>
+        <h3 class="Keyword"><a name="SYM_SIZE"></a>SYM_SIZE</h3>
+        <p>Set this property to a floating point value specifying the plot symbol size. The default value is 1.</p>
+        <h3 class="Keyword">SYM_THICK</h3>
+        <p>Set this property to a floating point value between 0 and 10 that specifies the thickness (in points) of the symbol. A value less than 1 displays as one pixel on the screen, but prints as a very thin line.</p>
+        <h3 class="Keyword">SYM_TRANSPARENCY</h3>
+        <p>Set this property to an integer between 0 and 100 that specifies the percent transparency of the symbols. The default value is 0.</p>
+        <h3 class="Keyword">SYMBOL</h3>
+        <p>Set this property to a string giving the symbol name. See <a href="../../IDL Graphics/FormattingSymsAndLines.html#Plot" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>for a list of valid symbol strings.</p>
+        <p>If  SYM_FONT_NAME is set, set this property to a string that is displayed in that font.</p>
+        <p>Use the             <![CDATA[ ]]><i>Symbol </i>argument when creating a graphic symbol. Use the SYMBOL property to modify a previously-created symbol.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Symbol names of more than one character are case insensitive, while single-character names are case sensitive.</p>
+        <h3 class="Keyword">TARGET (Init)</h3>
+        <p>If points are specified in data coordinates, set this property to the graphic object in which to insert the symbol. By default, the current graphic is used.</p>
+        <h3 class="Keyword">UVALUE</h3>
+        <p>Set this property to an IDL variable of any data type.</p>
+        <h3 class="Keyword">WINDOW (Get Only)</h3>
+        <p>This property retrieves a reference to the <a href="../W/WINDOW.html">WINDOW</a> object which contains the graphic.</p>
+        <h2><a name="Addition"></a>Additional Examples</h2>
+        <h3>Add a symbol to the data space of a plot</h3>
+        <p class="Code">p = PLOT(/TEST)</p>
+        <p class="Code">s = SYMBOL(50, 0, '*', SYM_COLOR='Blue', SYM_SIZE=2, $</p>
+        <p class="Code">&#160;&#160;SYM_THICK=3, /DATA)</p>
+        <h3>Add a symbol to the annotation layer of a plot</h3>
+        <p class="Code">p = PLOT(/TEST)</p>
+        <p class="Code">s = SYMBOL(0.5, 0.5, '*', SYM_COLOR='Blue', SYM_SIZE=2, $</p>
+        <p class="Code">&#160;&#160;SYM_THICK=3, /NORMAL)</p>
+        <h3>Add a character symbol to a map<img src="../images/symbol_2.gif" class="ImgFloatRight" /></h3>
+        <p>In the Symbol font, the characters 'a' and 'b' are rendered as the alpha and beta symbols.</p>
+        <p class="Code">m = MAP('orthographic', $                  <![CDATA[ ]]></p>
+        <p class="Code">&#160;&#160;LIMIT=[35.86, -110.51, 42.58, -100.01], $</p>
+        <p class="Code">&#160;&#160;CENTER_LONGITUDE=-105, CENTER_LATITUDE=40)</p>
+        <p class="Code">c = MAPCONTINENTS(/USA, /HIRES)</p>
+        <p class="Code">grid = m.MAPGRID</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">grid.HIDE = 1</p>
+        <p class="Code">s1 = SYMBOL(-104.48, 39.58, 'a', $</p>
+        <p class="Code">&#160;&#160;SYM_COLOR='Green', LABEL_STRING='Primary Site', $</p>
+        <p class="Code">&#160;&#160;/DATA, LABEL_POSITION='Top', $</p>
+        <p class="Code">&#160;&#160;SYM_FONT_NAME='symbol', SYM_FONT_SIZE=26)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">s2 = SYMBOL(-106.21, 39.38, 'b', $</p>
+        <p class="Code">&#160;&#160;SYM_COLOR='Green', LABEL_STRING='Backup Site', $</p>
+        <p class="Code">&#160;&#160;/DATA, LABEL_POSITION='Bottom', $</p>
+        <p class="Code">&#160;&#160;SYM_FONT_NAME='symbol', SYM_FONT_SIZE=26)</p>
+        <h3>Add a Unicode character symbol to a plot<img src="../images/symbol_3.gif" class="ImgFloatRight" /></h3>
+        <p>For an explanation of the <code>!Z</code> syntax for choosing a Unicode character, refer to <a href="../../Creating IDL Programs/Appendices/Embedded_Formatting_Comm.html#fonts_2203613354_20199" target="" title="" alt="" class="MCXref">Positioning Commands</a>.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The Arial Unicode MS font used in this example may not be loaded on your system, but the syntax for choosing a Unicode character is the same for all platforms.</p>
+        <p class="Code">p = PLOT( FINDGEN(10), XSTYLE=1, YSTYLE=1)</p>
+        <p class="Code">s2 = SYMBOL( 0.3, 0.7, '!Z(7546)', /NORMAL, $</p>
+        <p class="Code">&#160;&#160;LABEL_STRING='Unicode Symbol', SYM_FONT_SIZE=20, $</p>
+        <p class="Code">&#160;&#160;SYM_FONT_NAME='Arial Unicode MS')</p>
+        <h2>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px">
+            </col>
+            <col width="408px">
+            </col>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">8.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>See Also</h2>
+        <p><a href="../../IDL Graphics/FormattingSymsAndLines.html" target="" title="" alt="" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

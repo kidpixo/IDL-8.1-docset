@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|Miscellaneous Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDL_Object</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDL_Object.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_misc.html">Miscellaneous Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDL_Object</span>
+        </div>
+        <h1 class="ObjClass"><a name="objects_misc_904195448_1098343"></a><a name="objects_misc_904195448_63564"></a>IDL_Object</h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#objects_misc_904195448_1098176">Superclasses</a> | <a class="MCXref" href="#objects_misc_904195448_1098179">Creation</a> | <a class="MCXref" href="#objects_misc_904195448_1098185">Properties</a> | <a class="MCXref" href="#objects_misc_904195448_1098189">Methods</a> | <a class="MCXref" href="#objects_misc_904195448_1099339">Example</a> | <a class="MCXref" href="#objects_misc_904195448_1098268">Version History</a> | <a class="MCXref" href="#objects_misc_904195448_1098276">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor4597"></a>IDL_Object class is designed to be inherited by objects that define <span class="Courier">_overload</span> methods, in order to overload the behavior of one or more of IDL’s standard operators. It is not meant to be instantiated directly.</p>
+        <p>To overload the behavior of a standard operator for objects of a user-defined object class, you would write an overloaded operator method for the class, and add IDL_Object as a superclass of the class. Object classes that do not inherit from the IDL_Object class do not use operator overload methods even if the methods are defined.</p>
+        <p>Object classes that inherit from the IDL_Object class can also overload several routines that provide information about variables: HELP, PRINT, and SIZE. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The INIT and CLEANUP methods for a subclass do not need to call this superclass' INIT and CLEANUP&#160;methods.</p>
+        <h2><a name="objects_misc_904195448_1098176"></a><a name="objects_misc_904195448_1098176_PageTOC_IDL_OperatorOverload_"></a>Superclasses</h2>
+        <p>None</p>
+        <h2><a name="objects_misc_904195448_1098179"></a><a name="objects_misc_904195448_1098179_PageTOC_IDL_OperatorOverload_"></a>Creation</h2>
+        <p>This class serves as an interface class for other classes. There is never a need to instantiate an IDL_Object class directly.</p>
+        <h2><a name="objects_misc_904195448_1098185"></a><a name="objects_misc_904195448_1098185_PageTOC_IDL_OperatorOverload_"></a>Properties</h2>
+        <p>Objects of this class have no properties of their own.</p>
+        <h2><a name="objects_misc_904195448_1098189"></a><a name="objects_misc_904195448_1098189_PageTOC_IDL_OperatorOverload_"></a>Methods</h2>
+        <p>This class defines methods for each standard IDL operator that can be overloaded. </p>
+        <p>This class has the following methods:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o.html" class="MCXref">IDL_Object::_overloadForeach</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o1.html" class="MCXref">IDL_Object::_overloadAND</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o2.html" class="MCXref">IDL_Object::_overloadAsterisk</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o3.html" class="MCXref">IDL_Object::_overloadBracketsLeftSide</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o4.html" class="MCXref">IDL_Object::_overloadBracketsRightSide</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o5.html" class="MCXref">IDL_Object::_overloadCaret</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o8.html" class="MCXref">IDL_Object::_overloadEQ</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o9.html" class="MCXref">IDL_Object::_overloadGE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o10.html" class="MCXref">IDL_Object::_overloadGreaterThan</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o11.html" class="MCXref">IDL_Object::_overloadGT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o12.html" class="MCXref">IDL_Object::_overloadHelp</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o13.html" class="MCXref">IDL_Object::_overloadIsTrue</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o14.html" class="MCXref">IDL_Object::_overloadLE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o15.html" class="MCXref">IDL_Object::_overloadLessThan</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o16.html" class="MCXref">IDL_Object::_overloadLT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o17.html" class="MCXref">IDL_Object::_overloadMinus</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o18.html" class="MCXref">IDL_Object::_overloadMinusUnary</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o19.html" class="MCXref">IDL_Object::_overloadMOD</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o20.html" class="MCXref">IDL_Object::_overloadNE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o21.html" class="MCXref">IDL_Object::_overloadNOT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o22.html" class="MCXref">IDL_Object::_overloadOR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o23.html" class="MCXref">IDL_Object::_overloadPlus</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o24.html" class="MCXref">IDL_Object::_overloadPound</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o25.html" class="MCXref">IDL_Object::_overloadPoundPound</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o26.html" class="MCXref">IDL_Object::_overloadPrint</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object__o27.html" class="MCXref">IDL_Object::_overloadSize</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o28.html" class="MCXref">IDL_Object::_overloadSlash</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o29.html" class="MCXref">IDL_Object::_overloadTilde</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="IDL_Object___o30.html" class="MCXref">IDL_Object::_overloadXOR</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_misc_904195448_1099339"></a><a name="objects_misc_904195448_1098218_PageTOC_IDL_OperatorOverload_"></a>Example</h2>
+        <p>A user-defined class that overloads one or more operators must include the INHERITS token in the class structure definition:</p>
+        <p class="Code">PRO myObjectClass__define</p>
+        <p class="Code">structure = { myObjectClass, $</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PROPERTY1: 0L, $</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PROPERTY2: '', $</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;INHERITS IDL_Object $</p>
+        <p class="Code">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+        <p class="Code">END</p>
+        <h2><a name="objects_misc_904195448_1098268"></a><a name="objects_misc_904195448_1098268_PageTOC_IDL_OperatorOverload_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">8.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 MadCap:excludeAction="unbind"><a name="objects_misc_904195448_1098276"></a><a name="objects_misc_904195448_1098276_PageTOC_IDL_OperatorOverload_"></a>See Also</h2>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

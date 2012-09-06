@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Concepts|Variables" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Assignment and Compound Assignment</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/List_Format.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Assignment_and_Compound.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">Concepts</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Variables.html">Variables</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Assignment and Compound Assignment</span>
+        </div>
+        <h1><a name="expressions_2976722315_1033110"></a><a name="expressions_2976722315_85742"></a>Assignment and Compound Assignment</h1>
+        <p>The <a name="kanchor3453"></a>assignment statement stores a value in a variable. Compound assignment combines assignment with another operator. </p>
+        <table style="width: 503px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="82px" />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Operator</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Examples</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1033121"></a><a name="expressions_2976722315_83644"></a>=</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3454"></a></span>Assignment</p>
+                        <p class="CellBody">The value of the expression on the right hand side of the equal sign is stored in the variable, subscript element, or range on the left side. The old value of the variable, if any, is discarded, and the value of the expression is stored in the variable. The expression on the right side can be of any type or structure.</p>
+                        <p class="CellBody">For more information on assignment involving arrays and ranges, see Overview of Arrays. </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Simple assignment examples: </p>
+                        <p class="CellCode">A = 5</p>
+                        <p class="CellBody">Assigns 5 to variable A:</p>
+                        <p class="CellCode">&#160;</p>
+                        <p class="CellCode">B='Hello World'</p>
+                        <p class="CellBody">Assign “Hello World” to variable B:</p>
+                        <p class="CellCode">name = 'Mary'</p>
+                        <p class="CellBody">The variable <span class="Courier">name</span> becomes a scalar string variable.</p>
+                        <p class="CellCode">arr = FLTARR(100)</p>
+                        <p class="CellBody">Make <span class="Courier">arr</span> a 100-element, floating-point array.</p>
+                        <p class="CellCode">arr = arr[50:*]</p>
+                        <p class="CellBody">Discard points 0 to 49 of <span class="Courier">arr</span>. It is now a 50-element array.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1033141"></a><a name="expressions_2976722315_19598"></a><span class="Courier-Italic">op</span>=</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><a name="kanchor3455"></a>Compound Assignment</p>
+                        <p class="CellBody">where <i>op</i> is one of the following operators: ##, #, *, +, -, /, &lt;, &gt;, ^, AND, EQ, GE, GT, LE, LT, MOD, NE, OR, XOR</p>
+                        <p class="CellBody">Provides succinct syntax for expressions in which the same variable would otherwise be present on both sides of the equal sign. </p>
+                        <p class="CellBody">See <a class="MCXref" href="#expressions_2976722315_1033171" target="" title="" alt="">Compound Assignment Operators</a> for details.</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Applies the specified operation to the target variable “in place,” without making a copy of the variable. For example,</p>
+                        <p class="CellCode">A += 5</p>
+                        <p class="CellBody">adds 5 to the value of the variable A.</p>
+                        <p class="CellCode">A <i>op</i>= <i>expression</i></p>
+                        <p class="CellBody">is equivalent to:</p>
+                        <p class="CellCode">A = TEMPORARY(A) <i>op</i> (<i>expression</i>)<br /></p>
+                        <p class="CellBody">The following statements both add 100 to current value of A:</p>
+                        <p class="CellCode">A = A + 100</p>
+                        <p class="CellCode">A += 100</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Assignment and Compound Assignment</p>
+            </caption>
+        </table>
+        <h2><a name="expressions_2976722315_1033171"></a><a name="expressions_2976722315_81655"></a>Compound Assignment Operators</h2>
+        <p>In addition to the standard assignment statement, IDL versions beginning with 6.0 support the following compound assignment operators:</p>
+        <table style="width: 360px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/List_Format.css');" class="TableStyle_List_Format" cellspacing="0">
+            <col width="72px" />
+            <col width="72px" />
+            <col width="72px" />
+            <col width="72px" />
+            <col width="72px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_List_Format_Body_0_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3456"></a>##=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3457"></a>#=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3458"></a>*=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3459"></a>+=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_ColEnd">
+                        <p class="CellBody"><a name="kanchor3460"></a>-=</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_List_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3461"></a>/=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">&lt;=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3462"></a>&gt;=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3463"></a>AND=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody"><a name="kanchor3464"></a>EQ=</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_List_Format_Body_1_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3465"></a>GE=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3466"></a>GT=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3467"></a>LE=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_ColSep">
+                        <p class="CellBody"><a name="kanchor3468"></a>LT=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_ColEnd">
+                        <p class="CellBody"><a name="kanchor3469"></a>MOD=</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_List_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><a name="kanchor3470"></a>NE=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">OR=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">XOR=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">^=</p>
+                    </td>
+                    <td class="TableStyle_List_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>See <a class="MCXref" href="#expressions_2976722315_1033141" target="" title="" alt="">op=</a> in previous table for examples.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If one or both of the operands are objects, the operator may be overloaded. See <a class="MCXref" href="../../Objects/Object_Operator_Overload.html#obj_operators_3013489070_998687" target="" title="" alt="">Object Operator Overloading Overview</a> for more information.</p>
+        <p>These compound operators combine assignment with another operator. A statement such as:</p>
+        <p class="Code">A <i>op</i>= <i>expression</i></p>
+        <p>where <i>op</i> is an IDL operator that can be combined with the assignment operator to form one of the above-listed compound operators, and <i>expression</i> is any IDL expression, produces the same result as the statement:</p>
+        <p class="Code">A = A <i>op</i> (<i>expression)</i></p>
+        <p>The difference is that the statement using the compound operator makes more efficient use of memory, because it performs the operation on the target variable A <i>in place</i>. In contrast, the statement using the simple operators makes a copy of the variable A, performs the operation on the copy, and then assigns the resulting value back to A, temporarily using extra memory.</p>
+        <p>Note that the statement:</p>
+        <p class="Code">A <i>op</i>= <i>expression</i></p>
+        <p>is identical to the IDL statement:</p>
+        <p class="Code">A = TEMPORARY(A) <i>op</i> (<i>expression</i>)</p>
+        <p>which uses the TEMPORARY function to avoid making a copy of the variable A. While there is no efficiency benefit to using the compound operator rather than the TEMPORARY function, the compound operator allows you to write the same statement more succinctly.</p>
+        <h3>Compound Operators and Whitespace</h3>
+        <p>When using the compound operators that include an operator referenced by a <i>keyword</i> rather than a <i>symbol</i> (AND=, for example), you must be careful to use whitespace between the operator and the target variable. Without appropriate whitespace, the result will not be what you expect. Consider the difference between these two statements:</p>
+        <p class="Code">AAND= 23</p>
+        <p class="Code">A AND= 23</p>
+        <p>The first statement assigns the value 23 to a variable named AAND. The second statement performs the AND operation between A and 23, storing the result back into the variable A.</p>
+        <p>Compound operators that do not involve IDL keywords (+=, for example) do not require whitespace in order to be properly parsed by IDL, although such whitespace is recommended for code readability. That is, the statements</p>
+        <p class="Code">A+= 23</p>
+        <p class="Code">A += 23</p>
+        <p>are identical, but the latter is more readable.</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

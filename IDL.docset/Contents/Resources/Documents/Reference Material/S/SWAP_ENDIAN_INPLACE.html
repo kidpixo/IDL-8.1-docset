@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: S" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>SWAP_ENDIAN_INPLACE </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/S/SWAP_ENDIAN_INPLACE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="S_TEST.html">Routines: S</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">SWAP_ENDIAN_INPLACE</span>
+        </div>
+        <h1 class="Routine"><a name="S_820040301_1121013"></a><a name="S_820040301_79582"></a>SWAP_ENDIAN_INPLACE </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#S_820040301_1121020">Syntax</a> | <a class="MCXref" href="#S_820040301_1121022">Arguments</a> | <a class="MCXref" href="#S_820040301_1121025">Keywords</a> | <a class="MCXref" href="#S_820040301_1121030">Examples</a> | <a class="MCXref" href="#S_820040301_1121033">Version History</a> | <a class="MCXref" href="#S_820040301_1121035">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor2495"></a>SWAP_ENDIAN_INPLACE procedure <a name="kanchor2496"></a>rev<a name="kanchor2497"></a>erses the byte ordering of arbitrary scalars, arrays or structures. It can make “big endian” number “little endian” and vice-versa. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The BYTEORDER procedure can be used to reverse the byte ordering of <i>scalars and arrays</i> (SWAP_ENDIAN_INPLACE also allows structures).</p>
+        <p>SWAP_ENDIAN_INPLACE differs from the SWAP_ENDIAN function in that it alters the input data in place rather than making a copy as does SWAP_ENDIAN. SWAP_ENDIAN_INPLACE can therefore be more efficient, if a copy of the data is not needed. The pertinent bytes in the input variable are reversed. </p>
+        <p>This routine is written in the IDL language. Its source code can be found in the file <span class="Courier">swap_endian_inplace.pro</span> in the <span class="Courier">lib</span> subdirectory of the IDL distribution.</p>
+        <h2><a name="S_820040301_1121020"></a><a name="S_820040301_1121020_PageTOC_SWAP_ENDIAN_INPLACE_"></a>Syntax</h2>
+        <p class="Syntax">SWAP_ENDIAN_INPLACE, <i>Variable</i> [,&#160;/<a class="MCXref" href="#S_820040301_1143824">SWAP_IF_BIG_ENDIAN</a>] [,&#160;/<a class="MCXref" href="#S_820040301_1143826">SWAP_IF_LITTLE_ENDIAN</a>]</p>
+        <h2><a name="S_820040301_1121022"></a><a name="S_820040301_1121022_PageTOC_SWAP_ENDIAN_INPLACE_"></a>Arguments</h2>
+        <h3 class="Argument">Variable</h3>
+        <p>The named variable—scalar, array, or structure—to be swapped.</p>
+        <h2><a name="S_820040301_1121025"></a><a name="S_820040301_1121025_PageTOC_SWAP_ENDIAN_INPLACE_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="S_820040301_1143824"></a><a name="S_820040301_1143824_Keywords_SWAP_ENDIAN_INPLACE__"></a>SWAP_IF_BIG_ENDIAN</h3>
+        <p>If this keyword is set, the swap request will only be performed if the platform running IDL uses “big endian” byte ordering. On little endian machines, the SWAP_ENDIAN_INPLACE request quietly returns without doing anything. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</p>
+        <h3 class="Keyword"><a name="S_820040301_1143826"></a><a name="S_820040301_1143826_Keywords_SWAP_ENDIAN_INPLACE__"></a>SWAP_IF_LITTLE_ENDIAN</h3>
+        <p>If this keyword is set, the swap request will only be performed if the platform running IDL uses “little endian” byte ordering. On big endian machines, the SWAP_ENDIAN_INPLACE request quietly returns without doing anything. Note that this keyword does not refer to the byte ordering of the input data, but to the computer hardware.</p>
+        <h2><a name="S_820040301_1121030"></a><a name="S_820040301_1121030_PageTOC_SWAP_ENDIAN_INPLACE_"></a>Examples</h2>
+        <p>Reverse the byte order of A:</p>
+        <p class="Code">SWAP_ENDIAN_INPLACE, A</p>
+        <h2><a name="S_820040301_1121033"></a><a name="S_820040301_1121033_PageTOC_SWAP_ENDIAN_INPLACE_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.6</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="S_820040301_1121035"></a><a name="S_820040301_1121035_PageTOC_SWAP_ENDIAN_INPLACE_"></a>See Also</h2>
+        <p><a class="MCXref" href="../B/BYTEORDER.html#B_856805997_675897">BYTEORDER </a>, <a class="MCXref" href="SWAP_ENDIAN.html#S_820040301_762670">SWAP_ENDIAN </a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

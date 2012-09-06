@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: P" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>POLY_AREA </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/P/POLY_AREA.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="P_CORRELATE.html">Routines: P</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">POLY_AREA</span>
+        </div>
+        <h1 class="Routine"><a name="P_817877613_758386"></a><a name="P_817877613_94367"></a>POLY_AREA </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#P_817877613_758393">Syntax</a> | <a class="MCXref" href="#P_817877613_758395">Return Value</a> | <a class="MCXref" href="#P_817877613_1075004">Arguments</a> | <a class="MCXref" href="#P_817877613_1015360">Keywords</a> | <a class="MCXref" href="#P_817877613_758401">Version History</a> | <a class="MCXref" href="#P_817877613_1079115">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor2062"></a>POLY_AREA function returns the area of a polygon given the coordinates of its vertices.</p>
+        <p>It is assumed that the polygon has <i>n</i> vertices with <i>n</i> sides and the edges connect the vertices in the order:</p>
+        <p class="Indent1">[(x1,y1), (x2,y2), ... , (x<i>n</i>,y<i>n</i>), (x1,y1)]</p>
+        <p>such that the last vertex is connected to the first vertex.</p>
+        <p>This routine is written in the IDL language. Its source code can be found in the file <span class="Courier">poly_area.pro</span> in the <span class="Courier">lib</span> subdirectory of the IDL distribution.</p>
+        <h2><a name="P_817877613_758393"></a><a name="P_817877613_758393_PageTOC_POLY_AREA_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = POLY_AREA( <i>X</i>,<i> Y</i> [,&#160;/<a class="MCXref" href="#P_817877613_1074988">DOUBLE</a>] [,&#160;/<a class="MCXref" href="#P_817877613_1074986">SIGNED</a>] )</p>
+        <h2><a name="P_817877613_758395"></a><a name="P_817877613_758395_PageTOC_POLY_AREA_"></a>Return Value</h2>
+        <p>If either of the input arguments is double-precision or if the DOUBLE keyword is set, the result is a double-precision value, otherwise, the result is single-precision.</p>
+        <h2><a name="P_817877613_1075004"></a><a name="P_817877613_1075004_PageTOC_POLY_AREA_"></a>Arguments</h2>
+        <h3 class="Argument">X</h3>
+        <p>An <i>n</i>-element vector of X coordinate locations for the vertices.</p>
+        <h3 class="Argument">Y</h3>
+        <p>An <i>n</i>-element vector of Y coordinate locations for the vertices.</p>
+        <h2><a name="P_817877613_1015360"></a><a name="P_817877613_1015360_PageTOC_POLY_AREA_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="P_817877613_1074988"></a><a name="P_817877613_1074988_Keywords_POLY_AREA__"></a>DOUBLE</h3>
+        <p>Set this keyword to use double-precision for computations and to return a double-precision result. Explicitly set DOUBLE=0 to use single-precision for computations and to return a single-precision result. By default, if either of the arguments to POLY_AREA is double-precision, computations are done in double-precision; if both arguments are single-precision, computations are done in single-precision.</p>
+        <h3 class="Keyword"><a name="P_817877613_1074986"></a><a name="P_817877613_1074986_Keywords_POLY_AREA__"></a>SIGNED</h3>
+        <p>If set, returns a signed area. Polygons with edges traversed in counterclockwise order have a positive area; polygons traversed in the clockwise order have a negative area.</p>
+        <h2><a name="P_817877613_758401"></a><a name="P_817877613_758401_PageTOC_POLY_AREA_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">Original</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="P_817877613_1079115"></a><a name="P_817877613_1079115_PageTOC_POLY_AREA_"></a>See Also</h2>
+        <p><a class="MCXref" href="POLYFILLV.html#P_817877613_678285">POLYFILLV </a>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

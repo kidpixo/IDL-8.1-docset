@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: S" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>SIZE </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/S/SIZE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="S_TEST.html">Routines: S</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">SIZE</span>
+        </div>
+        <h1 class="Routine"><a name="S_820040301_678885"></a><a name="S_820040301_51745"></a>SIZE </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#S_820040301_1070056">Syntax</a> | <a class="MCXref" href="#S_820040301_1082570">Return Value</a> | <a class="MCXref" href="#S_820040301_678890">Arguments</a> | <a class="MCXref" href="#S_820040301_901280">Keywords</a> | <a class="MCXref" href="#S_820040301_678893">Examples</a> | <a class="MCXref" href="#S_820040301_1110327">Version History</a> | <a class="MCXref" href="#S_820040301_1199954">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor2386"></a>SIZE function returns <a name="kanchor2387"></a>size and type information for its argument if no keywords are set. If a keyword is set, SIZE returns the specified quantity.</p>
+        <h2><a name="S_820040301_1070056"></a><a name="S_820040301_1070056_PageTOC_SIZE_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = SIZE( <i>Expression</i> [, /<a class="MCXref" href="#S_820040301_1082592">L64</a>] [,&#160;/<a class="MCXref" href="#S_820040301_901281">DIMENSIONS</a> | ,&#160;/<a class="MCXref" href="#S_820040301_901288">FILE_LUN</a> | , /<a class="MCXref" href="#S_820040301_1199822">FILE_OFFSET</a> | ,&#160;/<a class="MCXref" href="#S_820040301_1082662">N_DIMENSIONS</a> | ,&#160;/<a class="MCXref" href="#S_820040301_901298">N_ELEMENTS</a> | ,&#160;/<a class="MCXref" href="#S_820040301_1199867">SNAME</a>, | , /<a class="MCXref" href="#S_820040301_901301">STRUCTURE</a> | ,&#160;/<a class="MCXref" href="#S_820040301_901328">TNAME</a> | ,&#160;/<a class="MCXref" href="#S_820040301_901331">TYPE</a>] )</p>
+        <h2><a name="S_820040301_1082570"></a><a name="S_820040301_1082570_PageTOC_SIZE_"></a>Return Value</h2>
+        <p>If no keywords are set, SIZE returns a vector of integer type. The first element is equal to the number of dimensions of <i>Expression</i>. This value is zero if <i>Expression</i> is scalar or undefined. The next elements contain the size of each dimension, one element per dimension (none if <i>Expression</i> is scalar or undefined). After the dimension sizes, the last two elements contain the type code (zero if undefined) and the number of elements in <i>Expression</i>, respectively. The type codes are listed below.</p>
+        <p>If a keyword is set, SIZE returns the specified information.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The SIZE function treats lists and hashes as if they are one-dimensional arrays.</p>
+        <h3><a name="S_820040301_1082572"></a><a name="S_820040301_1082572_PageTOC_SIZE_"></a><a name="S_820040301_30377"></a>IDL <a name="kanchor2388"></a>Type Code<a name="kanchor2389"></a>s and Names</h3>
+        <p>The following table lists the IDL type codes and type names returned by the SIZE function:</p>
+        <table style="width: 455px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="120px" />
+            <col width="104px" />
+            <col width="231px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Type Code</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Type Name</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Data Type</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">0</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">UNDEFINED</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Undefined</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">1</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">BYTE</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Byte</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">INT</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">3</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">LONG</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Longword integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">4</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">FLOAT</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Floating point</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">5</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">DOUBLE</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Double-precision floating</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">6</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">COMPLEX</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Complex floating</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">7</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">STRING</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">8</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">STRUCT</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Structure</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">9</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">DCOMPLEX</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Double-precision complex</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">10</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">POINTER</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Pointer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">11</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">OBJREF</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Object reference</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">12</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">UINT</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Unsigned Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">13</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">ULONG</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Unsigned Longword Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">14</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">LONG64</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">64-bit Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered">15</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">ULONG64</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Unsigned 64-bit Integer</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle"><a name="S_820040301_17771"></a>IDL Type Codes and Names</p>
+            </caption>
+        </table>
+        <p class="Body">See <a class="MCXref" href="../../Creating IDL Programs/Components of the IDL Language/IDL_Data_Types.html#constants_818058343_672352">IDL Data Types</a> for additional information on attributes of the various IDL data types, including ways to create variables of each type.</p>
+        <h2><a name="S_820040301_678890"></a><a name="S_820040301_678890_PageTOC_SIZE_"></a>Arguments</h2>
+        <h3 class="Argument">Expression</h3>
+        <p>The expression for which size information is requested.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Normally, providing a scalar object reference as an argument to SIZE returns standard information about an object reference. If the argument is an instance of an object class that overloads the IDL_Object::_overloadSize function method, the value returned by that function method will be output by SIZE. See <a class="MCXref" href="../../Object Classes/Miscellaneous/IDL_Object.html#objects_misc_904195448_1098343" target="" title="" alt="">IDL_Object</a> for details.</p>
+        <h2><a name="S_820040301_901280"></a><a name="S_820040301_901280_PageTOC_SIZE_"></a>Keywords</h2>
+        <p>With the exception of L64, the following keywords determine the return value of the SIZE function and are mutually exclusive — specify at most one of the following.</p>
+        <h3 class="Keyword"><a name="S_820040301_901281"></a><a name="S_820040301_901281_Keywords_SIZE__"></a>DIMENSIONS</h3>
+        <p>Set this keyword to return the dimensions of <i>Expression</i>. If <i>Expression</i> is scalar, the result is a scalar containing a 0. For arrays, lists, and hashes, the result is an array containing the array or list dimensions. The result is a 32-bit integer when possible, and 64-bit integer if the number of elements in <i>Expression</i> requires it. Set L64 to force 64-bit integers to be returned in all cases. If <i>Expression</i> is undefined, IDL reports eight dimensions.</p>
+        <h3 class="Keyword"><a name="S_820040301_901288"></a><a name="S_820040301_901288_Keywords_SIZE__"></a>FILE_LUN</h3>
+        <p>Set this keyword to return the file unit to which <i>Expression</i> is associated, if it is an IDL file variable, as created with the ASSOC function. If <i>Expression</i> is not a file variable, 0 is returned (0 is not a valid file unit for ASSOC).</p>
+        <h3 class="Keyword"><a name="S_820040301_1199822"></a><a name="S_820040301_11182"></a>FILE_OFFSET</h3>
+        <p>Set this keyword to return the ASSOC file offset for <span class="_Override" style="font-style: italic;">Expression</span>. In the case of ASSOC file variables, this is the value of the <span class="_Override" style="font-style: italic;">Offset</span> argument specified to ASSOC when the variable was created. In the case of regular non-file variables, 0 is returned. The result will be 32-bit integer when possible, and 64-bit integer if the size of the offset requires it. Set <a class="MCXref" href="#S_820040301_1082592">L64</a> to force a 64-bit integer to be returned in all cases. </p>
+        <h3 class="Keyword"><a name="S_820040301_1082592"></a><a name="S_820040301_1082592_Keywords_SIZE__"></a>L64</h3>
+        <p>By default, the result of SIZE is a 32-bit integer when possible, and a 64-bit integer if the number of elements in <i>Expression</i> requires it. Set L64 to force 64-bit integers to be returned in all cases. In addition to affecting the default result, L64 also affects the output from the <a class="MCXref" href="#S_820040301_901281">DIMENSIONS</a>, <a class="MCXref" href="#S_820040301_1199822">FILE_OFFSET</a>, <a class="MCXref" href="#S_820040301_901298">N_ELEMENTS</a>, and <a class="MCXref" href="#S_820040301_901301">STRUCTURE</a> keywords.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Only 64-bit versions of IDL are capable of creating variables requiring 64-bit SIZE output. Check the value of !VERSION.MEMORY_BITS to see if your IDL is 64-bit or not.</p>
+        <h3 class="Keyword"><a name="S_820040301_1082662"></a><a name="S_820040301_1082662_Keywords_SIZE__"></a>N_DIMENSIONS</h3>
+        <p>Set this keyword to return the number of dimensions in <i>Expression</i>, if it is an array or list. If <i>Expression</i> is scalar or undefined, 0 is returned. </p>
+        <h3 class="Keyword"><a name="S_820040301_901298"></a><a name="S_820040301_901298_Keywords_SIZE__"></a>N_ELEMENTS</h3>
+        <p>Set this keyword to return the number of data elements in <i>Expression</i>. Setting this keyword is equivalent to using the N_ELEMENTS function. The result will be a 32-bit integer when possible, and a 64-bit integer if the number of elements in <i>Expression</i> requires it. Set L64 to force 64-bit integers to be returned in all cases. If <i>Expression</i> is undefined, 0 is returned.</p>
+        <h3 class="Keyword"><a name="S_820040301_1199867"></a><a name="S_820040301_77267"></a>SNAME</h3>
+        <p>Set this keyword to return the name of the structure definition for <span class="_Override" style="font-style: italic;">Expression</span>, if <span class="_Override" style="font-style: italic;">Expression</span> is a named structure. If <span class="_Override" style="font-style: italic;">Expression</span> is not a named structure, a null string is returned. The string returned by this keyword is the same as that returned by TAG_NAMES(/STRUCTURE_NAME). </p>
+        <h3 class="Keyword"><a name="S_820040301_901301"></a><a name="S_820040301_901301_Keywords_SIZE__"></a>STRUCTURE</h3>
+        <p>Set this keyword to return all available information about <i>Expression</i> in a structure.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Since the structure is a named structure, the size of its fields is fixed. The result is an IDL_SIZE (32-bit) structure when possible, and an IDL_SIZE64 structure otherwise. Set <a class="MCXref" href="#S_820040301_1082592">L64</a> to force an IDL_SIZE64 structure to be returned in all cases.</p>
+        <p>The following are descriptions of the fields in the returned structure:</p>
+        <table style="width: 477px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="154px" />
+            <col width="323px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Field</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">TYPE_NAME</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Name of IDL type of <i>Expression</i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">STRUCTURE_NAME</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">If <span class="_Override" style="font-style: italic;">Expression</span> is a named (not anonymous) structure, the name of the structure definition; otherwise, a null string</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">TYPE</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Type code of <i>Expression</i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">FILE_LUN</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">If <i>Expression</i> is an IDL file variable, as created with the ASSOC function, the file unit to which it is associated; otherwise, 0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">FILE_OFFSET</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">If <span class="_Override" style="font-style: italic;">Expression</span> is an IDL file variable, as created with the ASSOC function, the offset specified to ASSOC when the variable was created; otherwise, 0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">N_ELEMENTS</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Number of data elements in <i>Expression</i></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">N_DIMENSIONS</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">If <i>Expression</i> is an array or list, the number of dimensions; otherwise, 0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">DIMENSIONS</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">An 8-element array containing the dimensions of <i>Expression</i></p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Structure Fields</p>
+            </caption>
+        </table>
+        <h3 class="Keyword"><a name="S_820040301_901328"></a><a name="S_820040301_901328_Keywords_SIZE__"></a>TNAME</h3>
+        <p>Set this keyword to return the IDL type of <i>Expression</i> as a string. See <a class="MCXref" href="#S_820040301_1082572">IDL Type Codes and Names</a> for details. </p>
+        <h3 class="Keyword"><a name="S_820040301_901331"></a><a name="S_820040301_901331_Keywords_SIZE__"></a>TYPE</h3>
+        <p>Set this keyword to return the IDL type code for <i>Expression</i>. See <a class="MCXref" href="#S_820040301_1082572">IDL Type Codes and Names</a> for details. For an example illustrating how to determine the type code of an expression, see <a class="MCXref" href="#S_820040301_1274021">Example: Returning the IDL Type Code of an Expression</a>.</p>
+        <h2><a name="S_820040301_678893"></a><a name="S_820040301_678893_PageTOC_SIZE_"></a>Examples</h2>
+        <p>Print the size information for a 10 by 20 floating-point array by entering:</p>
+        <p class="IDLCode">PRINT, SIZE(FINDGEN(10, 20))</p>
+        <p><span class="Reference Materialproduct_name">IDL</span> prints:</p>
+        <p class="Code">&#160;&#160;&#160;2&#160;&#160; 10&#160;&#160; 20&#160;&#160; 4&#160;&#160; 200</p>
+        <p>This <span class="Reference Materialproduct_name">IDL</span> output indicates the array has 2 dimensions, equal to 10 and 20, a type code of 4, and 200 elements total. Similarly, to print only the number of dimensions of the same array:</p>
+        <p class="IDLCode">PRINT, SIZE(FINDGEN(10, 20), /N_DIMENSIONS)</p>
+        <p>IDL prints:</p>
+        <p class="Code">&#160;&#160;&#160;2</p>
+        <h3><a name="S_820040301_1274021"></a><a name="S_820040301_63527"></a>Example: Returning the IDL Type Code of an Expression</h3>
+        <p>The following example illustrates two ways in which to determine the type code of the input expression (see <a class="MCXref" href="#S_820040301_1082572">IDL Type Codes and Names</a> for a list). The type code is always the next to last element in the result returned by the SIZE function. Using this information, and the N_ELEMENTS procedure, you can quickly access the data’s type code. For example:</p>
+        <p class="IDLCode">array = [[1,2,3], [4,5,6], [7,8,9]]<br /><br />; A more flexible method:<br />sz = SIZE(array)<br />n = N_ELEMENTS(sz)<br />type = sz[n-2]</p>
+        <p>The second method involves using the TYPE keyword to SIZE. In this case, the value returned by the SIZE function contains only the type code of the input expression. You can use the TNAME keyword to return the type name. Select any image file and the pixel data type will be printed in the Output window. </p>
+        <p class="IDLCode">; Select an image file.<br />result = DIALOG_READ_IMAGE(FILE=selectedFile, IMAGE=image)<br />type = SIZE(image, /TYPE)<br />typeName = SIZE(image, /TNAME)<br />PRINT, "Type code = ",  type,  " type code name = ",  typename</p>
+        <h3><a name="S_820040301_79429"></a>Example: Returning Array Dimension Information</h3>
+        <p>Assume A is an integer array with dimensions of (3,4,5). The statements:</p>
+        <p class="IDLCode">arr = INDGEN(3,4,5)<br />S = SIZE(arr)</p>
+        <p>assign to the variable <span class="Courier">S</span> a six-element vector containing:</p>
+        <table style="width: 379px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="76px" />
+            <col width="87px" />
+            <col width="216px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Element</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Value</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>0</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">3</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Three dimensions</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>1</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">3</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">First dimension</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>2</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">4</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Second dimension</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>3</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">5</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Third dimension</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>4</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Integer type</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered"><i>S</i><sub>5</sub>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered">60</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Number of elements = 3*4*5</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">SIZE Values</p>
+            </caption>
+        </table>
+        <p>The following code segment checks to see if the variable <span class="Courier">arr</span> is two-dimensional and extracts the dimensions:</p>
+        <p class="IDLCode">;Create a variable.<br />arr = [[1,2,3],[4,5,6]]<br /><br />;Get size vector.<br />S = SIZE(arr)<br /><br />;Check if two dimensional.<br />IF S[0] NE 2 THEN $<br />&#160;&#160;&#160;;Print error message.<br />&#160;&#160;&#160;MESSAGE, 'Variable a is not two dimensional.'<br /><br />;Get number of columns and rows.<br />NX = S[1] &amp; NY = S[2]<br /><br />PRINT, 'Array is ', NX, ' columns by ', NY, ' rows.'</p>
+        <p>IDL prints:</p>
+        <p class="Code">Array is &#160;&#160;&#160;3 columns by &#160;&#160;&#160;2 rows.</p>
+        <h2><a name="S_820040301_1110327"></a><a name="S_820040301_1110327_PageTOC_SIZE_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Original</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">6.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Added FILE_OFFSET and SNAME keywords</p>
+                        <p class="CellBody">Added FILE_OFFSET and STRUCTURE_NAME fields to STRUCTURE</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="S_820040301_1199954"></a><a name="S_820040301_63438"></a>See Also</h2>
+        <p><a class="MCXref" href="../../Object Classes/Miscellaneous/IDL_Savefile.html#objects_misc_904195448_1076956">IDL_Savefile</a>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

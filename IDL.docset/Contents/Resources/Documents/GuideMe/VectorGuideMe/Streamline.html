@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Graphics Examples|Vectors" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Streamline Vectors</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#GuideMe/VectorGuideMe/Streamline.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html">Graphics Examples</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html#Surface">Vectors</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Streamline Vectors</span>
+        </div>
+        <h1>Streamline Vectors</h1>
+        <p>The STREAMLINE function allows you to draw streamlines in a graphic. The following example displays streamlines of global wind vector data over a global map with continental outlines.</p>
+        <p>
+            <img src="../../Resources/Images/streamline.png" />
+        </p>
+        <p>The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL&#160;command line to run it.</p>
+        <p class="Code">; Read the data.</p>
+        <p class="Code">RESTORE, FILEPATH('globalwinds.dat', SUBDIR=['examples','data'])</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Set up the map projection, grid, and continents.</p>
+        <p class="Code">map = MAP('Equirectangular', POSITION=[0.1,0.1,0.9,0.9], $</p>
+        <p class="Code"> LIMIT=[0,-160,80,-50], TITLE='Wind Streamlines')</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Change some map grid properties.</p>
+        <p class="Code">grid = map.MAPGRID</p>
+        <p class="Code">grid.LINESTYLE = "dotted"</p>
+        <p class="Code">grid.ANTIALIAS = 0</p>
+        <p class="Code">grid.LABEL_POSITION = 0</p>
+        <p class="Code">grid.LABEL_ANGLE = 0</p>
+        <p class="Code">grid.FONT_SIZE=14</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">cont = MAPCONTINENTS(/CURRENT, FILL_COLOR="light gray")</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Display the streamlines on top of the map.</p>
+        <p class="Code">stream = STREAMLINE(u, v, x, y, /OVERPLOT, $</p>
+        <p class="Code"> STREAMLINE_STEPSIZE=0.05, $</p>
+        <p class="Code">RGB_TABLE=33, AUTO_COLOR=1, THICK=5)</p>
+        <p class="Code">&#160;</p>
+        <h2>Properties used in the example</h2>
+        <h3>MAP property</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">projection - defines the map projection to use. In this case, the Equirectangular projection.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>LIMIT </code>- specifies the boundaries of the map region (by minimum latitude, minimum longitude, maximum latitude, maximum longitude). In this example, the boundaries are the entire globe.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>POSITION </code>- specifies the position of the graphic within the window.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>TITLE </code>- specifies the graphic title.</td>
+            </tr>
+        </table>
+        <h3>MAPCONTINENTS&#160;properties</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>FILL_COLOR</code> - fills in the map boundaries.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>CURRENT</code> - draws MAPCONTINENTS outline in the current graphic window.</td>
+            </tr>
+        </table>
+        <h3>MAPGRID properties</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>ANTIALIAS</code> - turn off anti-aliasing on the grid lines.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>FONT_SIZE</code> - increase the font size.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>LABEL_ANGLE</code> - rotate the latitude/longitude labels.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>LABEL_POSITION</code> - move the labels to the map edge.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>LINESTYLE</code> - change the linestyle for the grid lines.</td>
+            </tr>
+        </table>
+        <h3>STREAMLINE properties</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">U, V, X, Y - the data variables restored by the RESTORE procedure.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>OVERPLOT </code>- displays the data as an overlay in the current window.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>RGB_TABLE </code>- defines the color table used to display the image. If no color table is defined, this image displays in gray scale.&#160;</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>AUTO_COLOR</code> - enables automatic coloring of according to the distance travelled at each step. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>STREAMLINE_STEPSIZE</code> - decrease the distance taken at each step along the streamlines. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>THICK</code> - change the line thickness. </td>
+            </tr>
+        </table>
+        <h2>Resources</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../propChanges.html" target="" title="" alt="" class="MCXref">Change Graphics Properties</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../MultiViz.html" class="MCXref">Multiple Graphics in One Window</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../ImageGuideMe/SaveImage.html" class="MCXref">Saving Graphics</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/M/MAP.html" class="MCXref">MAP</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/M/MAP_CONTINENTS_Procedure.html" target="" title="" alt="" class="MCXref">MAP_CONTINENTS Procedure</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/S/STREAMLINE.html" target="" title="" alt="" class="MCXref">STREAMLINE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/Functional List of IDL Routines/Graphics.html" class="MCXref">Graphics</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../IDL Graphics/FormattingSymsAndLines.html" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a><a href="../SurfaceGuideMe/surfaceContour.html" class="MCXref">Surface with Contour Lines</a>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

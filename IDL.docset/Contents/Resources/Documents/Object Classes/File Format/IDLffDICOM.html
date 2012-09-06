@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|File Format Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDLffDICOM</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/File Format/IDLffDICOM.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_ff.html">File Format Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDLffDICOM</span>
+        </div>
+        <h1 class="ObjClass"><a name="objects_ff_3755668711_1003869"></a><a name="objects_ff_3755668711_86680"></a>IDLff<a name="kanchor3729"></a>DICOM</h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#objects_ff_3755668711_1003891">Superclasses</a> | <a class="MCXref" href="#objects_ff_3755668711_1003894">Creation</a> | <a class="MCXref" href="#objects_ff_3755668711_1024002">Properties</a> | <a class="MCXref" href="#objects_ff_3755668711_1003900">Methods</a> | <a class="MCXref" href="#objects_ff_3755668711_1003962">Version History</a></MadCap:conditionalText>
+        </p>
+        <p>An <a name="kanchor3730"></a>IDLffDICOM object contains the data for one or more images embedded in a DICOM Part 10 file. The API to the IDLffDICOM object provides accessor methods to the basic data elements of a DICOM file, namely the group/element tag, value representation, length, and data values. Additional methods deal with the file header preamble, data dictionary description for individual elements, and embedded sequences of elements. Most methods take a DICOM group/element tag as a parameter. An alternative parameter to the DICOM tag in some methods is the reference. A reference value is a LONG integer that is unique to each element in the DICOM object. This value can be used to directly access a specific element and to differentiate between elements in the DICOM file that have the same group/element tag. Valid reference values are always positive.</p>
+        <p>See <a class="MCXref" href="#objects_ff_3755668711_1003968">IDLffDICOM Object DICOM Conformance Summary</a> for information regarding IDL DICOM file reading support. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>See <a href="../../IDLFeatureSupport.html" class="MCXref">IDL Feature Support</a> for a list of platforms that support DICOM file reading.</p>
+        <h2><a name="objects_ff_3755668711_1003891"></a><a name="objects_ff_3755668711_1334536_PageTOC_IDLffDICOM__"></a>Superclasses</h2>
+        <p>None</p>
+        <h2><a name="objects_ff_3755668711_1003894"></a><a name="objects_ff_3755668711_1334540_PageTOC_IDLffDICOM__"></a>Creation</h2>
+        <p>See <a class="MCXref" href="IDLffDICOM__Init.html#objects_ff_3755668711_1004866">IDLffDICOM::Init</a>.</p>
+        <h2><a name="objects_ff_3755668711_1024002"></a><a name="objects_ff_3755668711_56751"></a>Properties</h2>
+        <p>Objects of this class have the following properties. See <a class="MCXref" href="IDLffDICOM_Properties.html#objects_ff_3755668711_1024004">IDLffDICOM Properties</a> for details on individual properties.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM_Properties.html#objects_ff_3755668711_1024027">VERBOSE</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_ff_3755668711_1003900"></a><a name="objects_ff_3755668711_1334548_PageTOC_IDLffDICOM__"></a>Methods<a name="kanchor3731"></a></h2>
+        <p>This class has the following methods:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__Cleanup.html#objects_ff_3755668711_1024033">IDLffDICOM::Cleanup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__DumpElements.html#objects_ff_3755668711_1004201">IDLffDICOM::DumpElements</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetChildren.html#objects_ff_3755668711_1004254">IDLffDICOM::GetChildren</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetDescripti.html#objects_ff_3755668711_1004312">IDLffDICOM::GetDescription</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetElement.html#objects_ff_3755668711_1004367">IDLffDICOM::GetElement</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetGroup.html#objects_ff_3755668711_1004425">IDLffDICOM::GetGroup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetLength.html#objects_ff_3755668711_1004483">IDLffDICOM::GetLength</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetParent.html#objects_ff_3755668711_1004535">IDLffDICOM::GetParent</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetPreamble.html#objects_ff_3755668711_1004595">IDLffDICOM::GetPreamble</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetReference.html#objects_ff_3755668711_1004641">IDLffDICOM::GetReference</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetValue.html#objects_ff_3755668711_1004706">IDLffDICOM::GetValue</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__GetVR.html#objects_ff_3755668711_1004813">IDLffDICOM::GetVR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__Init.html#objects_ff_3755668711_1004866">IDLffDICOM::Init</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__Read.html#objects_ff_3755668711_1004918">IDLffDICOM::Read</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLffDICOM__Reset.html#objects_ff_3755668711_1004964">IDLffDICOM::Reset</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_ff_3755668711_1003962"></a><a name="objects_ff_3755668711_1394393_PageTOC_IDLffDICOM__"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.2</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="objects_ff_3755668711_1003968"></a><a name="objects_ff_3755668711_86848"></a>IDLffDICOM Object DICOM <a name="kanchor3732"></a>Conformance Summary</h2>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>This Conformance Summary is for the IDLffDICOM object only. See <span class="Link"><a href="http://www.ittvis.com/">www.ittvis.com</a></span> for the current DICOM Conformance Statement. See the following information for the IDLffDICOM object’s conformance information.</p>
+        <h3>Introduction</h3>
+        <p>This section is an abbreviated DICOM conformance statement for the IDLffDICOM object, and specifies the compliance of this object’s file reading support to the DICOM v3.0 standard. As described in the DICOM Standard PS 3.2 (Conformance), the purpose of this document is to outline the level of conformance to the DICOM standard and to enumerate the supported DICOM Service Classes, Information Objects, and Communications Protocols supported by the implementation of the IDLffDICOM object.</p>
+        <p>The IDLffDICOM object does not contain or support any of the DICOM services such as Storage, Query/Retrieve, Print, Verification, etc., so there will be no conformance claims relating to these services and no mention of any Application Entities for these services. Communications Protocol profiles will also be absent from this document for the same reasons. The remainder of this document will describe how the IDLffDICOM object handles the various Information Objects it is capable of reading.</p>
+        <h3>Reading of DICOM Part 10 files</h3>
+        <p>IDL supports reading files that conform to the DICOM Standard PS 3.10 DICOM File Format. This format provides a means to encapsulate in a file the Data Set representing a SOP (Service Object Pair) Instance related to a DICOM IOD (Information Object Definition). Files written to disk in this DICOM File Format will be referred to as DICOM Part 10 files for the remainder of this document. Note that the IDLffDICOM object does NOT support the writing of files in this DICOM File Format, only reading.</p>
+        <h3>Encapsulated Transfer Syntaxes Supported</h3>
+        <p>IDL supports reading DICOM Part 10 files whose contents have been written using the following Transfer Syntaxes. The Transfer Syntax UID is in the file’s DICOM Tag field (0002,0010).</p>
+        <table style="width: 508px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="150px" />
+            <col width="358px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">UID Value</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">UID Name</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Implicit VR Little Endian: Default Transfer Syntax for DICOM</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.1</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Explicit VR Little Endian</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Explicit VR Big Endian</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Encapsulated Transfer Syntaxes Supported</p>
+            </caption>
+        </table>
+        <h3>Encapsulated Transfer Syntaxes NOT Supported</h3>
+        <p>The IDLffDICOM object does NOT support reading DICOM Part 10 files whose contents have compressed data that has been written using the following Transfer Syntaxes. This object will NOT be able to access the data element (DICOM Tag field (7FE0,0010)) of files with these types of compressed data. The Transfer Syntax UID is in the file’s DICOM Tag field (0002,0010).</p>
+        <table style="width: 527px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="167px" />
+            <col width="360px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">UID Value</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">UID Name</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.50</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Baseline (Process 1): Default Transfer Syntax for Lossy JPEG 8 Bit Image Compression</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.51</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Extended (Process 2 &amp; 4): Default Transfer Syntax for Lossy JPEG 12 Bit Image Compression (Process 4 only)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.52</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Extended (Process 3 &amp; 5)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.53</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Spectral Selection, Non-Hierarchical (Process 6 &amp; 8)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.54</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Spectral Selection, Non-Hierarchical (Process 7 &amp; 9)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.55</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Full Progression, Non-Hierarchical (Process 10 &amp; 12)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.56</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Full Progression, Non-Hierarchical (Process 11 &amp; 13)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.57</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Lossless, Non-Hierarchical (Process 14)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.58</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Lossless, Non-Hierarchical (Process 15)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.59</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Extended, Hierarchical (Process 16 &amp; 18)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.60</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Extended, Hierarchical (Process 17 &amp; 19)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.61</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Spectral Selection, Hierarchical (Process 20 &amp; 22)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.62</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Spectral Selection, Hierarchical (Process 21 &amp; 23)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.63</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Full Progression, Hierarchical (Process 24 &amp; 26)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.64</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Full Progression, Hierarchical (Process 25 &amp; 27)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.65</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Lossless, Hierarchical (Process 28)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.66</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Lossless, Hierarchical (Process 29)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.4.70</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">JPEG Lossless, Non-Hierarchical, First-Order Prediction (Process 14 [Selection Value 1]): Default Transfer Syntax for Lossless JPEG Image Compression</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">1.2.840.10008.1.2.5</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">RLE Lossless</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Encapsulated Transfer Syntaxes NOT Supported</p>
+            </caption>
+        </table>
+        <h3>Encapsulated SOP Classes Supported</h3>
+        <p>The IDLffDICOM object supports reading DICOM Part 10 files whose contents encapsulate the data of the following SOP Classes. The SOP Class UID is in the file’s DICOM Tag field (0008,0016).</p>
+        <table style="width: 515px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="211px" />
+            <col width="304px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">UID Value</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">UID Name</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.1</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">CR Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">CT Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.4</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">MR Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.6.1</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Ultrasound Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.7</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Secondary Capture Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.12.1</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">X-Ray Angiographic Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.12.2</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">X-Ray Radiofluoroscopic Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.20</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Nuclear Medicine Image Storage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">1.2.840.10008.5.1.4.1.1.128</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Positron Emission Tomography Image Storage</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Encapsulated SOP Classes Supported</p>
+            </caption>
+        </table>
+        <h3>Handling of odd length data elements</h3>
+        <p>The DICOM Standard PS 3.5 (Data Structures and Encoding) specifies that the data element values which make up a DICOM data stream must be padded to an even length. The toolkit upon which IDL’s DICOM reading functionality is built strictly enforces this specification. If IDL encounters an incorrectly formed odd length data field while reading a DICOM Part 10 file it will report an error and stop the reading process.</p>
+        <h3>Handling of undefined VRs</h3>
+        <p>The VR (Value Representation) of a data element describes the data type and format of that data element's values. If IDL encounters an undefined VR while reading a DICOM Part 10 file, it will set that data element's VR to be UN (unknown).</p>
+        <h3>Handling of retired and private data elements</h3>
+        <p>Certain data elements are no longer supported under the v3.0 of the DICOM standard and are denoted as retired. Also, some DICOM implementations may require the communication of information that cannot be contained in standard data elements, and thus create private data elements to contain such information. Retired and private data elements should pose no problem to IDL’s DICOM Part 10 file reading capability. When the IDLffDICOM object encounters a retired or private data element tag during reading a DICOM Part 10 file, it will treat it just like any standard data element: read the data value and allow it to be accessed via the IDLffDICOM::GetValue method.</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

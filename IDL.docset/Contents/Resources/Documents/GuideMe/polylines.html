@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Graphics Examples|Modifying Visualizations" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Draw Lines and Arrows</title>
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../idl_CSH.html#GuideMe/polylines.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../GUInavigation/visualize.html">Graphics Examples</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../GUInavigation/visualize.html#Annotati">Modifying Visualizations</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Lines and Arrows</span>
+        </div>
+        <h1><a name="kanchor41"></a>Draw Lines and Arrows</h1>
+        <p>Use the POLYLINE function to draw lines or arrows on existing graphics. You can use POLYLINE at the time you create the graphic, or from the command line after the graphic is displayed. </p>
+        <p>The example shows an image of Mars with an arrow that points to a landing site. </p>
+        <p>
+            <img src="../Resources/Images/polyline.gif" />
+        </p>
+        <p>The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL&#160;command line to run it.</p>
+        <p class="Code">; Define the image to display.</p>
+        <p class="Code">file = FILEPATH('marsglobe.jpg', $</p>
+        <p class="Code">&#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Display the mars image.</p>
+        <p class="Code">mglobe = IMAGE(file, TITLE='Mars Study')</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Draw the line pointing to the landing site.</p>
+        <p class="Code">landingsite = POLYLINE([[35, 251],[68,300]], $</p>
+        <p class="Code">TARGET=mglobe, /DATA, ARROW_STYLE=1, $</p>
+        <p class="Code">&#160;&#160;&#160;COLOR='blue', THICK=2)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Draw the text for the landing site.</p>
+        <p class="Code">landtext = TEXT(11, 236, TARGET=mglobe, $</p>
+        <p class="Code">&#160;&#160;&#160;'Landing site', /DATA, COLOR='blue', FONT_SIZE=18)</p>
+        <p class="Code">&#160;</p>
+        <h2>Arguments and properties used in the example</h2>
+        <h3>IMAGE</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>TITLE</code> - defines the title for the window.</td>
+            </tr>
+        </table>
+        <h3>POLYLINE</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">coordinates - these arguments define the location to appear in the graphic, in normal, data or device coordinates.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>TARGET </code>- Use this after graphic creation to specify the graphic in which to appear. (Not needed if used during graphic creation or if only one graphic is active.)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>DATA </code>- defines that the location coordinates are defined in the data space.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>ARROW_STYLE</code> - defines the line as an arrow of a certain type. See <a href="../Reference Material/P/POLYLINE.html" class="MCXref">POLYLINE</a>for a list of available styles.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>COLOR - </code>defines the color of the line.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>THICK </code>- defines the line thickness.</td>
+            </tr>
+        </table>
+        <h3>TEXT</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>X, Y</code> - these arguments define the location to appear in the graphic, in normal, data or device coordinates. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>TARGET </code>- Use this after graphic creation to specify the graphic in which to appear. (Not needed if used during graphic creation or if only one graphic is active.)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">text string - defines the text.     </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>COLOR - </code>defines the color to use for the element.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>DATA </code>- defines that the location coordinates are in data coordinates.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>FONT_SIZE</code> - defines the font size of the text.</td>
+            </tr>
+        </table>
+        <h2>Resources</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../GUInavigation/visualize.html" class="MCXref">Graphics Examples</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../Reference Material/Functional List of IDL Routines/Graphics.html" class="MCXref">Graphics</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../Reference Material/E/ELLIPSE.html" class="MCXref">ELLIPSE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../Reference Material/P/POLYGON.html" class="MCXref">POLYGON</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../Reference Material/P/POLYLINE.html" class="MCXref">POLYLINE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../Reference Material/T/TEXT.html" class="MCXref">TEXT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="propChanges.html" target="" title="" alt="" class="MCXref">Change Graphics Properties</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="MultiViz.html" class="MCXref">Multiple Graphics in One Window</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="ImageGuideMe/SaveImage.html" class="MCXref">Saving Graphics</a><a href="../Reference Material/P/PLOT.html" class="MCXref">PLOT</a><a href="../Reference Material/P/POLARPLOT.html" class="MCXref">POLARPLOT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../IDL Graphics/FormattingSymsAndLines.html" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

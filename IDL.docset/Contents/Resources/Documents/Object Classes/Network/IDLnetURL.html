@@ -1,0 +1,2874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|Network Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDLnetURL</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/Network/IDLnetURL.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_network.html">Network Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDLnetURL</span>
+        </div>
+        <h1 class="ObjClass"><a name="objects_network_1009015_1370815"></a><a name="objects_network_1009015_22405"></a>IDLnetURL</h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#objects_network_1009015_1404543">Superclasses</a> | <a class="MCXref" href="#objects_network_1009015_1404545">Creation</a> | <a class="MCXref" href="#objects_network_1009015_1404550">Properties</a> | <a class="MCXref" href="#objects_network_1009015_1404674">Methods</a> | <a class="MCXref" href="#objects_network_1009015_1404712">Examples</a> | <a class="MCXref" href="#objects_network_1009015_1404719">Version History</a></MadCap:conditionalText>
+        </p>
+        <p>An <a name="kanchor4721"></a>IDLnetURL object allows IDL to act as a client to an HTTP or FTP server. The object handles:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Opening a connection to a remote HTTP or FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Creating and sending HTTP requests to the remote HTTP or FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Receiving responses from the remote HTTP or FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Receiving and writing large data files to disk at a user-specified location.</td>
+            </tr>
+        </table>
+        <p>For additional information, see the following sections:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#objects_network_1009015_1408472">Overview of the IDLnetURL Object</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#objects_network_1009015_1408886">Using Callbacks with the IDLnetURL Object</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_network_1009015_1404543"></a><a name="objects_network_1009015_1404543_PageTOC_IDLnetURL_"></a>Superclasses</h2>
+        <p>None.</p>
+        <h2><a name="objects_network_1009015_1404545"></a><a name="objects_network_1009015_1404545_PageTOC_IDLnetURL_"></a>Creation</h2>
+        <p>See <a class="MCXref" href="IDLnetURL__Init.html#objects_network_1009015_1406808">IDLnetURL::Init</a>.</p>
+        <h2><a name="objects_network_1009015_1404550"></a><a name="objects_network_1009015_1404550_PageTOC_IDLnetURL_"></a>Properties</h2>
+        <p>Objects of this class have the following properties. See <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1410556" target="" title="" alt="">IDLnetURL Properties</a> for details on individual properties. </p>
+        <table class="TableStyle_Property_Table" style="width: 507px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="255px" />
+            <col width="252px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1424430">AUTHENTICATION</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405144">CALLBACK_DATA</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1408065">CALLBACK_FUNCTION</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405202">CONNECT_TIMEOUT</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405231">CONTENT_TYPE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405260">ENCODE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405317">FTP_CONNECTION_MODE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405351">HEADERS</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405388">PROXY_AUTHENTICATION</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405444">PROXY_HOSTNAME </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405473">PROXY_PASSWORD</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405502">PROXY_PORT</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405531">PROXY_USERNAME</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405560">RESPONSE_CODE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405781">RESPONSE_FILENAME</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405811">RESPONSE_HEADER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405840">SSL_CERTIFICATE_FILE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405869">SSL_VERIFY_HOST</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405903">SSL_VERIFY_PEER</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405937">SSL_VERSION</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405992">TIMEOUT </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406021">URL_HOSTNAME </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406054">URL_PASSWORD</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406088">URL_PATH</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406123">URL_PORT</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406156">URL_QUERY</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406190">URL_SCHEME </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColEnd">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406223">URL_USERNAME</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+                            <col style="width: 4.800001px;" />
+                            <col style="width: 14.4px;" />
+                            <col style="width: auto;" />
+                            <tr>
+                                <td valign="top" />
+                                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                                </td>
+                                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1406257">VERBOSE</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2><a name="objects_network_1009015_1404674"></a><a name="objects_network_1009015_1404674_PageTOC_IDLnetURL_"></a>Methods</h2>
+        <p>This class has the following methods:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Cleanup.html#objects_network_1009015_1420125">IDLnetURL::Cleanup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__CloseConnecti.html#objects_network_1009015_1406534">IDLnetURL::CloseConnections</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__FtpCommand.html#objects_network_1009015_1406559">IDLnetURL::FtpCommand</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Get.html#objects_network_1009015_1406627">IDLnetURL::Get</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__GetFtpDirList.html#objects_network_1009015_1406752">IDLnetURL::GetFtpDirList</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__GetProperty.html#objects_network_1009015_1406783">IDLnetURL::GetProperty</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Init.html#objects_network_1009015_1406808">IDLnetURL::Init</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Put.html#objects_network_1009015_1406837">IDLnetURL::Put</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__SetProperty.html#objects_network_1009015_1406901">IDLnetURL::SetProperty</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_network_1009015_1404712"></a><a name="objects_network_1009015_1404712_PageTOC_IDLnetURL_"></a>Examples</h2>
+        <p>See the following methods for examples: </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__FtpCommand.html#objects_network_1009015_1406559">IDLnetURL::FtpCommand</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Get.html#objects_network_1009015_1406627">IDLnetURL::Get</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__GetFtpDirList.html#objects_network_1009015_1406752">IDLnetURL::GetFtpDirList</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLnetURL__Put.html#objects_network_1009015_1406837">IDLnetURL::Put</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="objects_network_1009015_1404719"></a><a name="objects_network_1009015_1404719_PageTOC_IDLnetURL_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">6.4</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="objects_network_1009015_1408472"></a><a name="objects_network_1009015_70274"></a>Overview of the IDLnetURL Object</h2>
+        <p>The <a name="kanchor4722"></a>following sections give a general overview of the IDLnetURL object’s capabilities.</p>
+        <h3>HTTP Functionality</h3>
+        <p>The IDLnetURL object enables the following HTTP-related tasks:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Allows IDL to act as a HTTP client node.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Allows IDL to act as a HTTP SSL client node.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Get requests to retrieve data from a remote HTTP server and place it in a buffer or file.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Put requests to move data from a buffer or file to a remote HTTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Post requests to move data from a buffer or file to a remote HTTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Encrypts all data to and from a remote HTTP server with SSL.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Compresses and decompresses data to and from a remote HTTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Supports Basic and Digest authentication modes.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Supports customizing HTTP headers that are later sent to the remote HTTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Returns the HTTP response code and HTTP response header to the user.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Provides status callbacks so the user can monitor call progress.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Requests can be cancelled if the user chooses not to wait for a complete reply.</td>
+            </tr>
+        </table>
+        <h3>FTP Functionality</h3>
+        <p>The IDLnetURL object enables the following FTP-related tasks:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Allows IDL to act as a FTP client node.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Allows IDL to act as a FTP SSL client node.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Get requests to retrieve data from a remote FTP server to a buffer or file. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Put requests to move data from a buffer or file to a remote FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues Dir requests to retrieve directory listings from a remote FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Issues commands (Delete, Make dir, and so on) to a remote FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Encrypts all data to and from a remote FTP server with SSL.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Supports authentication (logging into a remote FTP server).</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Returns the FTP response code and FTP response replies to the user.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Provides status callbacks so the user can monitor call progress.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Requests can be cancelled if the user chooses not to wait for a complete reply.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Supports custom commands that are sent to the remote FTP server.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Supports both Active and Passive mode connections.</td>
+            </tr>
+        </table>
+        <h3>HTTP Authentication Modes</h3>
+        <p>The IDLnetURL object supports Disabled, Basic, and Digest HTTP authentication modes. It also supports authenticating with a remote HTTP or FTP server, and with proxy servers. The username and password can be set for both a remote HTTP or FTP server, and for a proxy server.</p>
+        <h3>FTP Authentication</h3>
+        <p>The IDLnetURL object supports logging in to a remote FTP server. A username and password can be set prior to connecting to a remote FTP server.</p>
+        <h3>Secure HTTP</h3>
+        <p>The IDLnetURL object supports the HTTPS protocol by implementing a secure socket layer (SSL). Secure HTTP ensures that all requests and responses are encrypted. To activate SSL, set the URL_SCHEME property to ‘https’.</p>
+        <h3><a name="objects_network_1009015_1404804"></a><a name="objects_network_1009015_55832"></a>Secure FTP</h3>
+        <p>The IDLnetURL object supports implicit and explicit SSL, which ensure that all requests and responses are encrypted. An FTP server may support implicit SSL, explicit SSL, or both.</p>
+        <p class="Warning" MadCap:autonum="&lt;b&gt;Warning: &lt;/b&gt;"><span class="autonumber"><span><b>Warning: </b></span></span>Different FTP servers provide different responses when SSL authentication is not available. IDL attempts to catch these responses and generate errors if the FTP server does not support SSL, but there may be cases when IDL makes a non-SSL connection even when an SSL connection is requested. If you are not sure that the FTP server you are connecting to supports SSL, view the complete response headers to check that the connection is being made using SSL.</p>
+        <p>Explicit SSL is activated by setting the FTP_EXPLICIT_SSL keyword in the Get, Put, GetFtpDirList, and FtpCommand methods. Implicit SSL is activated by setting the scheme to ‘ftps’.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Implicit SSL has been deprecated.</p>
+        <h3>SSL Protocol Versions</h3>
+        <p>By default, the IDLnetURL object supports automatic determination of the SSL protocol that is supported by the remote HTTP or FTP server. If the remote server does not support automatic determination of the SSL protocol version, you can direct the object to use a specific version with the SSL_VERSION property. The IDLnetURL object supports protocol versions TLS v1, SSL v2, and SSL v3. TLS v1 supersedes all previous versions of the SSL protocols.</p>
+        <h3><a name="objects_network_1009015_45361"></a>HTTP Encoding</h3>
+        <p>The IDLnetURL object supports compressed/encoded responses from a remote HTTP server, as well as the deflate and GZIP encoding formats. Refer to the description of the <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405260">ENCODE</a> property for details.</p>
+        <h3>Proxies</h3>
+        <p>The IDLnetURL object supports proxies. When the object utilizes a proxy, the <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405444">PROXY_HOSTNAME </a> and <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405502">PROXY_PORT</a> properties must be set.</p>
+        <h3>Connection Caching</h3>
+        <p>The IDLnetURL object caches up to five existing connections to remote HTTP or FTP servers. Once a connection is established to a remote server, the connection is reused on subsequent transactions with the remote server. Reusing a connection can save time because the connect, login, and SSL handshake information does not need to be repeated.</p>
+        <p>Use the <a class="MCXref" href="IDLnetURL__CloseConnecti.html#objects_network_1009015_1406534">IDLnetURL::CloseConnections</a> method to close a connection. Typically, a remote server closes an existing connection after a period of no activity. When this occurs, the closed connection is removed from the existing connections list. Closing a connection using the CloseConnections method is useful for changing login information, enabling or disabling SSL, starting a new set of transactions on the FTP or HTTP server, and so on for the next transaction with the server.</p>
+        <h2><a name="objects_network_1009015_1408574"></a><a name="objects_network_1009015_74311"></a>Mapping URL Components to IDLnetURL Properties</h2>
+        <p><span class="Link">the following table</span> shows how the components of a URL map to IDLnetURL properties. Set these properties by calling the SetProperty method. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>You can use the <a class="MCXref" href="../../Reference Material/P/PARSE_URL.html#P_817877613_1162677" target="" title="" alt="">PARSE_URL</a> function to break up a URL into its component strings, which can then be passed to <a class="MCXref" href="IDLnetURL__SetProperty.html#objects_network_1009015_1406901">IDLnetURL::SetProperty</a> method.</p>
+        <p>A URL has the following composition:</p>
+        <p class="Code">URL_SCHEME://URL_USERNAME:URL_PASSWORD@URL_HOST:URL_PORT/URL_PATH?URL_QUERY</p>
+        <p>For example:</p>
+        <p class="Code">http://me:mypw@host.com:8080/project/data/get_data.cgi?dataset=climate&amp;date=01012006</p>
+        <p class="TableAnchor">&#160;</p>
+        <table style="width: 496px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="164px" />
+            <col width="332px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">IDLnetURL Property</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Value</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">URL_SCHEME</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">‘http’ (the default), ‘https’, ‘ftp’, or ‘ftps’</p>
+                        <p class="CellBody">(The string “://” is appended to URL_SCHEME) </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">URL_USERNAME</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Any string. </p>
+                        <p class="CellBody">The character “:” is appended if URL_PASSWORD is supplied; otherwise the character “@” is appended.</p>
+                        <p class="CellBody">The null string is the default.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">URL_PASSWORD</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Any string.</p>
+                        <p class="CellBody">The character “@” is appended.</p>
+                        <p class="CellBody">The null string is the default.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">URL_HOST</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">my.hostname.com</p>
+                        <p class="CellBody">The null string is the default.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">URL_PORT</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">8080</p>
+                        <p class="CellBody">The default is 80.</p>
+                        <p class="CellBody">The “:” character is prepended to URL_PORT if it is not null.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">URL_PATH</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody"><span class="Courier">demo/index.html</span>
+                        </p>
+                        <p class="CellBody">The null string is the default.</p>
+                        <p class="CellBody">The '/' character is prepended to URL_PATH if it is not null.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">URL_QUERY</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Parm1=value1&amp;Parm2=value2&amp; (and so on).</p>
+                        <p class="CellBody">The null string is the default.</p>
+                        <p class="CellBody">The '?' character is prepended to URL_QUERY if it is not null.</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle"><a name="objects_network_1009015_1417593"></a><a name="objects_network_1009015_87936"></a>IDLnetURL object URL properties.</p>
+            </caption>
+        </table>
+        <h2><a name="objects_network_1009015_1408886"></a><a name="objects_network_1009015_83917"></a>Using Callbacks with the IDLnetURL Object</h2>
+        <p>Callbacks from the IDLnetURL object provide a way to transmit information back to the caller based on the status of a request made to a HTTP or FTP server. The value returned by the callback function is then used by the IDLnetURL object to determine whether to continue or abort the request. </p>
+        <p>The caller must set the callback function property to receive callbacks from a method. The callback is made to an IDL function, which takes IDL variables as input parameters.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The callback method is intended to provide status and progress information. The callback should not be used to process the incoming or outgoing data. Any data processing must occur after the Get, Put, GetFtpDirList, or FtpCommand methods have returned.</p>
+        <p>The IDLnetURL object lets you define functions that are called during a Get or Put method call. If a callback function is specified with the CALLBACK_FUNCTION property, it is called in the following circumstances: </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">For the <a class="MCXref" href="IDLnetURL__Get.html#objects_network_1009015_1406627">IDLnetURL::Get</a> method, the callback function is called each time a packet is received from the HTTP or FTP server. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">For the <a class="MCXref" href="IDLnetURL__Put.html#objects_network_1009015_1406837">IDLnetURL::Put</a> method, the callback function is called each time a packet of data is sent to the HTTP or FTP server. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">For the <a class="MCXref" href="IDLnetURL__GetFtpDirList.html#objects_network_1009015_1406752">IDLnetURL::GetFtpDirList</a> method, the callback function is called each time a list of files is retrieved.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">For the <a class="MCXref" href="IDLnetURL__FtpCommand.html#objects_network_1009015_1406559">IDLnetURL::FtpCommand</a> method, the callback function is called each time an FTP command is executed.</td>
+            </tr>
+        </table>
+        <p>All methods invoke the callback function with an array of strings indicating status as the first parameter, an array of integers containing progress information as the second parameter, and with the value (if any) specified by the CALLBACK_DATA property as the third parameter. A callback function returns a value of type Int.</p>
+        <h3>Cancelling a Request</h3>
+        <p>The return value of the callback function should be an integer zero or one. If the return value is zero, a cancel message will be sent to the remote node. If the return value is one, the operation will continue. </p>
+        <h3><a name="objects_network_1009015_73767"></a>Callback Routine Signature </h3>
+        <p>A callback function is written in IDL and has the following format: </p>
+        <p class="Code">Function Callback_Function_Name, StatusInfo, ProgressInfo, &#160;&#160;&#160;CallbackData</p>
+        <p class="Code">...</p>
+        <p class="Code">return vCancelFlag</p>
+        <p>where </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">Callback_Function_Name</span> is the name of the callback function. This value is specified by the <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1408065">CALLBACK_FUNCTION</a> property.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">StatusInfo</span> is the first input parameter. It is an array of IDL strings that contains status information about the Get or Put. When the caller is a user interface (UI), the UI typically displays the string array in a text widget.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">ProgressInfo</span> is the second input parameter, and is an array of signed 64-bit values (type Long64) that contains progress information:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">ProgressInfo[0] – Contains 1 (one) when the <span class="Courier">ProgressInfo</span> array contains valid data, or 0 (zero) when the array does not contain valid data.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">ProgressInfo[1] – The download total used when doing a HTTP Get or FTP Get. This value is 0 when doing a HTTP Get and the transfer encoding is chunked.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">ProgressInfo[2] – Contains the number of bytes that have been downloaded during the current HTTP or FTP get.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">ProgressInfo[3] – Contains the total number of bytes to be uploaded during a HTTP Put, HTTP Post, or FTP Put.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">ProgressInfo[4] – Contains the number of bytes currently uploaded during the HTTP Put, HTTP Post, or FTP Put.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">CallbackData</span> is the CALLBACK_DATA property that can be set prior to calling the Get, Put, GetFtpDirList, or FtpCommand method. This property is passed into the callback function unmodified, and the contents of the property are determined by the user.   When the caller is a UI, the callback data typically contains the ID of a text widget that displays the status information strings. If the CALLBACK_DATA property is not set, its value is undefined.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The return value is of type Int, and can be used to cancel the Get, Put, GetFtpDirList, or FtpCommand operation. See <a class="MCXref" href="IDLnetOGCWCS.html#objects_network_1009015_1402531">Cancelling a Request</a> for more information.</td>
+            </tr>
+        </table>
+        <h2><a name="objects_network_1009015_1417867"></a><a name="objects_network_1009015_38116"></a>HTTP and FTP Response Codes</h2>
+        <p>The following tables list the response codes stored in the RESPONSE_CODE property for the last HTTP or FTP request sent to the remote server. See <a class="MCXref" href="IDLnetURL_Properties.html#objects_network_1009015_1405560">RESPONSE_CODE</a> for more information about the property that holds these values.</p>
+        <p>The following table lists the error response codes generated by the IDLnetURL object:</p>
+        <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="214px" />
+            <col width="69px" />
+            <col width="216px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Code</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Code Number</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">UNSUPPORTED_PROTOCOL</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">1 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The URL you passed uses an unsupported protocol. The problem might be an unused compile-time option or a misspelled protocol string.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FAILED_INIT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">2 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Very early initialization code failed. This is likely an internal error or problem.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">URL_MALFORMAT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The URL was not properly formatted.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">URL_MALFORMAT_USER</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">4</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Not used.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">COULDNT_RESOLVE_PROXY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">5 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The given proxy host could not be resolved.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">COULDNT_RESOLVE_HOST</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The given remote host was not resolved.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">COULDNT_CONNECT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">7 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Failed to connect to host or proxy.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WEIRD_SERVER_REPLY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">8 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">After connecting to an FTP server, the IDLnetURL object received a strange or bad reply. The remote server is probably not an OK FTP server.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_ACCESS_DENIED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">9</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A service was denied by the FTP server due to lack of access. When a login fails, this is not returned.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_USER_PASSWORD_INCORRECT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">10 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">This is never returned.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WEIRD_PASS_REPLY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">11 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">After sending the FTP password to the server, an unexpected code was received.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WEIRD_USER_REPLY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">12 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">After sending a user name to the FTP server, an unexpected code was received.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WEIRD_PASV_REPLY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">13 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The IDLnetURL object did not receive a sensible result from the server in response to either a PASV or EPSV command.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WEIRD_227_FORMAT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">14 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">FTP servers return a 227-line as a response to a PASV command. This code is returned if the IDLnetURL object fails to parse that line.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_CANT_GET_HOST</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">15 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Indicates an internal failure when looking up the host used for the new connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_CANT_RECONNECT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">16 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">A bad return code for either the PASV or EPSV command was sent by the FTP server, preventing the IDLnetURL object from continuing.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_SET_BINARY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">17 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">An error was received when trying to set the transfer mode to binary.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">PARTIAL_FILE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">18 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">A file transfer was shorter or larger than expected. This happens when the server first reports an expected transfer size, and then delivers data that doesn't match the previously-given size.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_RETR_FILE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">19 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Either the server returned a weird reply to a RETR command, or a zero-byte transfer was completed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_WRITE_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">20 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">After a completed file transfer, the FTP server did not send a proper "transfer successful" code.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_QUOTE_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">21 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">When sending custom QUOTE commands to the remote server, one of the commands returned an error code of 400 or higher.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">HTTP_RETURNED_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">22 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">This is returned if CURLOPT_FAILONERROR is TRUE and the HTTP server returns an error code that is &gt;= 400.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">WRITE_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">23 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">An error occurred when writing received data to a local file, or an error was returned from a write callback.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">MALFORMAT_USER</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">24</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Not used</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_STOR_FILE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">25</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The server denied the STOR operation. The error buffer usually contains the server's explanation.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">READ_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">26</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">There was a problem reading a local file, or the read callback returned an error.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">OUT_OF_MEMORY</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">27 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A memory allocation request failed. This is not a good thing.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">OPERATION_TIMEOUTED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">28</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The specified time-out period was exceeded.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_SET_ASCII</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">29</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Failed to set ASCII transfer type (TYPE A).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_PORT_FAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">30</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The FTP PORT command returned an error. This often happens when the address is improper.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_USE_REST</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">31</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The FTP REST command failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_COULDNT_GET_SIZE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">32</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The FTP SIZE command failed. SIZE is not a fundamental FTP command; it is an extension and not all servers support it. This is not a surprising error.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">HTTP_RANGE_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">33</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The HTTP server does not support or accept range requests.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">HTTP_POST_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">34 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">This is an odd error that mainly occurs due to internal confusion.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_CONNECT_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">35</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A problem occurred somewhere in the SSL/TLS handshake. Check the error buffer for more information.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">AD_DOWNLOAD_RESUME</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">36</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">An FTP resume was attempted beyond the file size.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FILE_COULDNT_READ_FILE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">37</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A file in the format of “FILE://” couldn't be opened, most likely because the file path is invalid. File permissions may also be the culprit.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">LDAP_CANNOT_BIND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">38 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The LDAP bind operation failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">LDAP_SEARCH_FAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">39 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">LDAP search failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">LIBRARY_NOT_FOUND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">40 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The LDAP library was not found.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FUNCTION_NOT_FOUND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">41 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A required LDAP function was not found.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">ABORTED_BY_CALLBACK</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">42 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">A callback returned an abort code.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">BAD_FUNCTION_ARGUMENT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">43 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Internal error. A function was called with a bad parameter.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">BAD_CALLING_ORDER</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">44</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Not used.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">INTERFACE_FAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">45</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A specified outgoing interface could not be used. Use CURLOPT_INTERFACE to set the interface for outgoing connections.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">BAD_PASSWORD_ENTERED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">46</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Not used.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">TOO_MANY_REDIRECTS </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">47</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Too many redirects. When following redirects, IDL hit the maximum amount. Set your limit with CURLOPT_MAXREDIRS.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">UNKNOWN_TELNET_OPTION</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">48</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">An option set with CURLOPT_TELNETOPTIONS was not recognized.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">TELNET_OPTION_SYNTAX </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">49</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">A TELNET option string was malformed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">OBSOLETE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">50 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Not used.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_PEER_CERTIFICATE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">51</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The remote server's SSL certificate is invalid.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">GOT_NOTHING</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">52</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The server returned nothing. In certain circumstances, getting nothing is considered an error.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_ENGINE_NOTFOUND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">53</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The specified crypto engine wasn't found.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_ENGINE_SETFAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">&#160;</td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Can not set the selected SSL crypto engine as the default.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SEND_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">55</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Sending network data failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">RECV_ERROR</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">56</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Failure in receiving network data.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SHARE_IN_USE</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">57 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Share is in use.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_CERTPROBLEM</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">58</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">There is a problem with the local certificate.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_CIPHER</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">59</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Could not use the specified cipher.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_CACERT</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">60</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">The peer certificate cannot be authenticated with known CA certificates.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">BAD_CONTENT_ENCODING</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">61</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Unrecognized transfer encoding.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">LDAP_INVALID_URL</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">62</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Invalid LDAP URL.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">FILESIZE_EXCEEDED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">63</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Maximum file size exceeded.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">FTP_SSL_FAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">&#160;</td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Requested FTP SSL level failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">SEND_FAIL_REWIND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">65</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Sending the data required rewinding the data to retransmit, but the rewind operation failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">SSL_ENGINE_INITFAILED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">66</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Failed to initialize the SSL engine.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">LOGIN_DENIED</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">67</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">The user password (or similar) was not accepted and the login failed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_NOTFOUND</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">68</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">File not found on TFTP server.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_PERM</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">69</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">There is a permission problem on the TFTP server.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_DISKFULL</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">70</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">TFTP server is out of disk space.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_ILLEGAL</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">71</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Illegal TFTP operation. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_UNKNOWNID</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">72</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Unknown TFTP transfer ID.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">TFTP_EXISTS</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">73</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">TFTP file already exists.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCode">TFTP_NOSUCHUSER</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered">74</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">No such TFTP user.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The following table lists all the HTTP response codes. Refer to <span class="Link">http://www.w3.org/</span> for detailed specifications.</p>
+        <table style="width: 393px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="81px" />
+            <col width="312px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Code</p>
+                        <p class="CellHeading">Number</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Code</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><span class="Bold">1xx</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Bold">Informational</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">100</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Continue</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">101</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Switching Protocols</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><span class="Bold">2xx</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Bold">Success</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">200</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">OK</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">201</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Created</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">202</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Accepted</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">203</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Non-Authoritative Information</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">204</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">No Content</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">205</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Reset Content</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">206</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Partial Content</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">207</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Multi-Status</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">3xx</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Redirection</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">300</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Multiple Choices</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">301</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Moved Permanently</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">302</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Found</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">303</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">See Other (since HTTP/1.1)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">304</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Not Modified</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">305</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Use Proxy (since HTTP/1.1)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">306</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">307</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Temporary Redirect (since HTTP/1.1)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><span class="Bold">4xx</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Bold">Client Error</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">400</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Bad Request</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">401</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Unauthorized</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">402</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Payment Required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">403</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Forbidden</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">404</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Not Found</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">405</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Method Not Allowed</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">406</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Not Acceptable</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">407</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Proxy Authentication Required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">408</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Request Timeout</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">409</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Conflict</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">410</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Gone</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">411</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Length Required</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">412</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Precondition Failed</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">413</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Request Entity Too Large</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">414</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Request-URI Too Long</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">415</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Unsupported Media Type</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">416</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested Range Not Satisfiable</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">417</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Expectation Failed</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">449</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Retry</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><span class="Bold">5xx</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Bold">Server Error</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">500</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Internal Server Error</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">501</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Not Implemented</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">502</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Bad Gateway</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">503</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Service Unavailable</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">504</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Gateway Timeout</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">505</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">HTTP Version Not Supported</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellCentered">509</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellCode">Bandwidth Limit Exceeded</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>The following table lists all the FTP response codes. Refer to <span class="Link">http://www.w3.org/</span> for detailed specifications.</p>
+        <table style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="81px" />
+            <col width="418px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Code</p>
+                        <p class="CellHeading">Number</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Code</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">110</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Restart marker reply.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">120</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Service ready in nnn minutes.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">125</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Data connection already open; transfer starting.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">150</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">File status okay; about to open data connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">200</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Command okay.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">202</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Command not implemented, superfluous at this site.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">211</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">System status, or system help reply.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">212</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Directory status.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">213</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">File status.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">214</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Help message.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">215</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">NAME system type.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">220</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Service ready for new user.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">221</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Service closing control connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">225</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Data connection open; no transfer in progress.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">226</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Closing data connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">227</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Entering Passive Mode (h1,h2,h3,h4,p1,p2).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">230</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">User logged in, proceed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">250</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested file action okay, completed.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">257</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">"PATHNAME" created.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">331</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">User name okay, need password.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">332</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Need account for login.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">350</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested file action pending further information.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">421</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Service not available, closing control connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">425</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Can't open data connection.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">426</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Connection closed; transfer aborted.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">450</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested file action not taken.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">451</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested action aborted: local error in processing.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">452</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested action not taken.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">500</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Syntax error, command unrecognized.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">501</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Syntax error in parameters or arguments.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">502</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Command not implemented.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">503</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Bad sequence of commands.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">504</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Command not implemented for that parameter.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">530</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Not logged in.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">532</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Need account for storing files.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">550</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested action not taken.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">551</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested action aborted: page type unknown.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">552</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">Requested file action aborted.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellCentered">553</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellCode">Requested action not taken. File name not allowed.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Example of Using Widgets with IDLnetURL</h2>
+        <p>The following example creates a widget-based dialog that connects to a OGC WCS server and allows you to download files located on the server. The dialog automatically points to the ITT Visual Information Solutions FTP server, which contains several sample files for download.</p>
+        <p class="ExampleCode" MadCap:autonum="&lt;b&gt;Example Code: &lt;/b&gt;"><span class="autonumber"><span><b>Example Code: </b></span></span>See <span class="Courier">idlneturl_widget<a name="kanchor4723"></a>.pro</span>, located in the <span class="Courier">examples/doc/objects</span> subdirectory of the IDL distribution, for the example code listing. View the file in an IDL editor window by entering <span class="Courier">.EDIT idlneturl_widget.pro</span>. at the IDL Command Line.</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

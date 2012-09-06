@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Concepts|Operators" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Mathematical Operators</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Mathematical_Operators.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">Concepts</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Operators.html">Operators</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Mathematical Operators</span>
+        </div>
+        <h1><a name="expressions_2976722315_1032390"></a><a name="expressions_2976722315_63216"></a>Mathematical Opera<span class="_Override" style="font-size: 14pt;line-height: 16pt;"><a name="kanchor3407"></a></span>tors</h1>
+        <p><span class="Reference Materialproduct_name">IDL</span> mathematical operators are described in the following table. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Also see <a class="MCXref" href="Assignment_and_Compound.html#expressions_2976722315_1033110" target="" title="" alt="">Assignment and Compound Assignment</a> for information on <a class="MCXref" href="Assignment_and_Compound.html#expressions_2976722315_1033121">=</a> and <a class="MCXref" href="Assignment_and_Compound.html#expressions_2976722315_1033141">op=</a> and <a class="MCXref" href="Other_Operators.html#expressions_2976722315_1033252" target="" title="" alt="">Other Operators</a> for information on the <a class="MCXref" href="Other_Operators.html#expressions_2976722315_1033272">[ ]</a>, <a class="MCXref" href="Other_Operators.html#expressions_2976722315_1033312">( )</a>, and <a class="MCXref" href="Other_Operators.html#expressions_2976722315_1033362">?:</a> operators.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If one or both of the operands are objects, the operator may be overloaded.</p>
+        <p>&#160;</p>
+        <table style="width: 501px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="77px" />
+            <col width="251px" />
+            <col width="467px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Operator</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Example</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">+</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="expressions_2976722315_1032428"></a><span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3408"></a></span><a name="expressions_2976722315_99434"></a>Addition</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Store the sum of 3 and 6 in B:</p>
+                        <p class="CellCode">B = 3 + 6</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">String Concatenation</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Store the string value of “John Doe” in B:</p>
+                        <p class="CellCode">B = 'John' + ' ' + 'Doe'</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">List or Hash Concatenation</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Combines two lists to make a new one.</p>
+                        <p class="CellCode">list3 = list1 + list2</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">++</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3409"></a>Increment</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Adds one to the operand:</p>
+                        <p class="CellCode">A = 3</p>
+                        <p class="CellCode">A++</p>
+                        <p class="CellCode">PRINT, A<br /></p>
+                        <p class="CellBody">IDL Prints:</p>
+                        <p class="CellCode">4</p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>The increment operator supports both pre- and post-fix syntax. See <a class="MCXref" href="#expressions_2976722315_1032548" target="" title="" alt="">Using Increment/Decrement</a>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">–</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3410"></a></span>Subtraction</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Store the value of 5 subtracted from 9 in C:</p>
+                        <p class="CellCode">C = 9 - 5</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Negation</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Change the sign of C:</p>
+                        <p class="CellCode">C = -C</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">--</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3411"></a>Decrement</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Subtracts one from the operand:</p>
+                        <p class="CellCode">A = 3</p>
+                        <p class="CellCode">A--</p>
+                        <p class="CellCode">PRINT, A<br /></p>
+                        <p class="CellBody">IDL Prints:</p>
+                        <p class="CellCode">2</p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>The decrement operator supports both pre- and post-fix syntax. See <a class="MCXref" href="#expressions_2976722315_1032548" target="" title="" alt="">Using Increment/Decrement</a>.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="2" class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">*</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Mu<span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3412"></a></span>ltiplication</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Store the product of 2 and 5 in variable C:</p>
+                        <p class="CellCode">C = 2 * 5</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Pointer dereference</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">If <span class="Courier">ptr</span> is a valid pointer (created via the PTR_NEW function), then <span class="Courier">*ptr</span> is the value held by the heap variable that <span class="Courier">ptr</span> points to.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered">/</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Divi<span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3413"></a></span>sion</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Store result of 10.0 divided by 3.2 in variable D:</p>
+                        <p class="CellCode">D = 10.0/3.2</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><a name="kanchor3414"></a>^</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Exp<span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3415"></a></span>onentiation</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Store result of 2 raised to the 3rd power in variable B:</p>
+                        <p class="CellCode">B = 2^3</p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>How exponentiation is evaluated depends upon whether the operands are real or complex. See <a class="MCXref" href="#expressions_2976722315_1032588" target="" title="" alt="">Using Exponentiation</a> for details. </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered"><a name="kanchor3416"></a>MOD</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3417"></a></span>Modulo</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">I MOD J is equal to the remainder when I is divided by J. The magnitude of the result is less than that of J, and its sign agrees with that of I. Print the value of 9 modulo 5:</p>
+                        <p class="CellCode">PRINT, 9 MOD 5<br /></p>
+                        <p class="CellBody">IDL Prints:</p>
+                        <p class="CellCode">4<br /></p>
+                        <p class="CellBody">Compute angle modulo 2p.</p>
+                        <p class="CellCode">A =(ANGLE + B) MOD (2 * !PI)</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Mathematical Operators</p>
+            </caption>
+        </table>
+        <h2><a name="expressions_2976722315_1032548"></a><a name="kanchor3418"></a><a name="expressions_2976722315_11571"></a>Using Increment/Decrement</h2>
+        <p>Beginning in IDL version 6.0, the increment (++) and decrement (--) operators can be applied to variables (including array subscripts or structure tags) of any numeric type. The ++ operator increments the target variable by one. The -- operator decrements the target by one. When written in front of the target variable (that is, using <i>prefix</i> notation), the operations are known as <i>preincrement</i> and <i>predecrement</i>, respectively. When written following the target variable (using <i>postfix</i> notation), they are called <i>postincrement</i> and <i>postdecrement</i>.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The increment and decrement operators can only be applied to variable expressions to which a value can be assigned. Hence, the following is not allowed:<br /><br /><span class="Courier">A = 23++</span><br /><br />because it attempts to apply the increment operator to a constant. Another way of stating this rule is to say that it must be <i>possible</i> for the expression being incremented or decremented to appear on the left-hand side of the equal sign.</p>
+        <p>The increment and decrement operators can be used either as standalone statements or within a larger enclosing expression. Although the two forms are very similar, the expression form has some efficiency and side-effect issues (described below) that do not apply to the statement form.</p>
+        <h3>Increment/Decrement Statements</h3>
+        <p>Increment and decrement operators can be used, along with a variable, as standalone statements:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">A++</span> or <span class="Courier">++A</span></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">A--</span> or <span class="Courier">--A</span></td>
+            </tr>
+        </table>
+        <p>The increment or decrement operator may be placed either before or after the target variable. The same operation is carried out in either case. These operators are very efficient, since the variable is incremented <i>in place</i> and no temporary copies of the data are made.</p>
+        <h3>Increment/Decrement Expressions</h3>
+        <p>Increment and decrement operators can be used within expressions. When the operator follows the target expression, it is applied <i>after</i> the value of the target is evaluated for use in the surrounding expression. When the operator precedes the target expression, it is applied <i>before</i> the value of the target is evaluated for use in the surrounding expression. For example, after executing the following statements, the value of the variable A is 27, while B is 28:</p>
+        <p class="Code">B = 27</p>
+        <p class="Code">A = B++</p>
+        <p>In contrast, after executing the following statements, both A and B have a value of 26:</p>
+        <p class="Code">B = 27</p>
+        <p class="Code">A = --B</p>
+        <h4>Efficiency of Prefix vs. Postfix Operations</h4>
+        <p>When used as part of an expression, the prefix form of the increment and decrement operators has an efficiency advantage over the postfix form. The reason for this is that the postfix form requires IDL to make a copy of the data, while the prefix form does not. The operations carried out by IDL to execute a prefix increment or decrement operation are:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top">Fetch the target variable.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top">Increment or decrement the target variable in place (no copies are made).</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top">Use the variable when evaluating the surrounding expression.</td>
+            </tr>
+        </table>
+        <p>This is very efficient. In contrast, the postfix form requires IDL to make a copy of the variable in order to use its old value in the surrounding expression following the increment/decrement. The operations carried out by IDL to execute a postfix increment or decrement operation are:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top">Fetch the target variable.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top">Make a temporary copy of the variable.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top">Increment or decrement the original variable.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="4. " valign="top">Use the temporary copy when evaluating the surrounding expression.</td>
+            </tr>
+        </table>
+        <p>If your computation requires the postfix form, then these operations are necessary and reasonable. If not, the prefix form will use fewer resources and is the better choice. The larger the data involved, the more important this becomes. It is not a concern for small variables.</p>
+        <h4>Order Of Side Effects</h4>
+        <p>The way that the increment and decrement operators change the value of a variable in addition to using its value in a surrounding expression is called a <i>side effect</i>. In most cases, the side effects are desired, and cause no problems. Side effects can cause problems, however, if the increment or decrement operator is applied to a variable that appears more than once within a single statement or expression. Consider the following statement (taken from <i>The C Programming Language</i> by Brian W. Kernighan and Dennis M. Ritchie):</p>
+        <p class="Code">A[i] = i++</p>
+        <p>Which value of i is used to index A? Is it the original value of i, or the incremented value? The answer depends on the order in which the various parts of the statement are evaluated. Either answer might be considered correct, and IDL does not require one or the other. Similarly, in the statements</p>
+        <p class="Code">B = 23</p>
+        <p class="Code">A = B++ + B</p>
+        <p>the value of A could be either 47 or 46, depending on which part of the expression is evaluated first. </p>
+        <p>Note that this situation falls outside the rules of operator precedence — it is the order in which the variables themselves are evalutated that affects the result. Let’s examine the situation closely:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Here the “old” value of B (23) is always used for the first occurrence of B in the statement. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If the sub-statement B++ is evaluated first, the value of the <i>second</i> occurrence of B in the statement uses the “new” value of B (24), giving A the value 47. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If the sub-statement that contains only the variable B is evaluated first, the “old” value of B will be used for both occurrences, and A will get the value 46. </td>
+            </tr>
+        </table>
+        <p>As with most languages that implement increment and decrement operators, IDL does not require any particular <i>ordering</i> of evaluation within an expression in which such side effects occur. Different versions or implementations of IDL may evaluate the same expression differently. As a result, you should avoid writing code that depends on a particular ordering of the side effects.</p>
+        <h2><a name="expressions_2976722315_1032588"></a><a name="expressions_2976722315_99894"></a>Using Exponentiation</h2>
+        <p>The caret (<span class="Courier">^</span><a name="kanchor3419"></a>) is the exponentiation operator. A<span class="Courier">^</span>B is equal to A raised to the B power.</p>
+        <p>For real numbers, A<span class="Courier">^</span>B is evaluated as follows:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If A is a real number and B is of integer type, repeated multiplication is applied.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If both A and B are real (non-integer), the formula A<sup class="italic">B</sup><i> = e</i><sup class="italic">BlnA</sup> is evaluated.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">A<sup>0</sup> is defined as 1.</td>
+            </tr>
+        </table>
+        <p>For <span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 12pt;line-height: 14pt;"><a name="kanchor3420"></a></span>complex numbers, A<span class="Courier">^</span>B is evalutated as follows. The complex number A can be represented as A = <i>a</i> + <i>ib</i>, where <i>a </i>is the real part, and <i>ib</i> is the imaginary part. In polar form, we can represent the complex number as A = <i>re</i><sup class="italic">i</sup><sup class="symbol">q</sup> = <i>r </i>cosθ + <i>ir </i>sinθ, where <i>r </i>cosθ is the real part, and <i>ir </i>sinθ is the imaginary part:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If A is complex and B is real, the formula <i>A</i><sup class="italic">B</sup> = (<i>re</i><sup class="italic">i</sup><sup class="symbol">q</sup>)<sup class="italic">B</sup> = <i>r</i><sup class="italic">B</sup> (cos<i>B</i>θ + <i>i</i>sin<i>B</i>θ) is evaluated.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If A is real and B is complex, the formula <i>A</i><sup class="italic">B</sup> = <i>e</i><sup class="italic">BlnA</sup> is evaluated.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">If both A and B are complex, the formula <i>A</i><sup class="italic">B</sup> = <i>e</i><sup class="italic">BlnA</sup> is evaluated, and the natural <span class="_Override" style="letter-spacing: -0.02em;">logarithm is computed to be ln(</span><i>A</i>) = ln(<i>re</i><sup class="italic">i</sup><sup class="symbol">q</sup>) = ln(<i>r</i>) + <i>i</i>θ.</td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

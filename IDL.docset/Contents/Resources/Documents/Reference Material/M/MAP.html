@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: M" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>MAP</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/M/MAP.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="M_CORRELATE.html">Routines: M</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">MAP</span>
+        </div>
+        <h1 class="ClassRoutine"><a name="kanchor1764"></a>MAP</h1>
+        <p>The MAP function displays map data in a graphics window.</p>
+        <p>
+            <img src="../images/map_ex.png" class="ImgFloatRight" />
+        </p>
+        <h2>Example
+        </h2>
+        <p>The following lines create the map shown at the top of this topic.</p>
+        <p class="Code">; Set up map projection, draw a grid</p>
+        <p class="Code">map = MAP('Hotine Oblique Mercator', $</p>
+        <p class="Code">&#160;&#160;&#160;ELLIPSOID='GRS1980', $</p>
+        <p class="Code">&#160;&#160;&#160;MERCATOR_SCALE=0.9996d, $</p>
+        <p class="Code">&#160;&#160;&#160;LIMIT=[40, -95, 50, -75], $</p>
+        <p class="Code">&#160;&#160;&#160;CENTER_LATITUDE=45.3091667d, $</p>
+        <p class="Code">&#160;&#160;&#160;HOM_AZIM_LONGITUDE=-86, $</p>
+        <p class="Code">&#160;&#160;&#160;HOM_AZIM_ANGLE=337.25556d, $</p>
+        <p class="Code">&#160;&#160;&#160;FALSE_EASTING=2546731.496d, $</p>
+        <p class="Code">&#160;&#160;&#160;FALSE_NORTHING=-4354009.816d, $</p>
+        <p class="Code">&#160;&#160;&#160;FILL_COLOR="light_blue", $</p>
+        <p class="Code">&#160;&#160;&#160;TITLE="Michigan GeoRef Projection")</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Change some grid properties.</p>
+        <p class="Code">grid = map.MAPGRID</p>
+        <p class="Code">grid.LINESTYLE = "dotted"</p>
+        <p class="Code">grid.LABEL_POSITION = 0</p>
+        <p class="Code">grid.FONT_SIZE=14</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Insert some shapes.</p>
+        <p class="Code">m1 = MAPCONTINENTS(/USA, $</p>
+        <p class="Code">&#160;&#160;&#160;FILL_COLOR="light green", COMBINE=0)</p>
+        <p class="Code">m2 = MAPCONTINENTS(/CANADA, $</p>
+        <p class="Code">&#160;&#160;&#160;FILL_COLOR="pale goldenrod")</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Retrieve a shape and change its properties.</p>
+        <p class="Code">m = map['Michigan']</p>
+        <p class="Code">m.FILL_COLOR = "green"</p>
+        <h3>Additional Examples</h3>
+        <p>See <a href="../../GUInavigation/visualize.html#Map" target="" title="" alt="" class="MCXref">Map Examples</a> for additional examples using the MAP function.</p>
+        <h2>Syntax</h2>
+        <p class="Syntax"><i>graphic</i> = MAP(<i>Projection</i> )</p>
+        <h2>Methods</h2>
+        <p class="Method"><a href="../../IDL Graphics/Close Method.html">Close</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/ConvertCoord Method.html">ConvertCoord</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/CopyWindow Method.html">CopyWindow</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Delete Method.html">Delete</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/MapForward Method.html">MapForward</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/MapInverse Method.html">MapInverse</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Order Method.html">Order</a>&#160;</p>
+        <p class="Method"><a href="../../IDL Graphics/Print Method.html">Print</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Refresh Method.html">Refresh</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Rotate Method.html">Rotate</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Save Method.html">Save</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Scale Method.html">Scale</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Select Method.html">Select</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Translate Method.html">Translate</a>
+        </p>
+        <h2>Return Value</h2>
+        <p>The MAP function returns a reference to the MapProjection object. Use the returned reference to manipulate the graphic after creation by changing properties or calling methods.</p>
+        <h2>Arguments</h2>
+        <h3 class="Argument"><a name="Project"></a>Projection</h3>
+        <p>A string giving the name of the map projection. Available projections include:</p>
+        <table style="caption-side: top;margin-left: auto;margin-right: auto;">
+            <col style="width: 250px;" />
+            <col style="width: 250px;" />
+            <col style="width: 250px;" />
+            <tbody>
+                <tr>
+                    <td>
+                        <p>Alaska Conformal</p>
+                        <p>Albers Equal Area</p>
+                        <p>Azimuthal Equidistant</p>
+                        <p>Cylindrical Equal Area</p>
+                        <p>Equidistant Conic</p>
+                        <p>Equirectangular</p>
+                        <p>Geographic</p>
+                        <p>Gnomonic</p>
+                        <p>Hammer</p>
+                        <p>Hotine Oblique Mercator</p>
+                        <p>Integerized Sinusoidal</p>
+                    </td>
+                    <td>
+                        <p>Interrupted Goode</p>
+                        <p>Interrupted Mollweide</p>
+                        <p>Lambert Azimuthal</p>
+                        <p>Lambert Conformal Conic</p>
+                        <p>Mercator</p>
+                        <p>Miller Cylindrical</p>
+                        <p>Mollweide</p>
+                        <p>Near Side Perspective</p>
+                        <p>Oblated Equal Area</p>
+                        <p>Orthographic</p>
+                        <p>Polar Stereographic</p>
+                    </td>
+                    <td>
+                        <p>Polyconic</p>
+                        <p>Robinson</p>
+                        <p>Sinusoidal</p>
+                        <p>Space Oblique Mercator</p>
+                        <p>State Plane</p>
+                        <p>Stereographic</p>
+                        <p>Transverse Mercator</p>
+                        <p>UTM</p>
+                        <p>Van der Grinten</p>
+                        <p>Wagner IV</p>
+                        <p>Wagner VII</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Map Properties</h2>
+        <p> Each of the above map projections requires other properties to define the projection. These properties can be set during creation, or retrieved or changed after creation. The following properties are available:</p>
+        <table style="caption-side: top;margin-left: auto;margin-right: auto;">
+            <col style="width: 250px;" />
+            <col style="width: 250px;" />
+            <col style="width: 250px;" />
+            <tbody>
+                <tr>
+                    <td>
+                        <p class="Keyword">CENTER_LATITUDE</p>
+                        <p class="Keyword">CENTER_LONGITUDE</p>
+                        <p class="Keyword">ELLIPSOID</p>
+                        <p class="Keyword">FALSE_EASTING</p>
+                        <p class="Keyword">FALSE_NORTHING</p>
+                        <p class="Keyword">HEIGHT</p>
+                        <p class="Keyword">HOM_AZIM_ANGLE</p>
+                        <p class="Keyword">HOM_AZIM_LONGITUDE</p>
+                        <p class="Keyword">HOM_LATITUDE1</p>
+                        <p class="Keyword">HOM_LATITUDE2</p>
+                        <p class="Keyword">HOM_LONGITUDE1</p>
+                    </td>
+                    <td>
+                        <p class="Keyword">HOM_LONGITUDE2</p>
+                        <p class="Keyword">IS_JUSTIFY</p>
+                        <p class="Keyword">IS_ZONES</p>
+                        <p class="Keyword">LIMIT</p>
+                        <p class="Keyword">MERCATOR_SCALE</p>
+                        <p class="Keyword">OEA_ANGLE</p>
+                        <p class="Keyword">OEA_SHAPEM</p>
+                        <p class="Keyword">OEA_SHAPEN</p>
+                        <p class="Keyword">SEMIMAJOR_AXIS</p>
+                        <p class="Keyword">SEMIMINOR_AXIS</p>
+                        <p class="Keyword">SOM_FLAG</p>
+                    </td>
+                    <td>
+                        <p class="Keyword">SOM_INCLINATION</p>
+                        <p class="Keyword">SOM_LANDSAT_NUMBER</p>
+                        <p class="Keyword">SOM_LANDSAT_PATH</p>
+                        <p class="Keyword">SOM_LONGITUDE</p>
+                        <p class="Keyword">SOM_PERIOD</p>
+                        <p class="Keyword">SOM_RATIO</p>
+                        <p class="Keyword">SPHERE_RADIUS</p>
+                        <p class="Keyword">STANDARD_PAR1</p>
+                        <p class="Keyword">STANDARD_PAR2</p>
+                        <p class="Keyword">STANDARD_PARALLEL</p>
+                        <p class="Keyword">TRUE_SCALE_LATITUDE</p>
+                        <p class="Keyword">ZONE</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>See the table of GCTP map projections within the <a href="MAP_PROJ_INIT.html" target="" title="" alt="" class="MCXref">MAP_PROJ_INIT </a> function for descriptions of these properties.</p>
+        <h2>Grid Properties</h2>
+        <p>The following map graticule (grid) properties are available during creation:</p>
+        <table style="caption-side: top;margin-left: auto;margin-right: auto;">
+            <col style="width: 280px;" />
+            <col style="width: 280px;" />
+            <col style="width: 197px;" />
+            <tbody>
+                <tr>
+                    <td>
+                        <p class="Keyword">BOX_ANTIALIAS</p>
+                        <p class="Keyword">BOX_AXES</p>
+                        <p class="Keyword">BOX_COLOR</p>
+                        <p class="Keyword">BOX_THICK</p>
+                        <p class="Keyword">COLOR</p>
+                        <p class="Keyword">FONT_NAME</p>
+                        <p class="Keyword">FONT_SIZE</p>
+                        <p class="Keyword">FONT_STYLE</p>
+                    </td>
+                    <td>
+                        <p class="Keyword">GRID_LATITUDE</p>
+                        <p class="Keyword">GRID_LONGITUDE</p>
+                        <p class="Keyword">LABEL_COLOR</p>
+                        <p class="Keyword">LABEL_FILL_BACKGROUND</p>
+                        <p class="Keyword">LABEL_FILL_COLOR</p>
+                        <p class="Keyword">LABEL_POSITION</p>
+                        <p class="Keyword">LABEL_SHOW</p>
+                        <p class="Keyword">LATITUDE_MAX</p>
+                    </td>
+                    <td>
+                        <p class="Keyword">LATITUDE_MIN</p>
+                        <p class="Keyword">LINESTYLE</p>
+                        <p class="Keyword">LONGITUDE_MAX</p>
+                        <p class="Keyword">LONGITUDE_MIN</p>
+                        <p class="Keyword">THICK</p>
+                        <p class="Keyword">TRANSPARENCY</p>
+                        <p class="Keyword">ZVALUE</p>
+                        <p>
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>After creation, these properties can be retrieved or set on the MapGrid object, which can be accessed by using the MAPGRID property. See the <a href="MAPGRID.html" target="" title="" alt="" class="MCXref">MAPGRID</a> function for details.</p>
+        <h2>Properties</h2>
+        <p>Properties marked as (Init) are applied <i>only</i> during the initial creation of the graphic. All other properties can be set during creation, or retrieved or changed after creation.</p>
+        <h3 class="Keyword">BACKGROUND_COLOR</h3>
+        <p>The window's background color. The default value is "white".</p>
+        <div MadCap:targetName="Common Graphic Keywords">
+            <h3 class="Keyword">BUFFER (Init)</h3>
+            <p>Set this property to 1 to direct the graphics to an off-screen buffer instead of creating a window.</p>
+            <h3 class="Keyword">CURRENT (Init)</h3>
+            <p>Set this property to create the graphic in the current window. If no window exists, a new window is created.</p>
+            <h3 class="Keyword">DEVICE (Init)</h3>
+            <p>Set this property if values are specified in device coordinates (pixels) for the MARGIN and POSITION properties. (Normalized coordinates are the default for these properties.)</p>
+            <h3 class="Keyword">DIMENSIONS (Init)</h3>
+            <p>Set this property to a two-element vector of the form [<i>width</i>, <i>height</i>] to specify the window dimensions in pixels. If you do not specify a value for DIMENSIONS, IDL&#160;by default uses the values of the IDL_GR_WIN_HEIGHT and IDL_GR_WIN_WIDTH preferences for Windows platforms or the IDL_GR_X_HEIGHT and IDL_GR_X_WIDTH preferences for X Windows systems on UNIX.</p>
+            <h3 class="Keyword">FONT_COLOR (Init)</h3>
+            <p>Set this property equal to the text color for the title (if present). The default value is "black".</p>
+            <h3 class="Keyword">FONT_NAME (Init)</h3>
+            <p>Set this property equal to a string specifying the IDL or system font for the title (if present). The default value is “Helvetica”.</p>
+            <h3 class="Keyword">FONT_SIZE (Init)</h3>
+            <p>Set this property equal to an integer specifying the font size for the title (if present). The default value is 16 points.</p>
+            <h3 class="Keyword">FONT_STYLE (Init)</h3>
+            <p>Set this property equal to an integer or a string specifying the font style for the title (if present). Allowed values are:</p>
+            <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: auto;margin-right: auto;" class="TableStyle_Keyword_Table" cellspacing="0">
+                <col style="width: 70px;">
+                </col>
+                <col style="width: 180px;">
+                </col>
+                <col style="width: 128px;">
+                </col>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Integer</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellHeading">String</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Resulting Style</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">0</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">"Normal" or "rm"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Default (roman)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Bold" or "bf"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">2</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">"Italic" or "it"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Italic</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">3</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Bold italic" or "bi"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold italic</p>
+                    </td>
+                </tr>
+            </table>
+            <h3 class="Keyword">HIDE</h3>
+            <p>Set this property to 1 to hide the graphic. Set HIDE to 0 to show the graphic.</p>
+            <h3 class="Keyword">LAYOUT (Init)</h3>
+            <p>Set this property to a three-element vector [<i>ncol</i>, <i>nrow</i>, <i>index</i>] that arranges graphics in a grid. The first dimension <i>ncol </i>is the number of columns in the grid, <i>nrow </i>is the number of rows, and <i>index </i>is the grid position at which to place the graphic (starting at element 1). This property is ignored if either OVERPLOT or POSITION is specified.</p>
+            <h3 class="Keyword">LOCATION (Init)</h3>
+            <p>Set this property to a two-element vector [<i>X offset</i>, <i>Y offset</i>] giving the window's screen offset in pixels.</p>
+            <h3 class="Keyword">MAPGRID (Get only)</h3>
+            <p>This property retrieves a reference to the existing <a href="MAPGRID.html" target="" title="" alt="" class="MCXref">MAPGRID</a> object.</p>
+            <h3 class="Keyword">MAP_PROJECTION</h3>
+            <p>A string giving the name of the current map projection. After creation, use this property to retrieve or set the current map projection.</p>
+            <h3 class="Keyword">MARGIN (Init)</h3>
+            <p>Set this property to the current graphic’s margin values in the layout specified by the LAYOUT property. Use a scalar value to set the same margin on all sides, or use a four-element vector [<i>left</i>, <i>bottom</i>, <i>right</i>, <i>top</i>] to specify different margins on each side.</p>
+            <p>By default, margin values are expressed in normalized units ranging from 0.0 to 0.5. If the DEVICE property is set, the values are given in device units (pixels).</p>
+            <p>This property is ignored if either OVERPLOT or POSITION is specified.</p>
+            <h3 class="Keyword">NAME</h3>
+            <p>A string that specifies the name of the graphic. The name can be used to retrieve the graphic using the brackets array notation.  If NAME is not set then a default name is chosen based on the graphic type.</p>
+            <h3 class="Keyword">OVERPLOT (Init)</h3>
+            <p>Set this property to 1 (one) to place the graphic on top of the existing graphic in the current window. If no current window exists, a new window is created.</p>
+            <p>Set this property to an existing IDL Graphic reference to direct the new graphic to the window specified by the provided IDL Graphic reference.</p>
+            <h3 class="Keyword">POSITION (Init)</h3>
+            <p>Set this property to a four-element vector that determines the location of the visualization within the graphic window. The coordinates <i>x</i><sub class="italic">0</sub>, <i>y</i><sub class="italic">0</sub> represent the lower left and <i>x</i><sub class="italic">1</sub>, <i>y</i><sub class="italic">1</sub> represent the upper right corners of the data space. Coordinates are expressed in normalized units ranging from 0.0 to 1.0. If the DEVICE property is set, the units are given in device units (pixels).</p>
+            <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>When using POSITION, factor in enough space to display the title and axis labels. For example, if you use POSITION to place your visualization at 0 on the X or Y axis, any labels for that axis will not be visible.</p>
+            <h3 class="Keyword">TITLE</h3>
+            <p>Set this property to a string specifying a title. The title properties may be modified using FONT_COLOR, FONT_NAME, FONT_SIZE, and FONT_STYLE. After creation the TITLE property may be used to retrieve a reference to the title text object, and the <a href="../T/TEXT.html" target="" title="" alt="" class="MCXref">TEXT</a>properties may be used to modify the title object.</p>
+            <p>You can also add Greek letters and mathematical symbols using a TeX-like syntax. These symbols need to be enclosed within a pair of "$" characters. See <a href="../T/TEXT.html#Adding" target="" title="" alt="" class="MCXref">Adding Mathematical Symbols and Greek Letters to the Text String</a> for details on the available symbols.</p>
+            <h3 class="Keyword">UVALUE</h3>
+            <p>Set this property to an IDL variable of any data type.</p>
+            <h3 class="Keyword">WINDOW (Get Only)</h3>
+            <p>This property retrieves a reference to the <a href="../W/WINDOW.html">WINDOW</a> object which contains the graphic.</p>
+            <h3 class="Keyword">WINDOW_TITLE</h3>
+            <p>Set this property to the title of the IDL Graphic window. The title is displayed in the window's title bar.</p>
+            <h3 class="Keyword">XRANGE</h3>
+            <p>A two-element vector giving the X data range to plot. The default behavior is to plot the entire data range.</p>
+            <h3 class="Keyword">YRANGE</h3>
+            <p>A two-element vector giving the Y data range to plot. The default behavior is to plot the entire data range.</p>
+        </div>
+        <h2>Version History</h2>
+        <table style="width: 100%; mc-table-style: url('../../Resources/TableStyles/Version_Table.css'); margin-left: auto; margin-right: auto;" class="TableStyle_Version_Table" cellspacing="0">
+            <col style="width: 84px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColSep">
+                        <p class="CellBody">8.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">8.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Added the following properties: MAP_PROJECTION, MAPGRID, UVALUE, WINDOW.</p>
+                        <p class="CellBody">Added the following methods: Delete, MapForward, MapInverse.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>See Also</h2>
+        <p><a href="../C/CONTOUR.html" target="" title="" alt="" class="MCXref">CONTOUR</a>,
+			<a href="../I/IMAGE.html" target="" title="" alt="" class="MCXref">IMAGE</a>,
+			<a href="MAPCONTINENTS.html" target="" title="" alt="" class="MCXref">MAPCONTINENTS</a>,
+			<a href="MAPGRID.html" target="" title="" alt="" class="MCXref">MAPGRID</a>,
+			<a href="MAP_PROJ_INIT.html" target="" title="" alt="" class="MCXref">MAP_PROJ_INIT </a></p>
+        <p><a href="../Functional List of IDL Routines/Graphics.html" class="MCXref">Graphics</a>, <a href="../../GuideMe/Using IDL Graphics.html" target="" title="" alt="" class="MCXref">Using IDL Graphics</a></p>
+        <p class="HideSearchTerms">MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP MAP </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

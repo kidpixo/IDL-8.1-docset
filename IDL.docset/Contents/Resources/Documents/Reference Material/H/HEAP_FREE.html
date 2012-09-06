@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: H" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>HEAP_FREE </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/H/HEAP_FREE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="H_EQ_CT.html">Routines: H</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">HEAP_FREE</span>
+        </div>
+        <h1 class="Routine"><a name="H_835179117_877451"></a><a name="H_835179117_40782"></a><a name="H_835179117_79017"></a>HEAP_FREE </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#H_835179117_877466">Syntax</a> | <a class="MCXref" href="#H_835179117_877468">Arguments</a> | <a class="MCXref" href="#H_835179117_877471">Keywords</a> | <a class="MCXref" href="#H_835179117_877479">Examples</a> | <a class="MCXref" href="#H_835179117_877493">Version History</a> | <a class="MCXref" href="#H_835179117_880150">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor1455"></a>HEAP_FREE procedure recursively <a name="kanchor1456"></a>frees all heap vari<a name="kanchor1457"></a>ables (pointers<a name="kanchor1458"></a> or objects) referenced by its input argument. This routine examines the input variable, including all array elements and structure fields. When a valid pointer or object reference is encountered, that heap variable is marked for removal. Pointer references are then recursively examined for additional heap variables to be freed. (HEAP_FREE does not descend into object references; freeing resources contained by an object should be handled by the object's Cleanup method.) Finally, all heap variables identified by HEAP_FREE are released; pointer heap variables as if the PTR_FREE procedure was called, and object heap variables as if the OBJ_DESTROY procedure was called.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If automatic garbage collection is enabled, heap variables are freed automatically when their reference counts reach zero. Automatic garbage collection is a more robust mechanism for finding and freeing orphaned heap variables than the older HEAP_FREE procedure, since automatic garbage collection will only free heap variables that have no remaining references. </p>
+        <p class="Body">See <a class="MCXref" href="../../Creating IDL Programs/Components of the IDL Language/Automatic_Garbage_Collec.html#pointers_3224653378_1018570" target="" title="" alt="">Automatic Garbage Collection</a>for details.)</p>
+        <p>As with the related HEAP_GC procedure, there are some disadvantages to using HEAP_FREE:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">When freeing object heap variables, HEAP_FREE calls OBJ_DESTROY without supplying any plain arguments or keywords. It is the responsibility of the object’s Cleanup method to release any heap variables encapsulated in the object itself; HEAP_FREE will not “descend” into an object to free heap variables.</td>
+            </tr>
+        </table>
+        <p class="Indent1">Depending on the objects being released, calling OBJ_DESTROY (and thus the object’s Cleanup method) without parameters may not be sufficient. In such cases, call OBJ_DESTROY explicitly with the proper arguments rather than using HEAP_FREE.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">HEAP_FREE releases the referenced heap variables in an unspecified order which depends on the current state of the internal data structure used by IDL to hold them. This can be confusing for object destructor methods that expect all of their contained data to be present. If your application requires a specific order for the release of its heap variables, you must explicitly free them in the correct order. HEAP_FREE cannot be used in such cases.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The algorithm used by HEAP_FREE to release variables requires examination of every existing heap variable (that is, it is an O(n) algorithm). This may be slow if an IDL session has thousands of current heap variables.</td>
+            </tr>
+        </table>
+        <p>For these reasons, applications should keep careful track of their heap variable usage, and explicitly free them at the proper time (for example, using the object destructor method) rather than resorting to simple-looking but potentially expensive expedients such as HEAP_FREE or HEAP_GC. </p>
+        <p>HEAP_FREE is recommended when:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The data structures involved are highly complex, nested, or variable, and writing cleanup code is difficult and error prone.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The data structures are opaque, and the code cleaning up does not have knowledge of the structure.</td>
+            </tr>
+        </table>
+        <h2><a name="H_835179117_877466"></a><a name="H_835179117_877466_PageTOC_HEAP_FREE_"></a>Syntax</h2>
+        <p class="Syntax">HEAP_FREE, <i>Var </i>[, /<a class="MCXref" href="#H_835179117_877472">OBJ</a>] [, /<a class="MCXref" href="#H_835179117_877474">PTR</a>] [, /<a class="MCXref" href="#H_835179117_877477">VERBOSE</a>]</p>
+        <h2><a name="H_835179117_877468"></a><a name="H_835179117_877468_PageTOC_HEAP_FREE_"></a>Arguments</h2>
+        <h3 class="Argument">Var</h3>
+        <p>The variable whose data is used as the starting point for heap variables to be freed.</p>
+        <h2><a name="H_835179117_877471"></a><a name="H_835179117_877471_PageTOC_HEAP_FREE_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="H_835179117_877472"></a><a name="H_835179117_877472_Keywords_HEAP_FREE__"></a>OBJ</h3>
+        <p>Set this keyword to free object heap variables only.</p>
+        <h3 class="Keyword"><a name="H_835179117_877474"></a><a name="H_835179117_877474_Keywords_HEAP_FREE__"></a>PTR</h3>
+        <p>Set this keyword to free pointer heap variables only.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Setting both the PTR and OBJ keywords is the same as setting neither.</p>
+        <h3 class="Keyword"><a name="H_835179117_877477"></a><a name="H_835179117_877477_Keywords_HEAP_FREE__"></a>VERBOSE</h3>
+        <p>If this keyword is set, HEAP_FREE writes a one line description of each heap variable, in the format used by the HELP procedure, as the variable is released. This is a debugging aid that can be used by program developers to check for heap variable leaks that need to be located and eliminated.</p>
+        <h2><a name="H_835179117_877479"></a><a name="H_835179117_877479_PageTOC_HEAP_FREE_"></a>Examples</h2>
+        <p class="IDLCode">; Create a structure variable.<br />mySubStructure = {pointer:PTR_NEW(INDGEN(100)), $<br />&#160;&#160;&#160;obj:OBJ_NEW('Idl_Container')}<br />myStructure ={substruct:mySubStructure, $<br />&#160;&#160;&#160;ptrs:[PTR_NEW(INDGEN(10)), PTR_NEW(INDGEN(11))]}<br /><br />;Look at the heap.<br />HELP, /HEAP_VARIABLES<br /><br />; Now free the heap variables contained in myStructure.<br />HEAP_FREE, myStructure, /VERBOSE<br />HELP, /HEAP_VARIABLES</p>
+        <h2><a name="H_835179117_877493"></a><a name="H_835179117_877493_PageTOC_HEAP_FREE_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.3</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="H_835179117_880150"></a><a name="H_835179117_880150_PageTOC_HEAP_FREE_"></a>See Also</h2>
+        <p><a class="MCXref" href="HEAP_GC.html#H_835179117_852187">HEAP_GC </a>, <a class="MCXref" href="HEAP_REFCOUNT.html#H_835179117_925652">HEAP_REFCOUNT</a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

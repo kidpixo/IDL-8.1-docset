@@ -1,0 +1,518 @@
+/* MadCap Table Style: */
+
+/*<meta />*/
+
+mcTableStyle {
+	name: GalleryFormat; 
+	margin-right: 25px; 
+	margin-top: 25pt; 
+	margin-bottom: 25pt; 
+	border-spacing-x: 0; 
+	border-spacing-y: 0; 
+	border-collapse: separate; 
+	border-top-style: ridge; 
+	border-bottom-style: ridge; 
+	border-right-style: ridge; 
+	border-left-style: ridge; 
+	cell-padding-top: 6pt; 
+	cell-padding-left: 5pt; 
+	cell-padding-right: 6pt; 
+	cell-padding-bottom: 3pt; 
+	border-left-width: 1px; 
+	border-right-width: 1px; 
+	border-top-width: 1px; 
+	border-bottom-width: 1px; 
+	margin-left: 25px; 
+}
+
+mcTableColumnStyle {
+	separator-style: ridge; 
+	ruler-style: none; 
+	text-align: center; 
+	vertical-align: middle; 
+	separator-width: 1px; 
+	span: 1; 
+}
+
+mcTableHeadStyle {
+}
+
+mcTableBodyStyle {
+	span: 1; 
+	separator-style: ridge; 
+	ruler-style: ridge; 
+	ruler-width: 1px; 
+	separator-width: 1px; 
+}
+
+mcTableFootStyle {
+}
+
+ 
+ 
+/* Cell Styles: */
+ 
+.TableStyle_GalleryFormat
+{
+	border-left-style: ridge;
+	border-left-width: 1px;
+	border-right-style: ridge;
+	border-right-width: 1px;
+	border-top-style: ridge;
+	border-top-width: 1px;
+	border-bottom-style: ridge;
+	border-bottom-width: 1px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 25pt;
+	margin-bottom: 25pt;
+	border-collapse: separate;
+	border-spacing: 0px 0px;
+	mc-cell-padding: 6pt 6pt 3pt 5pt;
+}
+
+.TableStyle_GalleryFormat_Head_0_0
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Head_0_0 p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowSep_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_RowEnd_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Head_0_0_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Head_0_0_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Body_0_0 p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep_ColSep
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_ColSep
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep_ColEnd
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowSep_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_RowEnd_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Body_0_0_ColEnd
+{
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Body_0_0_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0 p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowSep_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-style: none;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd_ColSep
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+	border-right-width: 1px;
+	border-right-style: ridge;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd_ColSep p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_RowEnd_ColEnd p
+{
+	
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_ColEnd
+{
+	text-align: center;
+	vertical-align: middle;
+	padding-left: 5pt;
+	padding-right: 6pt;
+	padding-top: 6pt;
+	padding-bottom: 3pt;
+}
+
+.TableStyle_GalleryFormat_Foot_0_0_ColEnd p
+{
+	
+}
+
+

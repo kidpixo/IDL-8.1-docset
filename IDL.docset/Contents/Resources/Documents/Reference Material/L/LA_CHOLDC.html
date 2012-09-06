@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: L" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>LA_CHOLDC </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/L/LA_CHOLDC.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="L64INDGEN.html">Routines: L</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">LA_CHOLDC</span>
+        </div>
+        <h1 class="Routine"><a name="L_826528365_958431"></a><a name="L_826528365_49664"></a>LA_CHOLDC </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#L_826528365_969064">Syntax</a> | <a class="MCXref" href="#L_826528365_969066">Arguments</a> | <a class="MCXref" href="#L_826528365_969069">Keywords</a> | <a class="MCXref" href="#L_826528365_969079">Examples</a> | <a class="MCXref" href="#L_826528365_969102">Version History</a> | <a class="MCXref" href="#L_826528365_969104">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor1598"></a>LA_CHOLDC procedure computes the <a name="kanchor1599"></a>Cholesky <a name="kanchor1600"></a>factorization of an <i>n</i>-by-<i>n</i> symmetric (or Hermitian) positive-definite array as:</p>
+        <p class="Indent1">If A is real: <i> A = U</i><sup class="italic">T</sup><i> U or A = L L</i><sup class="italic">T</sup></p>
+        <p class="Indent1">If A is complex:<i>  A = U</i><sup class="italic">H</sup><i> U or A = L L</i><sup class="italic">H</sup></p>
+        <p>where <i>U</i> and <i>L</i> are upper and lower triangular arrays. The <i>T </i>represents the transpose while <i>H</i> represents the Hermitian, or transpose complex conjugate.</p>
+        <p>LA_CHOLDC is based on the following LAPACK routines:</p>
+        <table style="width: 327px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="162px" />
+            <col width="165px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Output Type</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">LAPACK Routine</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Float</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">spotrf</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Double</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCentered">dpotrf</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Complex</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCentered">cpotrf</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">Double complex</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellCentered">zpotrf</p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">LAPACK Routine Basis for LA_CHOLDC</p>
+            </caption>
+        </table>
+        <p>For more details, see Anderson et al., <i>LAPACK Users' Guide</i>, 3rd ed., SIAM, 1999.</p>
+        <h2><a name="L_826528365_969064"></a><a name="L_826528365_56664"></a>Syntax</h2>
+        <p class="Syntax">LA_CHOLDC, <i>Array</i> [,&#160;/<a class="MCXref" href="#L_826528365_969070">DOUBLE</a>] [,&#160;<a class="MCXref" href="#L_826528365_969072">STATUS</a>=<i>variable</i>] [,&#160;/<a class="MCXref" href="#L_826528365_969077">UPPER</a>]</p>
+        <h2><a name="L_826528365_969066"></a><a name="L_826528365_29119"></a>Arguments</h2>
+        <h3 class="Argument">Array</h3>
+        <p>A named variable containing the real or complex array to be factorized. Only the lower triangular portion of <i>Array</i> is used (or upper if the UPPER keyword is set). This procedure returns <i>Array</i> as a lower triangular array from the Cholesky decomposition (upper triangular if the UPPER keyword is set).</p>
+        <h2><a name="L_826528365_969069"></a><a name="L_826528365_89389"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="L_826528365_969070"></a><a name="L_826528365_969070_Keywords_LA_CHOLDC__"></a>DOUBLE</h3>
+        <p>Set this keyword to use double-precision for computations and to return a double-precision (real or complex) result. Set DOUBLE = 0 to use single-precision for computations and to return a single-precision (real or complex) result. The default is /DOUBLE if <i>Array</i> is double precision, otherwise the default is DOUBLE = 0.</p>
+        <h3 class="Keyword"><a name="L_826528365_969072"></a><a name="L_826528365_969072_Keywords_LA_CHOLDC__"></a>STATUS</h3>
+        <p>Set this keyword to a named variable that will contain the status of the computation. Possible values are:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">STATUS = 0: The computation was successful.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">STATUS &gt; 0: The array is not positive definite and the factorization could not be completed. The STATUS value specifies the order of the leading minor which is not positive definite.</td>
+            </tr>
+        </table>
+        <p class="TableAnchor">&#160;</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If STATUS is not specified, any error messages will output to the screen.</p>
+        <h3 class="Keyword"><a name="L_826528365_969077"></a><a name="L_826528365_969077_Keywords_LA_CHOLDC__"></a>UPPER</h3>
+        <p>If this keyword is set, then only the upper triangular portion of <i>Array</i> is used, and the upper triangular array is returned. The default is to use the lower triangular portion and to return the lower triangular array.</p>
+        <h2><a name="L_826528365_969079"></a><a name="L_826528365_31382"></a>Examples</h2>
+        <p>The following example program computes the Cholesky decomposition of a given symmetric positive-definite array:</p>
+        <p class="IDLCode">; Create a symmetric positive-definite array.<br />n = 10<br />seed = 12321<br />array = RANDOMU(seed, n, n)<br />array = array ## TRANSPOSE(Array)<br /><br />; Compute the Cholesky decomposition.<br />lower = array    ; make a copy<br />LA_CHOLDC, lower<br /><br />; Zero out the upper triangular portion.<br />for i&#160;=&#160;0,n&#160;-&#160;2 Do lower[i+1:*,i] = 0<br /><br />; Reconstruct the array and check the difference<br />arecon = lower ## TRANSPOSE(lower)<br />PRINT, 'LA_CHOLDC Error:', MAX(ABS(arecon - array))</p>
+        <p>When this program is compiled and run, IDL prints:</p>
+        <p class="Code">LA_CHOLDC Error: </p>
+        <p class="Code">3.57628e-007</p>
+        <h2><a name="L_826528365_969102"></a><a name="L_826528365_32856"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.6</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="L_826528365_969104"></a><a name="L_826528365_94923"></a>See Also</h2>
+        <p><a class="MCXref" href="../C/CHOLDC.html#C_854643309_50336">CHOLDC </a>, <a class="MCXref" href="LA_CHOLMPROVE.html#L_826528365_958516">LA_CHOLMPROVE</a>, <a class="MCXref" href="LA_CHOLSOL.html#L_826528365_958610">LA_CHOLSOL </a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

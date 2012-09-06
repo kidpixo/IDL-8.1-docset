@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: J|Java-IDL Bridge Routines" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>JIDLMouseListener</title>
+        <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../Resources/TableStyles/Table_No_Title.css" rel="stylesheet" />
+        <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../../idl_CSH.html#Reference Material/J/Java-IDL Bridge Routines/JIDLMouseListener.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../JOURNAL.html">Routines: J</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Java IDL Bridge Routines.html">Java-IDL Bridge Routines</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">JIDLMouseListener</span>
+        </div>
+        <h1><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener"><a name="JIDL_Import_1464128226_ClassHead"></a>JIDLMouseListener</a><a name="kanchor1573"></a>
+        </h1>
+        <h2>Declaration</h2>
+        <p class="Code">public interface<span class="Bold"> JIDLMouseListener</span></p>
+        <h2>All Known Implementing Classes:</h2>
+        <p class="Body"><span class="Link"><a href="JIDLCanvas.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas">JIDLCanvas</a></span>
+        </p>
+        <h2>Description</h2>
+        <p class="Body">The listener interface for receiving mouse events from IDL (press, release, enter, and exit) on a JIDLCanvas. A mouse event is generated when the mouse is pressed, released, the mouse cursor enters or leaves the JIDLCanvas component. </p>
+        <p class="Body">Note: Mouse moves and drags are tracked using JIDLMouseMotion-Listener. </p>
+        <p class="Body">The class that is interested in processing an IDL mouse event implements this interface (and all the methods it contains). The listener object created from that class is then registered with the JIDLCanvas using the add-IDLMouse-Listener method. The listener is unregistered with the remove-IDLMouse-Listener. </p>
+        <p class="Body">The JIDLCanvas automatically handles mouse events whether a program registers an additional JIDLMouse-Listener or not. The JIDLCanvas is itself a JIDLMouse-Listener and provides default behavior for the 4 events, as denoted in the specific methods below. </p>
+        <p class="Body">Note that clients should not register to listen to JIDLCanvas Mouse-Events using a Mouse-Listener, preferring the JIDLMouse-Listener instead.</p>
+        <h2>See Also:</h2>
+        <p class="Code"><span class="Link"><a href="JIDLCanvas.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLCanvas">JIDLCanvas</a></span>, <span class="Link"><a href="JIDLMouseMotionListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseMotionListener">JIDLMouseMotionListener</a></span>, <span class="Courier">java.awt.event.MouseEvent</span>, <span class="Courier">java.awt.event.MouseListener</span></p>
+        <p class="Body">&#160;</p>
+        <table style="width: 480px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Table_No_Title.css');" class="TableStyle_Table_No_Title" cellspacing="0">
+            <col width="133px" />
+            <col width="347px" />
+            <thead>
+                <tr>
+                    <td colspan="2" class="TableStyle_Table_No_Title_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Member Summary</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-weight: bold;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Bold">Methods</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Link"><a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">IDLmouseEntered(JIDLObjectI obj,</a></span> <![CDATA[ ]]><span class="Link">java.awt.event.MouseEvent event)</span></p>
+                        <p class="CellBody">The mouse has entered the JIDLCanvas.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode" style="font-family: Courier;font-weight: normal;font-style: normal;font-size: 9pt;letter-spacing: 0em;color: #0000ff;text-decoration: none;"><span class="Link"><a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">IDLmouseExited(JIDLObjectI obj, java.awt.event.MouseEvent event)</a></span>
+                        </p>
+                        <p class="CellBody">The mouse has exiting the JIDLCanvas.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode"><span class="Link"><a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">IDLmousePressed(JIDLObjectI obj,</a></span> <![CDATA[ ]]><span class="Link">java.awt.event.MouseEvent event)</span></p>
+                        <p class="CellBody">A mouse button was pressed inside the JIDLCanvas.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowEnd_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellCode"><span class="Link"><a href="#JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_">IDLmouseReleased(JIDLObjectI obj,</a></span> <![CDATA[ ]]><span class="Link">java.awt.event.MouseEvent event)</span></p>
+                        <p class="CellBody">A mouse button was released inside the JIDLCanvas.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Methods</h2>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseEntered_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_"><a name="JIDL_Import_1464128226_MemberHead"></a>IDLmouseEntered(JIDLObjectI, MouseEvent)</a>
+        </h3>
+        <p class="Code">public void <span class="Bold">IDLmouseEntered</span>(<span class="Link"><a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">com.idl.javaidl.JIDLObjectI</a></span> obj, <span class="Courier">java.awt.event.MouseEvent</span>&#160;event)</p>
+        <p class="Body">The mouse has entered the JIDLCanvas. </p>
+        <p class="Body">The default behavior of JIDLCanvas’s default implementation is to call the IDL program’s On-Enter method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">obj</span> - The JIDLCanvas in which the event occurred.</p>
+        <p class="Body"><span class="Courier">event</span> - The mouse event</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseExited_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_"><a name="JIDL_Import_1464128226_MemberHead"></a>IDLmouseExited(JIDLObjectI, MouseEvent)</a>
+        </h3>
+        <p class="Code">public void <span class="Bold">IDLmouseExited</span>(<span class="Link"><a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">com.idl.javaidl.JIDLObjectI</a></span> obj, <span class="Courier">java.awt.event.MouseEvent</span>&#160;event)</p>
+        <p class="Body">The mouse has exiting the JIDLCanvas. </p>
+        <p class="Body">The default behavior of JIDLCanvas’s default implementation is to call the IDL program’s On-Exit method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">obj</span> - The JIDLCanvas in which the event occurred.</p>
+        <p class="Body"><span class="Courier">event</span> - The mouse event</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmousePressed_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_"><a name="JIDL_Import_1464128226_MemberHead"></a>IDLmousePressed(JIDLObjectI, MouseEvent)</a>
+        </h3>
+        <p class="Code">public void <span class="Bold">IDLmousePressed</span>(<span class="Link"><a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">com.idl.javaidl.JIDLObjectI</a></span> obj, <span class="Courier">java.awt.event.MouseEvent</span>&#160;event)</p>
+        <p class="Body">A mouse button was pressed inside the JIDLCanvas. </p>
+        <p class="Body">The default behavior of JIDLCanvas’s default implementation is to call the IDL program’s On-Mouse-Down method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">obj</span> - The JIDLCanvas in which the event occurred.</p>
+        <p class="Body"><span class="Courier">event</span> - The mouse event</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLMouseListener_IDLmouseReleased_com_idl_javaidl_JIDLObjectI__java_awt_event_MouseEvent_"><a name="JIDL_Import_1464128226_MemberHead"></a>IDLmouseReleased(JIDLObjectI, MouseEvent)</a>
+        </h3>
+        <p class="Code">public void <span class="Bold">IDLmouseReleased</span>(<span class="Link"><a href="JIDLObjectI.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI">com.idl.javaidl.JIDLObjectI</a></span> obj, <span class="Courier">java.awt.event.MouseEvent</span>&#160;event)</p>
+        <p class="Body">A mouse button was released inside the JIDLCanvas. </p>
+        <p class="Body">The default behavior of JIDLCanvas’s default implementation is to call the IDL program’s On-Mouse-Up method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">obj</span> - The JIDLCanvas in which the event occurred.</p>
+        <p class="Body"><span class="Courier">event</span> - The mouse event</p>
+        <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

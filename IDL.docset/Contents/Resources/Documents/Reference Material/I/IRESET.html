@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: I" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IRESET</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/I/IRESET.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="IBETA.html">Routines: I</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IRESET</span>
+        </div>
+        <h1 class="Routine"><a name="iTools_api_3860698369_1006774"></a><a name="iTools_api_3860698369_79075"></a><span class="_Override">IRESET</span>
+        </h1>
+        <p class="CellBody" MadCap:conditions="iTool_Procedures_only.Online_Help_Only"><span class="_Override"><MadCap:conditionalText MadCap:conditions="iTool_Procedures_only.Online_Help_Only"><a class="MCXref" href="#iTools_api_3860698369_1006799">Syntax</a> | <a class="MCXref" href="#iTools_api_3860698369_1006805">Arguments</a> | <a class="MCXref" href="#iTools_api_3860698369_1006808">Keywords</a> | <a class="MCXref" href="#iTools_api_3860698369_1006813">Examples</a> | <a class="MCXref" href="#iTools_api_3860698369_1006831">Version History</a> | <a class="MCXref" href="#iTools_api_3860698369_1006843">See Also</a></MadCap:conditionalText></span>
+        </p>
+        <h2><a name="iTools_api_3860698369_1006799"></a><a name="iTools_api_3860698369_1056494_PageTOC_IRESET_"></a><span class="_Override">Syntax</span>
+        </h2>
+        <p class="Syntax"><span class="_Override">IRESET [,&#160;/<a class="MCXref" href="#iTools_api_3860698369_1006810">NO_PROMPT</a>]</span>
+        </p>
+        <h2><a name="iTools_api_3860698369_1006805"></a><a name="iTools_api_3860698369_1056500_PageTOC_IRESET_"></a><span class="_Override">Arguments</span>
+        </h2>
+        <h2><a name="iTools_api_3860698369_1006808"></a><a name="iTools_api_3860698369_1056503_PageTOC_IRESET_"></a><span class="_Override">Keywords</span>
+        </h2>
+        <h3 class="Keyword"><a name="iTools_api_3860698369_1006810"></a><a name="iTools_api_3860698369_42640"></a><span class="_Override">NO_PROMPT</span>
+        </h3>
+        <p><span class="_Override">Set this keyword to disable prompting the user before resetting the system. If this keyword is set, the user is not presented with a prompt and the reset is performed immediately.</span>
+        </p>
+        <h2><a name="iTools_api_3860698369_1006813"></a><a name="iTools_api_3860698369_1056508_PageTOC_IRESET_"></a><span class="_Override">Examples</span>
+        </h2>
+        <p><span class="_Override">The iTool Data Manager system maintains your data during the entire IDL session, unless IRESET is used. This example shows how the data is maintained and how IRESET is used to clear the iTool Data Manager.</span>
+        </p>
+        <p><span class="_Override">Read in plot data and load it into an iPlot tool at the IDL Command Line:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">file = FILEPATH('dirty_sine.dat', $</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">&#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">data = READ_BINARY(file, DATA_DIMS = [256, 1])</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">IPLOT, data</span>
+            <br />
+            <br />
+        </p>
+        <p><span class="_Override">Delete this tool with the IDELETE procedure at the IDL Command Line:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">IDELETE</span>
+        </p>
+        <p><span class="_Override">Read in surface data and load it into an iSurface tool at the IDL Command Line:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">file = FILEPATH('elevbin.dat', $</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">&#160;&#160;&#160;SUBDIRECTORY = ['examples', 'data'])</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">data = READ_BINARY(file, DATA_DIMS = [64, 64])</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">ISURFACE, data</span>
+            <br />
+            <br />
+        </p>
+        <p><span class="_Override">Use </span><span class="Bold">Window</span><span class="_Override"></span>&#160;&gt;&#160;<span class="_Override"></span><span class="Bold">Data Manager...</span><span class="_Override"> to access the Data Manager Browser. The browser contains both plot and surface parameters. Although the iPlot tool was deleted, its data remains in the Data Manager. Click </span><span class="Bold">Dismiss</span><span class="_Override">.</span></p>
+        <p><span class="_Override">Use </span><span class="Bold">File</span><span class="_Override"></span>&#160;&gt;&#160;<span class="_Override"></span><span class="Bold">New</span><span class="_Override"></span>&#160;&gt;&#160;<span class="_Override"></span><span class="Bold">iPlot</span><span class="_Override"> to create an empty iPlot tool. If you want to load the plot data in the Data Manager into this tool, use </span><span class="Bold">Insert</span><span class="_Override"></span>&#160;&gt;&#160;<span class="_Override"></span><span class="Bold">Visualization</span><span class="_Override"> to access the Insert Visualization dialog, which allows you to specify the plot data to be displayed.</span></p>
+        <p><span class="_Override">At the IDL Command Line, enter:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">IRESET, /NO_PROMPT</span>
+        </p>
+        <p><span class="_Override">The two iTools are deleted and the data in the Data Manager is released. To verify the data is released, create an empty iSurface tool at the IDL Command Line:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">ISURFACE</span>
+        </p>
+        <p><span class="_Override">Use </span><span class="Bold">Window</span><span class="_Override"></span>&#160;&gt;&#160;<span class="_Override"></span><span class="Bold">Data Manager...</span><span class="_Override"> to access the Data Manager Browser. No data appears in the browser. The iTool Data Manager is empty. Click </span><span class="Bold">Dismiss</span><span class="_Override">.</span></p>
+        <p><span class="_Override">At the IDL Command Line, enter:</span>
+        </p>
+        <p class="IDLCode"><span class="_Override">IRESET, /NO_PROMPT</span>
+        </p>
+        <h2><a name="iTools_api_3860698369_1006831"></a><a name="iTools_api_3860698369_1056526_PageTOC_IRESET_"></a><span class="_Override">Version History</span>
+        </h2>
+        <p><span class="_Override">&#160;</span>
+        </p>
+        <table cellpadding="0" cellspacing="0" class="Default" height="56px" style="border-spacing-x: 0;border-spacing-y: 0;border-collapse: collapse;border-color: black;width: 499px;caption-side: top;">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr style="height: 13px;">
+                    <td>
+                        <p class="CellBody">6.0</p>
+                    </td>
+                    <td>
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+                <tr style="height: 13px;">
+                    <td>
+                        <p class="CellBody">7.1</p>
+                    </td>
+                    <td>
+                        <p class="CellBody">Routine name changed from ITRESET to IRESET.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="iTools_api_3860698369_1006843"></a><a name="iTools_api_3860698369_1056533_PageTOC_IRESET_"></a><span class="_Override">See Also</span>
+        </h2>
+        <p><span class="_Override"><a class="MCXref" href="ISETCURRENT.html#iTools_api_3860698369_1007411">ISETCURRENT</a>, <a class="MCXref" href="IDELETE.html#iTools_api_3860698369_1000192">IDELETE</a>, <a class="MCXref" href="IGETCURRENT.html#iTools_api_3860698369_1000791">IGETCURRENT</a></span>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

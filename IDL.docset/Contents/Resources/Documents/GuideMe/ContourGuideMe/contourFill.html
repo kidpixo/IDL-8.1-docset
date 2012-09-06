@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Graphics Examples|Contours" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Filled Contours</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#GuideMe/ContourGuideMe/contourFill.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html">Graphics Examples</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../GUInavigation/visualize.html#Surface">Contours</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Filled Contours</span>
+        </div>
+        <h1><a name="kanchor29"></a>Filled Contours</h1>
+        <p>You can enhance contour graphics by displaying different levels of the contour and filling them with color. In this topic, we will use the CONTOUR function along with various keywords to demonstrate some of the capabilities of CONTOUR.</p>
+        <h2>Smoothed contour example</h2>
+        <p>This first example uses random data to demonstrate how to define colors to use, fill the contours and then outline the levels you want to show. This example also illustrates how to smooth contour data.</p>
+        <p>
+            <img src="../../Resources/Images/contour_smooth.png" />
+        </p>
+        <p>The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL&#160;command line to run it.</p>
+        <p class="Code">; Create a simple dataset:</p>
+        <p class="Code">data = RANDOMU(seed, 9, 9)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Plot the unsmoothed data:</p>
+        <p class="Code">unsmooth = CONTOUR(data, TITLE='Unsmoothed', $</p>
+        <p class="Code">&#160;&#160;&#160;LAYOUT=[2,1,1], RGB_TABLE=13, /FILL, N_LEVELS=10)</p>
+        <p class="Code">; Draw the outline of the 10 levels</p>
+        <p class="Code">outline1 = CONTOUR(data, N_LEVELS=10, /OVERPLOT)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Plot the smoothed data:</p>
+        <p class="Code">smooth = CONTOUR(MIN_CURVE_SURF(data), TITLE='Smoothed', $</p>
+        <p class="Code">&#160;&#160;&#160;/CURRENT, LAYOUT=[2,1,2], RGB_TABLE=13, $</p>
+        <p class="Code">&#160;&#160;&#160;/FILL, N_LEVELS=10)</p>
+        <p class="Code">; Draw the outline of the 10 levels</p>
+        <p class="Code">outline2 = CONTOUR(MIN_CURVE_SURF(data), $</p>
+        <p class="Code">&#160;&#160;&#160;N_LEVELS=10, /OVERPLOT)</p>
+        <h2>Properties used in the example</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>TITLE</code> - defines the title for the window.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>CURRENT </code>- draws the graphic in the active window.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>LAYOUT </code>- specifies a grid within the window, and determines where the graphic appears. The syntax of LAYOUT is three numbers: [<code>ncolumns</code>, <code>nrows</code>, <code>location</code>].</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>RGB_TABLE </code>- defines the color table used to display the image. If no color table is defined, this image displays in gray scale.&#160;</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>FILL</code> - specifies that the contour is filled. This keyword uses the colors defined in <code>RGB_TABLE.</code></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>N_LEVELS</code> - defines the number of contour levels to display.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>MIN_CURVE_SURF</code> - defines <span>a minimum curvature surface. </span>See the <a href="../../Reference Material/M/MIN_CURVE_SURF.html" class="MCXref">MIN_CURVE_SURF </a> routine for information.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>OVERPLOT </code>- tells IDL to display the data as an overlay in the current window.</td>
+            </tr>
+        </table>
+        <h2><a name="Digital"></a>Digital Elevation Model (DEM) contour example</h2>
+        <p>The data in this example is a digital elevation model (DEM) data taken from the Santa Monica mountains in California.</p>
+        <p>
+            <img src="../../Resources/Images/contour_santa_monica.png" />
+        </p>
+        <p>The code shown below creates the graphic shown above. You can copy the entire block and paste it into the IDL command line to run it. The keywords used are explained in detail after the example code.</p>
+        <p xml:space="preserve" class="Code">; Define the digital elevation model data to open</p>
+        <p class="Code">file = FILEPATH('elevbin.dat', SUBDIR=['examples', 'data'])</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Read the binary file and define the data dimensions</p>
+        <p class="Code">dem = READ_BINARY(file, DATA_DIMS=[64,64])</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Rotate the data for display purposes</p>
+        <p class="Code">dem = ROTATE(dem, 1)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Define the minimum data elements</p>
+        <p class="Code">dem_min = MIN(dem, MAX=dem_max)</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Define the number of levels to display</p>
+        <p class="Code">nlevels = 15</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Define the levels to display</p>
+        <p class="Code">levels = FINDGEN(nlevels)/nlevels*(dem_max-dem_min) + dem_min</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Define the levels to show and the colors to use</p>
+        <p class="Code">levels = [-1, levels]</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Display the filled contour</p>
+        <p class="Code">c1 = CONTOUR(dem, $</p>
+        <p class="Code">&#160;&#160;&#160;C_VALUE=levels, RGB_TABLE=12, $</p>
+        <p class="Code">&#160;&#160;&#160;/FILL, PLANAR=0, /DEPTH_OFFSET, $</p>
+        <p class="Code">&#160;&#160;&#160;ANISOTROPIC_SCALE_3D=0.25, $</p>
+        <p class="Code">&#160;&#160;&#160;XTITLE='X', YTITLE='Y', ZTITLE='Elevation (m)', $</p>
+        <p class="Code">&#160;&#160;&#160;TITLE='L.A. Basin and Santa Monica Mountains')</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Overplot the contour lines to show more detail</p>
+        <p class="Code">c2 = CONTOUR(dem, $</p>
+        <p class="Code">&#160;&#160;&#160;C_VALUE=levels, PLANAR=0, COLOR='black', $</p>
+        <p class="Code">&#160;&#160;&#160;/OVERPLOT)</p>
+        <h2>Properties used in the example</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>C_VALUE</code> - defines the contour values to be drawn.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>RGB_TABLE </code>- defines the color table used to display the image. If no color table is defined, this image displays in gray scale.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>FILL</code> - specifies that the contour is filled. This keyword uses the colors defined in <code>RGB_TABLE.</code></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>PLANAR </code>- projects the graphic onto a plane.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>DEPTH_OFFSET</code> - renders a graphic with greater depth to emphasize detail.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>ANISOTROPIC_SCALE_3D</code> - defines the ratio of the Z dimension to the X and Y dimensions for three-dimensional anisotropic visualizations.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>[X,Y,Z]TITLE</code> - defines the title for the axis.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>VIEW_TITLE</code> - defines the title for the window.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><code>OVERPLOT </code>- tells IDL to display the data as an overlay in the current window.</td>
+            </tr>
+        </table>
+        <h2>Resources</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../propChanges.html" target="" title="" alt="" class="MCXref">Change Graphics Properties</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../MultiViz.html" class="MCXref">Multiple Graphics in One Window</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../ImageGuideMe/SaveImage.html" class="MCXref">Saving Graphics</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../SurfaceGuideMe/surface.html" class="MCXref">Surfaces</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../SurfaceGuideMe/surfaceContour.html" class="MCXref">Surface with Contour Lines</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/M/MIN_CURVE_SURF.html" class="MCXref">MIN_CURVE_SURF </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/C/CONTOUR.html" class="MCXref">CONTOUR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../Reference Material/Functional List of IDL Routines/Graphics.html" class="MCXref">Graphics</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a href="../../IDL Graphics/FormattingSymsAndLines.html" class="MCXref">Formatting IDL&#160;Graphics Symbols and Lines</a><a href="../SurfaceGuideMe/surfaceContour.html" class="MCXref">Surface with Contour Lines</a>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

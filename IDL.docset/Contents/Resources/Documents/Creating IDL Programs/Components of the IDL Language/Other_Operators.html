@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Concepts|Operators" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Other Operators</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Table_Format.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Creating IDL Programs/Components of the IDL Language/Other_Operators.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">Concepts</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Operators.html">Operators</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Other Operators</span>
+        </div>
+        <h1><a name="expressions_2976722315_1033252"></a><a name="expressions_2976722315_27258"></a>Other Operators<a name="kanchor3427"></a></h1>
+        <p>The following operators (on the <a class="MCXref" href="#expressions_2976722315_1033272">[ ]</a>, <a class="MCXref" href="#expressions_2976722315_1033312">( )</a>, <a class="MCXref" href="#expressions_2976722315_1033362">?:</a> and <a class="MCXref" href="#expressions_2976722315_1055060">-&gt;</a> operators) are used when working with arrays, controlling the order of operations, creating conditional expressions, or invoking an object method. </p>
+        <table style="width: 503px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Table_Format.css');" class="TableStyle_Table_Format" cellspacing="0">
+            <col width="82px" />
+            <col width="187px" />
+            <col width="234px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Operator</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Description</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Examples</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1033272"></a><a name="expressions_2976722315_28428"></a>[ ]</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><span class="_Override" style="font-family: Helvetica;font-weight: bold;font-size: 14pt;line-height: 16pt;"><a name="kanchor3428"></a></span>Array concatenation</p>
+                        <p class="CellBody">The expression <span class="Courier">[A,B]</span> is an array formed by concatenating A and B, which can be scalars or arrays, along the first dimension.</p>
+                        <p class="CellBody">To concatenate second and third levels, nest the brackets; [[1,2],[3,4]] is a 2-element by 2-element array with the first row containing 1 and 2 and the second row containing 3 and 4. Operands must have compatible dimensions; all dimensions must be equal except the dimension that is to be concatenated, e.g., [2,INTARR(2,2)] are incompatible. </p>
+                        <p class="CellBody">See <a class="MCXref" href="#arrays_3727706888_723429" target="" title="" alt="">Other Operators</a> for more information. </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Define C as three-point vector:</p>
+                        <p class="CellCode">C = [0, 1, 3]<br /></p>
+                        <p class="CellBody">Add 5 to the end of C:</p>
+                        <p class="CellCode">PRINT, [C, 5]</p>
+                        <p class="CellCode">IDL Prints: <span class="Courier">0 1 3 5</span><br /></p>
+                        <p class="CellBody">Insert -1 at the beginning of C:</p>
+                        <p class="CellCode">PRINT, [-1, C]<br /></p>
+                        <p class="CellBody">IDL Prints: <span class="Courier">-1 0 1 3</span></p>
+                        <p class="CellBody">Plot ARR2 appended to ARR1.</p>
+                        <p class="CellCode">PLOT, [ARR1, ARR2]<br /></p>
+                        <p class="CellBody">Define a 3x3 matrix.</p>
+                        <p class="CellCode">KER = [[1,2,1], [2,4,2], $</p>
+                        <p class="CellCode">&#160;&#160;&#160;[1,2,1]]<br /></p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>Array concatenation is a relatively inefficient operation, and should only be performed once for a given set of data if possible.</p>
+                        <p class="CellBody">&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Enclose array subscripts</p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>See <a class="MCXref" href="Understanding_Array_Subs.html#arrays_3727706888_737171" target="" title="" alt="">Array Subscript Syntax: [ ] vs. ( )</a> for additional details. </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">A = [2, 1, 5]</p>
+                        <p class="CellBody">Print the 3rd element in A:</p>
+                        <p class="CellCode">PRINT, A[2]<br /></p>
+                        <p class="CellBody">IDL Prints: <span class="Courier">5</span></p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>If one or both of the operands are objects, the operator may be overloaded.</p>
+                        <p class="CellBody">&#160;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1033312"></a><a name="expressions_2976722315_13603"></a>( )</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Group expressions to control order of evaluation or enclose function parameter lists</p>
+                        <p class="CellNote" MadCap:autonum="Note - "><span class="autonumber"><span class="Helvetica Bold">Note - </span></span>See <a class="MCXref" href="Operator_Precedence.html#expressions_2976722315_1033406" target="" title="" alt="">Operator Precedence</a> for details on order of evaluation</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">PRINT, 3 + 4 * 2 ^ 2 /2</p>
+                        <p class="CellBody">IDL Prints: <span class="Courier">11</span></p>
+                        <p class="CellCode">PRINT, (3 + (4 * 2) ^ 2 / 2)</p>
+                        <p class="CellBody">IDL Prints: <span class="Courier">35</span></p>
+                        <p class="CellBody">Enclose function argument lists:</p>
+                        <p class="CellCode">SIN(ANG * PI/180.)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1033362"></a><a name="expressions_2976722315_67160"></a>?:</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody"><a name="kanchor3429"></a>Cond<a name="kanchor3430"></a>iti<a name="kanchor3431"></a>onal expression</p>
+                        <p class="CellBody">Provides a way to write simple constructions of the IF...THEN...ELSE statement in expression form.</p>
+                        <p class="CellBody">See <a class="MCXref" href="#expressions_2976722315_1033390" target="" title="" alt="">Working with Conditional Expressions</a> below. </p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody"> For </p>
+                        <p class="CellBody"><i>value </i>= <i>expr1</i> ? <i>expr2</i> : <i>expr3</i></p>
+                        <p class="CellBody"><i>expr1</i> is evaluated first. If <i>expr1</i> is true, then <i>value </i>= <i>expr2</i>. If <i>expr1</i> is false, <i>value</i> = <i>expr3</i>.</p>
+                        <p class="CellCode">A=6 &amp; B=4<br /></p>
+                        <p class="CellBody">Set Z to the greater of A and B:</p>
+                        <p class="CellCode">Z = (A GT B) ? A : B</p>
+                        <p class="CellCode">PRINT, Z<br /></p>
+                        <p class="CellBody">IDL Prints: <span class="Courier">6</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellCentered">.</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Method invocation</p>
+                        <p class="CellBody">Calls an object method. See <a class="MCXref" href="../../Objects/Acting_on_Objects_Using.html#objects_3041994433_1016265" target="" title="" alt="">Acting on Objects Using Methods </a> for more information.</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">oWindow.Draw </p>
+                        <p class="CellCode"><span class="_Override" style="font-family: Times;font-size: 11pt;line-height: 13pt;">where </span><span class="Courier">oWindow</span><span class="_Override" style="font-family: Times;font-size: 11pt;line-height: 13pt;"> is an IDLgrWindow object and </span><span class="Courier">Draw</span><span class="_Override" style="font-family: Times;font-size: 11pt;line-height: 13pt;"> is the object method. </span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCentered"><a name="expressions_2976722315_1055060"></a><a name="kanchor3432"></a><a name="expressions_2976722315_96181"></a>-&gt;</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">Method invocation</p>
+                        <p class="CellBody">Calls an object method. See <a class="MCXref" href="../../Objects/Acting_on_Objects_Using.html#objects_3041994433_1016265" target="" title="" alt="">Acting on Objects Using Methods </a> for more information.</p>
+                    </td>
+                    <td class="TableStyle_Table_Format_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellCode">oWindow-&gt;Draw </p>
+                        <p class="CellBody">where <span class="Courier">oWindow</span> is an IDLgrWindow object and <span class="Courier">Draw</span> is the object method. </p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="TableTitle">Other Operators</p>
+            </caption>
+        </table>
+        <h2><a name="expressions_2976722315_1033390"></a><a name="expressions_2976722315_16146"></a>Working with Conditional Expressions</h2>
+        <p>The <a name="kanchor3433"></a>conditional expression—written with the <a name="kanchor3434"></a>ternary operator ?:—has the lowest precedence of all the operators. It provides a way to write simple constructions of the IF...THEN...ELSE statement in expression form. In the following example, Z receives the larger of the values contained by A and B:</p>
+        <p class="Code">IF (A GT B) THEN Z = A ELSE Z = B</p>
+        <p>This statement can be written more concisely using a conditional expression:</p>
+        <p class="Code">Z = (A GT B) ? A : B</p>
+        <p>The general form of a conditional expression is:</p>
+        <p class="Code"><i>expr1</i> ? <i>expr2</i> : <i>expr3</i></p>
+        <p>The expression <i>expr1</i> is evaluated first. If <i>expr1</i> is true, then the expression <i>expr2</i> is evaluated and set as the value of the conditional expression. If <i>expr1</i> is false, <i>expr3</i> is evaluated and set as the value of the conditional expression. Only one of <i>expr2</i> or <i>expr3</i> is evaluated, based on the result of <i>expr1</i>. (See <a class="MCXref" href="../Application Programming/Definition_of_True_and_F.html#prog_control_2688138422_715725" target="" title="" alt="">Definition of True and False</a> for details on how the “truth” of an expression is determined.)</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Since ?: has very low precedence—just above assignment—parentheses are not necessary around <i>expr1</i>. However, parentheses are often used in this situation, as they enhance the readability of the expression.</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

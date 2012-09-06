@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|Graphics Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDLgrLegend</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/Graphics/IDLgrLegend.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_gr.html">Graphics Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDLgrLegend</span>
+        </div>
+        <h1 class="ObjClass"><a name="objects_gr_2157407275_1010440"></a><a name="objects_gr_2157407275_18270"></a>IDLgrLegend</h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#objects_gr_2157407275_1010461">Superclasses</a> | <a class="MCXref" href="#objects_gr_2157407275_1010467">Creation</a> | <a class="MCXref" href="#objects_gr_2157407275_1043935">Properties</a> | <a class="MCXref" href="#objects_gr_2157407275_1010473">Methods</a> | <a class="MCXref" href="#objects_gr_2157407275_1010497">Version History</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor4214"></a>IDLgrLeg<a name="kanchor4215"></a>end object provides a simple interface for displaying a legend. The legend itself consists of a (filled and/or framed) box around one or more legend items (arranged in a single column) and an optional title string. Each legend item consists of a glyph patch positioned to the left of a text string. The glyph patch is drawn in a square which is a fraction of the legend label font height. The glyph itself can be in one of two types (see the TYPE keyword). In line type, the glyph is a line segment with line style, thickness and color attributes and an optional symbol object drawn over it. In fill type, the glyph is a square patch drawn with color and optional pattern object attributes.</p>
+        <p>An IDLgrLegend object is a<i> composite object</i>; it is one of the basic drawable elements of the IDL Object Graphics system, and it is not a container for other objects.</p>
+        <p>This object class is implemented in the IDL language. Its source code can be found in the file <span class="Courier">idlgrlegend</span><span class="Courier" style="letter-spacing: 0.2em;">_</span><span class="Courier" style="letter-spacing: 0em;">_define.pro</span> in the <span class="Courier">lib</span> subdirectory of the IDL distribution.</p>
+        <h2>Dimensions</h2>
+        <p>Until the legend is drawn to the destination object, the [XYZ]RANGE properties will be zero. Because you must know the size of the legend object in order to scale it properly for your window, you must use the ComputeDimensions method on the legend object to get the data dimensions of the legend prior to a draw operation.</p>
+        <p>The following example builds and displays a three-element legend.</p>
+        <p class="Code">; Create a window, view, and model:</p>
+        <p class="Code">mywindow = OBJ_NEW('IDLgrWindow')</p>
+        <p class="Code">myview = OBJ_NEW('IDLgrView')</p>
+        <p class="Code">mymodel = OBJ_NEW('IDLgrModel')</p>
+        <p class="Code">myview-&gt;Add, mymodel</p>
+        <p class="Code">; Create the legend with two items:</p>
+        <p class="Code">itemNameArr = ['Original Data', 'Histogram Plot', $</p>
+        <p class="Code">&#160;&#160;&#160;'Boxcar-filtered (Width=5)']</p>
+        <p class="Code">mytitle = OBJ_NEW('IDLgrText', 'Plot Legend')</p>
+        <p class="Code">mysymbol = OBJ_NEW('IDLgrSymbol', 5, SIZE=[0.3, 0.3])</p>
+        <p class="Code">myLegend = OBJ_NEW('IDLgrLegend', itemNameArr, TITLE=mytitle, $</p>
+        <p class="Code">&#160;&#160;&#160;BORDER_GAP=0.8, GAP=0.5, $</p>
+        <p class="Code">&#160;&#160;&#160;ITEM_TYPE=[0,1], ITEM_LINESTYLE=[0,4,2], $</p>
+        <p class="Code">&#160;&#160;&#160;ITEM_OBJECT=[mysymbol, OBJ_NEW(), OBJ_NEW()], $</p>
+        <p class="Code">&#160;&#160;&#160;GLYPH_WIDTH=2.0, /SHOW_OUTLINE)</p>
+        <p class="Code">; Add the legend to the model:</p>
+        <p class="Code">mymodel-&gt;Add, mylegend</p>
+        <p class="Code">; Center the legend in the window.</p>
+        <p class="Code">; Note that you must use the ComputeDimensions method</p>
+        <p class="Code">; to get the dimensions of the legend.</p>
+        <p class="Code">dims = mylegend-&gt;ComputeDimensions(mywindow)</p>
+        <p class="Code">mymodel-&gt;Translate, -(dims[0]/2.), -(dims[1]/2.), 0</p>
+        <p class="Code">; Draw the legend:</p>
+        <p class="Code">mywindow-&gt;Draw, myview</p>
+        <p class="TableAnchor">&#160;</p>
+        <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+            <col width="517px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">&#160;</p>
+                        <p style="text-align: center;">
+                            <img src="../../images/objplot9.gif" style="margin-left: 4.24512px;margin-top: 1.4868px;margin-right: 4.78584px;margin-bottom: 3.262323px;" />
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="FigureTitle">Legend Object</p>
+            </caption>
+        </table>
+        <h2><a name="objects_gr_2157407275_1010461"></a><a name="objects_gr_2157407275_1156153_PageTOC_IDLgrLegend__"></a>Superclasses</h2>
+        <p><a class="MCXref" href="IDLgrModel.html#objects_gr_2157407275_1011092" target="" title="" alt="">IDLgrModel</a>
+        </p>
+        <p><a href="../Miscellaneous/IDLitComponent.html">IDLitComponent</a>
+        </p>
+        <h2><a name="objects_gr_2157407275_1010467"></a><a name="objects_gr_2157407275_1144776_PageTOC_IDLgrLegend__"></a>Creation</h2>
+        <p>See <a class="MCXref" href="IDLgrLegend__Init.html#objects_gr_2157407275_1010622" target="" title="" alt="">IDLgrLegend::Init</a>.</p>
+        <h2><a name="objects_gr_2157407275_1043935"></a><a name="objects_gr_2157407275_99490"></a>Properties</h2>
+        <p>Objects of this class have the following properties. See <a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1044551" target="" title="" alt="">IDLgrLegend Properties</a> for details on individual properties.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053896">ALL </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053903">BORDER_GAP</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053905">COLUMNS</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053907">FILL_COLOR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053909">FONT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053912">GAP</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053914">GLYPH_WIDTH</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053916">HIDE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1069308">ITEM_COLOR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053922">ITEM_LINESTYLE </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053935">ITEM_NAME</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053937">ITEM_OBJECT </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053940">ITEM_THICK</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053942">ITEM_TYPE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053948">OUTLINE_COLOR </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053950">OUTLINE_THICK</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1055362">PARENT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1055360">RECOMPUTE </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053952">SHOW_FILL</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053956">SHOW_OUTLINE </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053960">TEXT_COLOR </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053962">TITLE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053966">XCOORD_CONV </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1055399">XRANGE </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053972">YCOORD_CONV </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1055389">YRANGE </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1053978">ZCOORD_CONV</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend_Properties.html#objects_gr_2157407275_1070059">ZRANGE</a>
+                </td>
+            </tr>
+        </table>
+        <p>In addition, objects of this class inherit the properties of all superclasses of this class.</p>
+        <h2><a name="objects_gr_2157407275_1010473"></a><a name="objects_gr_2157407275_1144784_PageTOC_IDLgrLegend__"></a>Methods<a name="kanchor4216"></a></h2>
+        <p>This class has the following methods:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend__Cleanup.html#objects_gr_2157407275_1010502">IDLgrLegend::Cleanup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend__ComputeDime.html#objects_gr_2157407275_1010537">IDLgrLegend::ComputeDimensions</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend__GetProperty.html#objects_gr_2157407275_1010575">IDLgrLegend::GetProperty</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend__Init.html#objects_gr_2157407275_1010622">IDLgrLegend::Init</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLgrLegend__SetProperty.html#objects_gr_2157407275_1010746">IDLgrLegend::SetProperty</a>
+                </td>
+            </tr>
+        </table>
+        <p>In addition, this class inherits the methods of its superclasses (if any).</p>
+        <h2><a name="objects_gr_2157407275_1010497"></a><a name="objects_gr_2157407275_1394985_PageTOC_IDLgrLegend__"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

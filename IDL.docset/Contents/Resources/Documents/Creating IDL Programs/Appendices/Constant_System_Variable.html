@@ -1,0 +1,1801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Concepts|System Variables" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Constant System Variables</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Creating IDL Programs/Appendices/Constant_System_Variable.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../../ProgrammingConcepts.html">Concepts</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../System Variables.html">System Variables</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Constant System Variables</span>
+        </div>
+        <h1><a name="sysvars_272074529_1009288"></a><a name="sysvars_272074529_70585"></a>Constant System Variables</h1>
+        <p>The following system variables contain predefined constants or values for use by IDL routines. System variables can be used just like other variables. For example, the command:</p>
+        <p class="Code">PRINT, ACOS(A) * !RADEG</p>
+        <p>converts a result expressed in radians to one expressed in degrees.</p>
+        <h3 class="Sysvar"><a name="kanchor3076"></a><a name="sysvars_272074529_1036303"></a><a name="!COLOR"></a>!COLOR</h3>
+        <p>A read-only structure variable that allows you to retrieve color values [<i>red</i>, <i>green</i>, <i>blue</i>] by providing one of the color name strings listed in the <a class="MCXref" href="#sysvars_272074529_1048182" target="" title="" alt="">!COLOR Color Names and Values</a>: table.</p>
+        <p class="Code">PRINT, !COLOR.burlywood</p>
+        <p>The following table lists !COLOR names and values (these are essentially the same as those in W3C’s list of web colors):</p>
+        <table class="TableStyle_Keyword_Table" style="width: 398px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" cellspacing="0">
+            <col width="158px" />
+            <col width="120px" />
+            <col width="120px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Color Name</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Hex Value</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Decimal Value</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">alice_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F0F8FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">240,248,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">antique_white </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FAEBD7 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">250,235,215</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">aqua </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#00FFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,255,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">aquamarine </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#7FFFD4 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">127,255,212</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">azure </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F0FFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">240,255,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">beige </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#F5F5DC </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">245,245,220</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">bisque </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFE4C4 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,228,196</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">black </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#000000 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,0,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">blanched_almond </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFEBCD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,235,205</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#0000FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,0,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">blue_violet </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#8A2BE2 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">138,43,226</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">brown </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#A52A2A </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">165,42,42</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">burlywood </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#DEB887 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">222,184,135</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">cadet_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#5F9EA0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">95,158,160</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">chartreuse </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7FFF00 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">127,255,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">chocolate </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#D2691E </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">210,105,30</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">coral </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FF7F50 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,127,80</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">cornflower</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#6495ED </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">100,149,237</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">cornsilk </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFF8DC </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,248,220</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">crimson </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#DC143C </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">220,20,60</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">cyan </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#00FFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,255,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#00008B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,0,139</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_cyan </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#008B8B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,139,139</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_goldenrod </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#B8860B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">184,134,11</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#A9A9A9 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">169,169,169</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#A9A9A9 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">169,169,169</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#006400 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,100,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_khaki </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#BDB76B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">189,183,107</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_magenta </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#8B008B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">139,0,139</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_olive_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#556B2F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">85,107,47</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_orange </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FF8C00 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,140,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_orchid </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#9932CC </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">153,50,204</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#8B0000 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">139,0,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_salmon </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#E9967A </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">233,150,122</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_sea_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#8FBC8F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">143,188,143</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_slate_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#483D8B </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">72,61,139</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_slate_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#2F4F4F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">47,79,79</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_slate_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#2F4F4F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">47,79,79</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dark_turquoise </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#00CED1 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,206,209</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dark_violet </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#9400D3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">148,0,211</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">deep_pink </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FF1493 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,20,147</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">deep_sky_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#00BFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,191,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dim_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#696969 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">105,105,105</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">dim_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#696969 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">105,105,105</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">dodger_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#1E90FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">30,144,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">firebrick </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#B22222 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">178,34,34</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">floral_white </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFAF0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,250,240</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">forest_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#228B22 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">34,139,34</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">fuchsia </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FF00FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,0,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">gainsboro </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#DCDCDC </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">220,220,220</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">ghost_white </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F8F8FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">248,248,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">gold </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFD700 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,215,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">goldenrod </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#DAA520 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">218,165,32</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#7F7F7F</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">127,127,127</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7F7F7F</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">127,127,127</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#007F00</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,127,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">green_yellow </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#ADFF2F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">173,255,47</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#808080 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">128,128,128</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">honeydew </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F0FFF0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">240,255,240</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">hot_pink </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FF69B4 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,105,180</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">indian_red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#CD5C5C </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">205,92,92</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">indigo </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#4B0082 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">75,0,130</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">ivory </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFFF0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,255,240</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">khaki </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#F0E68C </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">240,230,140</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">lavender </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#E6E6FA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">230,230,250</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">lavender_blush </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFF0F5 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,240,245</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">lawn_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7CFC00 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">124,252,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">lemon_chiffon </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFACD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,250,205</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#ADD8E6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">173,216,230</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_coral </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#F08080 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">240,128,128</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_cyan </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#E0FFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">224,255,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_goldenrod</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FAFAD2 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">250,250,210</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#D3D3D3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">211,211,211</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#90EE90 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">144,238,144</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#D3D3D3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">211,211,211</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#D3D3D3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">211,211,211</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_pink </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFB6C1 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,182,193</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_salmon </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFA07A </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,160,122</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_sea_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#20B2AA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">32,178,170</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_sky_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#87CEFA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">135,206,250</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_slate_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#778899 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">119,136,153</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_slate_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#778899 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">119,136,153</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">light_steel_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#B0C4DE </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">176,196,222</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">light_yellow </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFFE0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,255,224</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">lime </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#00FF00 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,255,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">lime_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#32CD32 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">50,205,50</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">linen </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FAF0E6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">250,240,230</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">magenta </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FF00FF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,0,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">maroon </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7F0000</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">127,0,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">medium_aquamarine </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#66CDAA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">102,205,170</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">medium_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#0000CD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,0,205</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">medium_orchid </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#BA55D3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">186,85,211</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">medium_purple </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#9370DB </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">147,112,219</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">medium_sea_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#3CB371 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">60,179,113</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">medium_slate_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7B68EE </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">123,104,238</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">medium_spring_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#00FA9A </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,250,154</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">medium_turquoise </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#48D1CC </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">72,209,204</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">medium_violet_red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#C71585 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">199,21,133</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">midnight_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#191970 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">25,25,112</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">mint_cream </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#F5FFFA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">245,255,250</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">misty_rose </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFE4E1 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,228,225</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">moccasin </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFE4B5 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,228,181</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">navajo_white </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFDEAD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,222,173</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">navy </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#000080 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,0,128</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">old_lace </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FDF5E6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">253,245,230</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">olive </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#808000 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">128,128,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">olive_drab </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#6B8E23 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">107,142,35</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">orange </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFA500 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,165,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">orange_red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FF4500 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,69,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">orchid </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#DA70D6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">218,112,214</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">pale_goldenrod </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#EEE8AA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">238,232,170</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">pale_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#98FB98 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">152,251,152</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">pale_turquoise </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#AFEEEE </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">175,238,238</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">pale_violet_red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#DB7093 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">219,112,147</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">papaya_whip </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFEFD5 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,239,213</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">peach_puff </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFDAB9 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,218,185</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">peru </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#CD853F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">205,133,63</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">pink </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFC0CB </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,192,203</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">plum </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#DDA0DD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">221,160,221</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">powder_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#B0E0E6 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">176,224,230</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">purple </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#7F007F</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">127,0,127</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">red </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FF0000 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,0,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">rosy_brown </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#BC8F8F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">188,143,143</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">royal_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#4169E1 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">65,105,225</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">saddle_brown </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#8B4513 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">139,69,19</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">salmon </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FA8072 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">250,128,114</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">sandy_brown </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F4A460 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">244,164,96</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">sea_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#2E8B57 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">46,139,87</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">seashell </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#FFF5EE </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">255,245,238</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">sienna </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#A0522D </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">160,82,45</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">silver </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#C0C0C0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">192,192,192</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">sky_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#87CEEB </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">135,206,235</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">slate_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#6A5ACD </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">106,90,205</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">slate_gray </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#708090 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">112,128,144</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">slate_grey </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#708090 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">112,128,144</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">snow </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFAFA </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,250,250</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">spring_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#00FF7F </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">0,255,127</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">steel_blue </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#4682B4 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">70,130,180</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">tan </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#D2B48C </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">210,180,140</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">teal </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#008080 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">0,128,128</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">thistle </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#D8BFD8 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">216,191,216</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">tomato </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FF6347 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,99,71</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">turquoise </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#40E0D0 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">64,224,208</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">violet </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#EE82EE </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">238,130,238</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">wheat </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F5DEB3 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">245,222,179</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">white </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFFFF </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,255,255</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">white_smoke </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">#F5F5F5 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">245,245,245</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">yellow </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">#FFFF00 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">255,255,0</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">yellow_green </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellCode">#9ACD32 </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellCode">154,205,50 </p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 15pt;">
+                <p class="TableTitle"><a name="sysvars_272074529_1048182"></a><a name="sysvars_272074529_42368"></a>!COLOR Color Names and Values</p>
+            </caption>
+        </table>
+        <h3 class="Sysvar"><a name="kanchor3077"></a><a name="!DPI"></a>!DPI</h3>
+        <p>A read-only variable containing the double-precision value of pi (π).</p>
+        <h3 class="Sysvar"><a name="kanchor3078"></a><a name="!DTOR"></a>!DTOR</h3>
+        <p>A read-only variable containing the floating-point value used to convert degrees to radians (π/180&#160;<span class="Symbol">@</span>&#160; 0.01745).</p>
+        <h3 class="Sysvar"><a name="kanchor3079"></a><a name="!MAP"></a>!MAP</h3>
+        <p>A variable containing the information needed to effect coordinate conversions between points of latitude and longitude and map coordinates. The values in this structure are established by the MAP_SET procedure; the user should not change them directly.</p>
+        <p>The !MAP structure contains the following fields:</p>
+        <h4 class="SysvarField">A</h4>
+        <p>A double-precision floating point integer specifying the equatorial radius or semimajor axis in meters. (The default is 6370997 m.)</p>
+        <h4 class="SysvarField">COSO</h4>
+        <p>A double-precision floating point integer specifying the cosine of the center latitude in degrees.</p>
+        <h4 class="SysvarField">COSR</h4>
+        <p>A double-precision floating point integer specifying the cosine of the rotation angle.</p>
+        <h4 class="SysvarField">E2</h4>
+        <p>A double-precision floating point integer specifying the eccentricity squared of the ellipsoid.</p>
+        <h4 class="SysvarField">FILL_METHOD</h4>
+        <p>A long-integer variable that indicates the fill order. True (1) fills counterclockwise, False (0) fills starting with the closest polygons. </p>
+        <h4 class="SysvarField">LL_BOX</h4>
+        <p>A four-element, double-precision floating point array that specifies the map range in degrees (latmin, lonmin, latmax, lonmax).</p>
+        <h4 class="SysvarField">P</h4>
+        <p>A 16-element, double-precision floating point array indicating additional projection parameters.</p>
+        <h4 class="SysvarField">P0LAT</h4>
+        <p>A double-precision floating point integer specifying the center latitude in degrees.</p>
+        <h4 class="SysvarField">P0LON</h4>
+        <p>A double-precision floating point integer specifying the center longitude in degrees.</p>
+        <h4 class="SysvarField">PIPELINE</h4>
+        <p>A four by four, double-precision floating point array specifying the graphics clipping and splitting pipeline.</p>
+        <h4 class="SysvarField">POLE</h4>
+        <p>A seven-element, double-precision floating point array that indicates Pole location parameters. Longitude and latitude are given in radians, sine and cosine of polar latitude, and X,Y,Z coordinates.</p>
+        <h4 class="SysvarField">PROJECTION</h4>
+        <p>A long-integer variable indicating the projection number (for GCTP only).</p>
+        <h4 class="SysvarField">ROTATION</h4>
+        <p>A double-precision floating point integer specifying the rotation angle in degrees, clockwise of pole.</p>
+        <h4 class="SysvarField">SEGMENT_LENGTH</h4>
+        <p>A double-precision floating point integer specifying the maximum segment length.</p>
+        <h4 class="SysvarField">SIMPLE</h4>
+        <p>A long-integer variable indicating the projection number. For IDL projections, True (1) indicates the projection is centered on the Equator or no rotation. For GCTP, this number is the GCTP projection number. </p>
+        <h4 class="SysvarField">SINO</h4>
+        <p>A double-precision floating point integer specifying the sine of the center latitude.</p>
+        <h4 class="SysvarField">SINR</h4>
+        <p>A double-precision floating point integer specifying the sine of the rotation angle.</p>
+        <h4 class="SysvarField">U0</h4>
+        <p>A double-precision floating point integer specifying the center longitude in radians.</p>
+        <h4 class="SysvarField">UP_FLAGS</h4>
+        <p>A double-precision floating point integer that sets the user projection flags (currently unused).</p>
+        <h4 class="SysvarField">UP_NAME</h4>
+        <p>A string that specifies the projection name (used only for GCTP).</p>
+        <h4 class="SysvarField">UV</h4>
+        <p>A two-element, double-precision floating point array specifying the U,V coordinates of the last point.</p>
+        <h4 class="SysvarField">UV_BOX</h4>
+        <p>A four-element, double-precision floating point array that contains the map range in meters (xmin, ymin, xmax, ymax).</p>
+        <h4 class="SysvarField">V0</h4>
+        <p>A double-precision floating point integer specifying the center latitude in radians.</p>
+        <h3 class="Sysvar"><a name="!NULL"></a><span class="_Override"><a name="kanchor3080"></a>!NULL</span>
+        </h3>
+        <p><span class="_Override">A variable of type </span><i>Undefined</i><span class="_Override">. The value of !NULL can be:</span>
+        </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="_Override">Assigned to another variable: </span><span class="Courier">var = !NULL</span>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="_Override">Used to test whether a variable exists: </span><span class="Courier">IF var NE !NULL THEN...</span>
+                </td>
+            </tr>
+        </table>
+        <p><span class="_Override">In addition, variables with the value !NULL are ignored when added to an array. That is:</span>
+        </p>
+        <p class="Code"><span class="_Override">array = [1, !NULL, 2, !NULL, 3]</span>
+        </p>
+        <p><span class="_Override">is the same as</span>
+        </p>
+        <p class="Code"><span class="_Override">array = [1, 2, 3]</span>
+        </p>
+        <p><span class="_Override">See <a class="MCXref" href="../Components of the IDL Language/The_Null_Variable.html#constants_818058343_695602" target="" title="" alt="">The Null Variable</a> for additional information.</span>
+        </p>
+        <h3 class="Sysvar"><a name="kanchor3081"></a><a name="!PI"></a>!PI</h3>
+        <p>A read-only variable containing the single-precision value of pi (π).</p>
+        <h3 class="Sysvar"><a name="kanchor3082"></a><a name="!RADEG"></a>!RADEG</h3>
+        <p>A read-only variable containing the floating-point value used to convert radians to degrees (180/π&#160;<span class="Symbol">@</span>&#160;57.2958).</p>
+        <h3 class="Sysvar"><a name="sysvars_272074529_996962"></a><a name="kanchor3083"></a>!VALUES</h3>
+        <p>A read-only variable containing the IEEE single- and double-precision floating-point values <i>Infinity</i> and <i>NaN</i> (Not A Number). !VALUES is a structure variable with the following fields:</p>
+        <p class="Code">** Structure !VALUES, 4 tags, length=24:</p>
+        <p class="Code">&#160;&#160;&#160;F_INFINITY&#160;&#160;&#160;&#160;&#160;&#160;FLOAT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Infinity</p>
+        <p class="Code">&#160;&#160;&#160;F_NAN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FLOAT&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NaN</p>
+        <p class="Code">&#160;&#160;&#160;D_INFINITY&#160;&#160;&#160;&#160;&#160;&#160;DOUBLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Infinity</p>
+        <p class="Code">&#160;&#160;&#160;D_NAN&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DOUBLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NaN</p>
+        <p>where the meaning of the fields as follows:</p>
+        <h4 class="SysvarField">F_INFINITY</h4>
+        <p>The single-precision floating point value <i>Infinity</i>.</p>
+        <h4 class="SysvarField">F_NAN</h4>
+        <p>The single-precision floating point value <i>NaN</i> (Not a Number).</p>
+        <h4 class="SysvarField">D_INFINITY</h4>
+        <p>The double-precision floating point value <i>Infinity</i>.</p>
+        <h4 class="SysvarField">D_NAN</h4>
+        <p>The double-precision floating point value <i>NaN</i> (Not a Number).</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

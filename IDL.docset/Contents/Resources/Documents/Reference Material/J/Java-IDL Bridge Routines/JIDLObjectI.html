@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: J|Java-IDL Bridge Routines" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>JIDLObjectI
+            </title>
+        <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../Resources/TableStyles/Table_No_Title.css" rel="stylesheet" />
+        <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../../idl_CSH.html#Reference Material/J/Java-IDL Bridge Routines/JIDLObjectI.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../JOURNAL.html">Routines: J</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Java IDL Bridge Routines.html">Java-IDL Bridge Routines</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">JIDLObjectI</span>
+        </div>
+        <h1><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI"><a name="JIDL_Import_1464128226_ClassHead"></a></a>JIDLObjectI
+            <a name="kanchor1578"></a></h1>
+        <h2>Declaration</h2>
+        <p class="Code">public interface<span class="Bold"> JIDLObjectI</span></p>
+        <h2>All Known Implementing Classes:</h2>
+        <p><a href="JIDLObject.html">JIDLObject</a>, <a href="JIDLCanvas.html">JIDLCanvas</a></p>
+        <h2>Description</h2>
+        <p class="Body">The interface that wrapped IDL objects must implement. Both non-drawable and drawable IDL objects implement this interface. </p>
+        <p class="Body">In many of the methods of this class, one or more flags are required to be specified for parameters being passed to or from the bridge. These flags follow the following guidelines: </p>
+        <p class="Body">For all types of parameters (subclasses of JIDLNumber, JIDLString, JIDLObject-I and JIDLArray), a flag should be set that determines whether the parameter is in-only (const) or in-out (we expect it to be changed by IDL). The constants that determine this are either JIDLConst.PARMFLAG_CONST or JIDLConst.PARMFLAG_IN_OUT. </p>
+        <p class="Body">For parameters that are arrays, a flag should be set that tells the bridge whether the array is to be convolved when passed to IDL. If the PARM_IN_OUT flag is set, this flag will also tell the bridge whether to convolve the array when it is copied back to Java. The constants that determine this are either JIDLConst.PARMFLAG_CONVMAJORITY or JIDLConst.PARMFLAG_NO_CONVMAJORITY. </p>
+        <p class="Body">For example, if the parameter in question is an array that is to be modified by IDL (in-out) and needs to be convolved when passed to and from IDL, we would set its argpal array member as follows: </p>
+        <p class="Code">&#160;&#160;&#160;argpal[2]&#160;=&#160;JIDLConst.PARMFLAG_IN_OUT&#160;|&#160;JIDLConst.PARMFLAG_CONVMAJORITY;</p>
+        <p class="Body">&#160;</p>
+        <table style="width: 483px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Table_No_Title.css');" class="TableStyle_Table_No_Title" cellspacing="0">
+            <col width="144px" />
+            <col width="339px" />
+            <thead>
+                <tr>
+                    <td colspan="2" class="TableStyle_Table_No_Title_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Member Summary</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2" class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellBody"><span class="Bold">Methods</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">abort()
+                        </p>
+                        <p class="CellBody">Requests that the IDL process containing the underlying IDL object abort its current activity.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode">addIDLNotifyListener(JIDLNotifyListener listener)
+                        </p>
+                        <p class="CellBody">Adds the specified IDL notify listener to receive IDL notification events on this object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">addIDLOutputListener(JIDLOutputListener listener)
+                        </p>
+                        <p class="CellBody">Adds the specified IDL output listener to receive IDL output events on this object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellCode">java.lang.Object</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColEnd">
+                        <p class="CellCode">callFunction(java.lang.String sMethodName, int argc, java.lang.Object argv, int[] argpal, int iPalFlag)
+                        </p>
+                        <p class="CellBody">Call IDL function.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">callProcedure(java.lang.String sMethodName, int argc, java.lang.Object argv, int[] argpal)
+                        </p>
+                        <p class="CellBody">Call IDL procedure.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode">createObject(int argc, java.lang.Object argv, int[] argpal, com.idl.idljava.JIDLProcessInitializer initializer)
+                        </p>
+                        <p class="CellBody">Creates the underlying IDL object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">destroyObject()
+                        </p>
+                        <p class="CellBody">Destroys the underlying IDL object associated with the wrapper.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColEnd">
+                        <p class="CellCode">executeString(java.lang.String sCmd)
+                        </p>
+                        <p class="CellBody">Execute the given command string in IDL.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">long</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">getCookie()
+                        </p>
+                        <p class="CellBody">Internal use.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">java.lang.String</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode">getIDLObjectClassName()
+                        </p>
+                        <p class="CellBody">Retrieves the IDL object class name of the underlying IDL object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">java.lang.String</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">getIDLObjectVariableName()
+                        </p>
+                        <p class="CellBody">When the underlying IDL object was created in the IDL process, it was assigned a variable name.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellCode">java.lang.Object</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColEnd">
+                        <p class="CellCode">getIDLVariable(java.lang.String sVar)
+                        </p>
+                        <p class="CellBody">Given a variable name, return the IDL variable.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">java.lang.String</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">getProcessName()
+                        </p>
+                        <p class="CellBody">Returns the name of the process that contains the underlying IDL object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">java.lang.Object</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode">getProperty(java.lang.String sProperty, int iPalFlag)
+                        </p>
+                        <p class="CellBody">Call IDL get-Property method to get named property.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">initListeners()
+                        </p>
+                        <p class="CellBody">Initialize any listeners.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellCode">boolean</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColEnd">
+                        <p class="CellCode">isObjectCreated()
+                        </p>
+                        <p class="CellBody">Determine if object has been created successfully.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">boolean</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">isObjectDisplayable()
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_ColEnd">
+                        <p class="CellCode">removeIDLNotifyListener(JIDLNotifyListener listener)
+                        </p>
+                        <p class="CellBody">Removes the specified IDL notify listener so it no longer receives IDL notifications.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowSep_ColEnd">
+                        <p class="CellCode">removeIDLOutputListener(JIDLOutputListener listener)
+                        </p>
+                        <p class="CellBody">Removes the specified IDL output listener on this object.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_ColEnd">
+                        <p class="CellCode">setIDLVariable(java.lang.String sVar, java.lang.Object obj)
+                        </p>
+                        <p class="CellBody">Set/Create an IDL variable of the given name and value.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_0_0_RowSep_ColEnd">
+                        <p class="CellCode">setProcessName(java.lang.String process)
+                        </p>
+                        <p class="CellBody">Set the process name that the object will be created in.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowEnd_ColSep">
+                        <p class="CellCode">void</p>
+                    </td>
+                    <td class="TableStyle_Table_No_Title_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellCode">setProperty(java.lang.String sProperty, java.lang.Object obj, int iPalFlag)
+                        </p>
+                        <p class="CellBody">Call IDL set-Property method to set named property.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Methods</h2>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_abort__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>abort()
+        </h3>
+        <p class="Code">public void <span class="Bold">abort</span>()</p>
+        <p class="Body">Requests that the IDL process containing the underlying IDL object abort its current activity. </p>
+        <p class="Body">This is only a request and IDL may take a long time before it actually stops. </p>
+        <p class="Body">The client can only Abort the current IDL activity if that wrapper object is the current “owner” of the underlying IDL.</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h4>See Also:</h4>
+        <p class="Body">JIDLAbortedException
+        </p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_addIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_"></a>addIDLNotifyListener(JIDLNotifyListener)
+        </h3>
+        <p class="Code">public void <span class="Bold">addIDLNotifyListener</span>(com.idl.javaidl.JIDLNotifyListener listener)</p>
+        <p class="Body">Adds the specified IDL notify listener to receive IDL notification events on this object. </p>
+        <p class="Body">Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">listener</span> - the listener</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_addIDLOutputListener_com_idl_javaidl_JIDLOutputListener_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>addIDLOutputListener(JIDLOutputListener)
+        </h3>
+        <p class="Code">public void <span class="Bold">addIDLOutputListener</span>(com.idl.javaidl.JIDLOutputListener listener)</p>
+        <p class="Body">Adds the specified IDL output listener to receive IDL output events on this object. </p>
+        <p class="Body">Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">listener</span> - the listener</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_callFunction_java_lang_String__int__java_lang_Object______int______int_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>callFunction(String, int, Object[], int[], int)
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.Object</span> <![CDATA[ ]]><span class="Bold">callFunction</span>(<span class="Courier">java.lang.String</span> sMethodName, int&#160;argc, <span class="Courier">java.lang.Object[]</span>&#160;argv, int[]&#160;argpal, int&#160;iPalFlag)</p>
+        <p class="Body">Call IDL function. </p>
+        <p class="Body">The argpal parameter is an array of flags created by OR-ing constants from class JIDLConst. Each array element corresponds to the equivalent parameter in argv.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sMethodName</span> - the procedure name</p>
+        <p class="Body"><span class="Courier">argc</span> - the number of parameters</p>
+        <p class="Body"><span class="Courier">argv</span> - array of Objects to be passed to IDL. This array should be of length <span class="Courier">argc</span> and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.</p>
+        <p class="Body"><span class="Courier">argpal</span> - array of flags denoting whether each argv parameter passed to be bridge is 1) in-out vs constant; or 2) a convolved or non-convolved array This array should be of length <span class="Courier">argc</span>.</p>
+        <p class="Body"><span class="Courier">iPalFlag</span> - a flag determining whether a returned array if convolved or not. If the returned value is not an array, this value is zero.</p>
+        <h4>Returns:</h4>
+        <p class="Body">an Object of type JIDLNumber, JIDLString, JIDLObject-I or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type.</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h4>See Also:</h4>
+        <p class="Body">JIDLNumber, JIDLObject, JIDLString, JIDLArray, JIDLConst.PARMFLAG_CONST, JIDLConst.PARMFLAG_IN_OUT, JIDLConst.PARMFLAG_CONVMAJORITY, JIDLConst.PARMFLAG_NO_CONVMAJORITY</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_callProcedure_java_lang_String__int__java_lang_Object______int_____"><a name="JIDL_Import_1464128226_MemberHead"></a></a>callProcedure(String, int, Object[], int[])
+        </h3>
+        <p class="Code">public void <span class="Bold">callProcedure</span>(<span class="Courier">java.lang.String</span> sMethodName, int&#160;argc, <span class="Courier">java.lang.Object[]</span>&#160;argv, int[]&#160;argpal)</p>
+        <p class="Body">Call IDL procedure. </p>
+        <p class="Body">The argpal parameter is an array of flags created by OR-ing constants from class JIDLConst. Each array element corresponds to the equivalent parameter in argv.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sMethodName</span> - the procedure name</p>
+        <p class="Body"><span class="Courier">argc</span> - the number of parameters</p>
+        <p class="Body"><span class="Courier">argv</span> - array of Objects to be passed to IDL. This array should be of length <span class="Courier">argc</span> and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.</p>
+        <p class="Body"><span class="Courier">argpal</span> - array of flags denoting whether each argv parameter passed to be bridge is 1) in-out vs constant; or 2) a convolved or non-convolved array This array should be of length <span class="Courier">argc</span>.</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h4>See Also:</h4>
+        <p class="Body">JIDLNumber, JIDLObject, JIDLString,JIDLArray, JIDLConst.PARMFLAG_CONST, JIDLConst.PARMFLAG_IN_OUT, JIDLConst.PARMFLAG_CONVMAJORITY, JIDLConst.PARMFLAG_NO_CONVMAJORITY</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_createObject_int__java_lang_Object______int_____"><a name="JIDL_Import_1464128226_MemberHead"></a></a>createObject(int, Object[], int[], JIDLProcessInitializer)
+        </h3>
+        <p class="Code">public void <span class="Bold">createObject</span>(int argc, <span class="Courier">java.lang.Object[]</span>&#160;argv, int[]&#160;argpal, com.idl.javaidl.JIDLProcessInitializer initializer)</p>
+        <p class="Body">Creates the underlying IDL object. The argc, argv, argpal parameters are used to supply parameters to the underlying IDL object’s ::Init method. If the ::Init method does not have any parameters, the caller sets argc, argv, and argpal to 0, null, and null, respectively. create-Object does the following: </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Calls ::Init method in the IDL object </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Calls the superclass init-Listeners method to initialize any event handlers. The init-Listeners method has default behavior, which is different for graphical and non-graphical objects. If the default behavior is not desired, a sub-class to modify the listener initialization may override the init-Listeners method.</td>
+            </tr>
+        </table>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">argc</span> - the number of parameters to be passed to INIT</p>
+        <p class="Body"><span class="Courier">argv</span> - array of Objects to be passed to IDL. This array should be of length argc and should contain objects of type JIDLNumber, JIDLObject, JIDLString or JIDLArray.</p>
+        <p class="Body"><span class="Courier">argpal</span> - array of flags denoting whether each argv parameter that is of type array should be convolved or not. For parameters that are not arrays, the value within the array will always be 0.</p>
+        <p class="Body"><span class="Courier">initializer</span> - a JIDLProcessInitializer object that specifies IDL process initialization parameters such as the licensing mode to be used.</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_destroyObject__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>destroyObject()
+        </h3>
+        <p class="Code">public void <span class="Bold">destroyObject</span>()</p>
+        <p class="Body">Destroys the underlying IDL object associated with the wrapper. </p>
+        <p class="Body">If the object being destroyed is the last object within an OPS process, the OPS process is also destroyed. </p>
+        <p class="Body">Note that this does not destroy the actual wrapper object. Because the wrapper object is a Java object, it follows all the Java reference counting/garbage collection schemes. Once all references to the wrapper object are released from Java code and once the Java Virtual Machine calls the garbage collector, the wrapper object may be deleted from memory.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_executeString_java_lang_String_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>executeString(String)
+        </h3>
+        <p class="Code">public void <span class="Bold">executeString</span>(<span class="Courier">java.lang.String</span> sCmd)</p>
+        <p class="Body">Execute the given command string in IDL.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sCmd</span> - the single-line command to execute in IDL.</p>
+        <h4>Throws:</h4>
+        <p class="Body">JIDLException - If IDL encounters an error.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getCookie__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getCookie()
+        </h3>
+        <p class="Code">public long <span class="Bold">getCookie</span>()</p>
+        <p class="Body">Internal use.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLObjectClassName__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getIDLObjectClassName()
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.String</span> <![CDATA[ ]]><span class="Bold">getIDLObjectClassName</span>()</p>
+        <p class="Body">Retrieves the IDL object class name of the underlying IDL object.</p>
+        <h4>Returns:</h4>
+        <p class="Body">the IDL object class name</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLObjectVariableName__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getIDLObjectVariableName()
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.String</span> <![CDATA[ ]]><span class="Bold">getIDLObjectVariableName</span>()</p>
+        <p class="Body">When the underlying IDL object was created in the IDL process, it was assigned a variable name. This method retrieves that name.</p>
+        <h4>Returns:</h4>
+        <p class="Body">the variable name</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getIDLVariable_java_lang_String_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getIDLVariable(String)
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.Object</span> <![CDATA[ ]]><span class="Bold">getIDLVariable</span>(<span class="Courier">java.lang.String</span> sVar)</p>
+        <p class="Body">Given a variable name, return the IDL variable. </p>
+        <p class="Body">Note that in the case of arrays, the array will ALWAYS be convolved when passed between Java and IDL.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sVar</span> - The IDL variable name</p>
+        <h4>Returns:</h4>
+        <p class="Body">an Object of type JIDLNumber, JIDLString, JIDLObject or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type. May also return null.</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getProcessName__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getProcessName()
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.String</span> <![CDATA[ ]]><span class="Bold">getProcessName</span>()</p>
+        <p class="Body">Returns the name of the process that contains the underlying IDL object. For an in-process object, returns an empty string.</p>
+        <h4>Returns:</h4>
+        <p class="Body">process name. EMpty string if the process is in-process.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_getProperty_java_lang_String__int_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>getProperty(String, int)
+        </h3>
+        <p class="Code">public <span class="Courier">java.lang.Object</span> <![CDATA[ ]]><span class="Bold">getProperty</span>(<span class="Courier">java.lang.String</span> sProperty, int&#160;iPalFlag)</p>
+        <p class="Body">Call IDL get-Property method to get named property.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sProperty</span> - the property name</p>
+        <p class="Body"><span class="Courier">iPalFlag</span> - a flag determining whether a returned array will be convolved or not. If the returned value is not is ignored.</p>
+        <h4>Returns:</h4>
+        <p class="Body">an Object of type JIDLNumber, JIDLString, JIDLObject or JIDLArray. The caller must know the type of the Object being returned and cast it to its proper type. May also return null.</p>
+        <h4>Throws:</h4>
+        <p class="Body">JIDLException - If IDL encounters an error.</p>
+        <h4>See Also:</h4>
+        <p class="Body">JIDLNumber, JIDLObjectI, JIDLString, JIDLArray, JIDLConst.PARMFLAG_CONVMAJORITY, JIDLConst.PARMFLAG_NO_CONVMAJORITY</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_initListeners__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>initListeners()
+        </h3>
+        <p class="Code">public void <span class="Bold">initListeners</span>()</p>
+        <p class="Body">Initialize any listeners. </p>
+        <p class="Body">This method is always called by the JIDLObject and JIDLCanvas create-Object methods. </p>
+        <p class="Body">The method may be overridden by sub-classes to initialize a different set of listeners (or none at all).</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_isObjectCreated__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>isObjectCreated()
+        </h3>
+        <p class="Code">public boolean <span class="Bold">isObjectCreated</span>()</p>
+        <p class="Body">Determine if object has been created successfully.</p>
+        <h4>Returns:</h4>
+        <p class="Body"><span class="Courier">true</span> if object created successfully, or <span class="Courier">false</span> if object not created or creation was unsuccessful.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_isObjectDisplayable__"><a name="JIDL_Import_1464128226_MemberHead"></a></a>isObjectDisplayable()
+        </h3>
+        <p class="Code">public boolean <span class="Bold">isObjectDisplayable</span>()</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_removeIDLNotifyListener_com_idl_javaidl_JIDLNotifyListener_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>removeIDLNotifyListener(JIDLNotifyListener)
+        </h3>
+        <p class="Code">public void com.idl.javaidl.JIDLNotifyListener listener)</p>
+        <p class="Body">Removes the specified IDL notify listener so it no longer receives IDL notifications. </p>
+        <p class="Body">Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">listener</span> - the listener</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_removeIDLOutputListener_com_idl_javaidl_JIDLOutputListener_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>removeIDLOutputListener(JIDLOutputListener)
+        </h3>
+        <p class="Code">public void <span class="Bold">removeIDLOutputListener</span>(<span class="Link"><a href="JIDLOutputListener.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLOutputListener">com.idl.javaidl.JIDLOutputListener</a></span> listener)</p>
+        <p class="Body">Removes the specified IDL output listener on this object. </p>
+        <p class="Body">Note that registering/unregistering for events should happen in the init-Listeners method or AFTER the create-Object method.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">listener</span> - the listener</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setIDLVariable_java_lang_String__java_lang_Object_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>setIDLVariable(String, Object)
+        </h3>
+        <p class="Code">public void <span class="Bold">setIDLVariable</span>(<span class="Courier">java.lang.String</span> sVar, <span class="Courier">java.lang.Object</span>&#160;obj)</p>
+        <p class="Body">Set/Create an IDL variable of the given name and value. </p>
+        <p class="Body">Note that in the case of arrays, the array will ALWAYS be convolved when passed between Java and IDL.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sVar</span> - the IDL variable name</p>
+        <p class="Body"><span class="Courier">obj</span> - object to be passed to IDL. Should be an object of type JIDLNumber, JIDLObject, JIDLString or JIDLArray.</p>
+        <h4>Throws:</h4>
+        <p class="Body">JIDLException - If IDL encounters an error.</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setProcessName_java_lang_String_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>setProcessName(String)
+        </h3>
+        <p class="Code">public void <span class="Bold">setProcessName</span>(<span class="Courier">java.lang.String</span> process)</p>
+        <p class="Body">Set the process name that the object will be created in. </p>
+        <p class="Body">The process name may only be set before create-Object is called. If called after the object has been created, this method call does nothing.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">process</span> - Process name. Empty String means create in same process (in-process).</p>
+        <h3><a name="JIDL_Import_1464128226_com_idl_javaidl_JIDLObjectI_setProperty_java_lang_String__java_lang_Object__int_"><a name="JIDL_Import_1464128226_MemberHead"></a></a>setProperty(String, Object, int)
+        </h3>
+        <p class="Code">public void <span class="Bold">setProperty</span>(<span class="Courier">java.lang.String</span> sProperty, <span class="Courier">java.lang.Object</span>&#160;obj, int&#160;iPalFlag)</p>
+        <p class="Body">Call IDL set-Property method to set named property. </p>
+        <p class="Body">The i-Pal-Flag parameter is a set of flags that are or-ed together. Currently this parameter is only used to specify whether a JIDLArray being passed in to IDL is convolved or not. For arrays argpal should be set to either JIDLConst.PARMFLAG_CONVMAJORITY or JIDLConst.PARMFLAG_NO_CONVMAJORITY.</p>
+        <h4>Parameters:</h4>
+        <p class="Body"><span class="Courier">sProperty</span> - the property name</p>
+        <p class="Body"><span class="Courier">obj</span> - object to be passed to IDL. Should be an object of type JIDLNumber, JIDLObject, JIDLString or JIDLObject.</p>
+        <p class="Body"><span class="Courier">iPalFlag</span> - flag denoting whether the passed in parameter is convolved or not. <br /> Note: set-Property does not allow obj to be modified by IDL</p>
+        <h4>Throws:</h4>
+        <p class="Body"><a href="JIDLException.html">JIDLException</a> - If IDL encounters an error.</p>
+        <h4>See Also:</h4>
+        <p class="Body"><a href="JIDLNumber.html">JIDLNumber</a>, <a href="JIDLObject.html">JIDLObject</a>, <a href="JIDLString.html">JIDLString</a>, <a href="JIDLArray.html">JIDLArray</a>, <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_CONVMAJORITY">JIDLConst.PARMFLAG_CONVMAJORITY</a>, <a href="JIDLConst.html#JIDL_Import_1464128226_com_idl_javaidl_JIDLConst_PARMFLAG_NO_CONVMAJORITY">JIDLConst.PARMFLAG_NO_CONVMAJORITY</a></p>
+        <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

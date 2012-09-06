@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Additional Topics|Medical Imaging in IDL|Using IDL DICOM Network Services|Managing the Storage SCP Service" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Starting and Stopping the Service Outside the Utility</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#DICOM_Medical/Using IDL DICOM Network Services/StartingStoppingServiceOutsideUtility.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../OtherTopics.html">Additional Topics</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Expanded DICOM Support in IDL/ExpandedDICOMFunctionality.html">Medical Imaging in IDL</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Overview.html">Using IDL DICOM Network Services</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="ManagingStorageSCPService.html">Managing the Storage SCP Service</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Starting and Stopping the Service Outside the Utility</span>
+        </div>
+        <h2>Starting and Stopping the Service Outside the Utility</h2>
+        <p>On Windows, use the Windows Services Administrative tool to start or stop the IDL DicomEx Storage SCP service. To access the Service dialog, select <b>Start &gt; Control Panel &gt; Administrative Tools</b>, and double-click <span class="Bold">Services</span> in the Administrative Tools list.</p>
+        <p class="Body">On UNIX and Mac OS X, start the service from the command prompt by using the startup script installed in the <span class="Courier">bin/bin.</span><span class="Courier-Italic">platform</span> directory of the IDL installation directory where <span class="Courier-Italic">platform</span> is the platform-specific <span class="Courier">bin</span> directory. To stop the service, use the <span class="Courier">kill</span> command with the process id of the service (idl_dicom). Use one of the following to return the process id:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">ps -aef | grep idl_dicom </span>on Linux</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">ps -axu | grep idl_dicom</span> on Macintosh OS X</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><span class="Courier">ps -aef | grep idl_dicom</span> on Solaris</td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

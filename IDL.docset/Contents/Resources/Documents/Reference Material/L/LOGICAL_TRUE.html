@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: L" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>LOGICAL_TRUE</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/L/LOGICAL_TRUE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="L64INDGEN.html">Routines: L</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">LOGICAL_TRUE</span>
+        </div>
+        <h1 class="Routine"><a name="L_826528365_983139"></a><a name="L_826528365_52105"></a>LOGICAL_TRUE</h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#L_826528365_999355">Syntax</a> | <a class="MCXref" href="#L_826528365_999358">Return Value</a> | <a class="MCXref" href="#L_826528365_999361">Arguments</a> | <a class="MCXref" href="#L_826528365_999365">Keywords</a> | <a class="MCXref" href="#L_826528365_999369">Example</a> | <a class="MCXref" href="#L_826528365_999375">Version History</a> | <a class="MCXref" href="#L_826528365_999378">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor1707"></a>LOGICAL_TRUE function returns <a name="kanchor1708"></a>True (1) if its arguments are non-zero (non-NULL for strings and heap variables), and False (0) otherwise.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>For a given argument, the value returned by LOGICAL_TRUE is the opposite of the value returned by the ~ operator.</p>
+        <h2><a name="L_826528365_999355"></a><a name="L_826528365_43653"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = LOGICAL_TRUE(<i>Arg</i>)</p>
+        <h2><a name="L_826528365_999358"></a><a name="L_826528365_23245"></a>Return Value</h2>
+        <p>Integer zero (false) or one (true) if the argument is a scalar, or an array of zeroes and ones if the argument is an array.</p>
+        <h2><a name="L_826528365_999361"></a><a name="L_826528365_47566"></a>Arguments</h2>
+        <h3 class="Argument">Arg</h3>
+        <p>The expression on which the logical truth evaluation is to be carried out. The argument can be a scalar or an array of any type other than structure.</p>
+        <h2><a name="L_826528365_999365"></a><a name="L_826528365_14382"></a>Keywords</h2>
+        <h3>Thread Pool Keywords</h3>
+        <p>This routine is written to make use of IDL’s <i>thread pool</i>, which can increase execution speed on systems with multiple CPUs. The values stored in the !CPU system variable control whether IDL uses the thread pool for a given computation. In addition, you can use the thread pool keywords TPOOL_MAX_ELTS, TPOOL_MIN_ELTS, and TPOOL_NOTHREAD to override the defaults established by !CPU for a single invocation of this routine. See Appendix D, “Thread Pool Keywords” for details.</p>
+        <h2><a name="L_826528365_999369"></a><a name="L_826528365_71682"></a>Example</h2>
+        <p>At the IDL Command Line, enter:</p>
+        <p class="IDLCode">PRINT, LOGICAL_TRUE(2), LOGICAL_TRUE(0)</p>
+        <p>IDL Prints:</p>
+        <p class="Code">1   0</p>
+        <h2><a name="L_826528365_999375"></a><a name="L_826528365_92105"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">6.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="L_826528365_999378"></a><a name="L_826528365_70990"></a>See Also</h2>
+        <p><a class="MCXref" href="../K/KEYWORD_SET.html#K_837341805_938653">KEYWORD_SET </a>, <a class="MCXref" href="LOGICAL_AND.html#L_826528365_983100">LOGICAL_AND</a>, <a class="MCXref" href="LOGICAL_OR.html#L_826528365_983101">LOGICAL_OR</a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

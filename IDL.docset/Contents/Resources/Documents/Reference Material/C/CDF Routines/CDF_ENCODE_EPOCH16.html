@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: C|CDF Routines" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>CDF_ENCODE_EPOCH16</title>
+        <link href="../../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../../idl_CSH.html#Reference Material/C/CDF Routines/CDF_ENCODE_EPOCH16.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../CURSOR.html">Routines: C</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../CDF_Routines.html">CDF Routines</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">CDF_ENCODE_EPOCH16</span>
+        </div>
+        <h1 class="Routine"><a name="CDF_1744428779_1007169"></a><a name="CDF_1744428779_51736"></a>CDF_ENCODE_EPOCH16</h1>
+        <p>The <a name="kanchor229"></a>CDF_ENCODE_EPOCH16 function encodes a CDF_EPOCH16 value into the standard date and time character string.</p>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071276_PageTOC_CDF_ENCODE_EPOCH16_"></a>Syntax</h2>
+        <p class="Syntax">Result = CDF_ENCODE_EPOCH16(<span class="Italic">Epoch16</span> [,&#160;<a class="MCXref" href="#CDF_1744428779_1007217">EPOCH</a>={0&#160;|&#160;1&#160;|&#160;2&#160;|&#160;3}] )</p>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071278_PageTOC_CDF_ENCODE_EPOCH16_"></a>Return Value</h2>
+        <p>Returns the string representation of the given CDF_EPOCH16 value. </p>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071280_PageTOC_CDF_ENCODE_EPOCH16_"></a>Arguments</h2>
+        <h3 class="Argument">Epoch16</h3>
+        <p>The double-precision CDF_EPOCH16 value to be encoded. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>The CDF_EPOCH16 value can be obtained by calling <a class="MCXref" href="CDF_EPOCH16.html#CDF_1744428779_1007399">CDF_EPOCH16</a> with the COMPUTE keyword, or by calling <a class="MCXref" href="CDF_PARSE_EPOCH16.html#CDF_1744428779_1008112">CDF_PARSE_EPOCH16</a>.</p>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071290_PageTOC_CDF_ENCODE_EPOCH16_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="CDF_1744428779_1007217"></a><a name="CDF_1744428779_1071291_Keywords_CDF_ENCODE_EPOCH16_"></a>EPOCH</h3>
+        <p>Set this keyword equal to one of the following integer values, specifying the epoch mode to use for output of the epoch date string:</p>
+        <table style="width: 498px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="64px" />
+            <col width="434px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Value</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Date Format</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">0</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody"><span class="Courier">DD-Mon-YYYY hh:mm:ss.ccc.uuu.nnn.ppp</span>
+                            <br />(This is the default)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">1</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">YYYYMMDD.ttttttttttttttt</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">2</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">YYYYMMDDss</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">3</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Courier">YYYY-MM-DDThh:mm:ss.ccc.uuu.nnn.pppZ</span>
+                            <br />(The characters <span class="Courier">T</span> and <span class="Courier">Z</span> are the CDF_EPOCH16 type 3 place holders)</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>where:</p>
+        <table style="width: 500px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="133px" />
+            <col width="367px" />
+            <thead>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Date Element</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Head_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Represents</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">DD</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the day of the month (1-31)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">Mon</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">the abbreviated month name: (<span class="Courier">Jan</span>, <span class="Courier">Feb</span>, <span class="Courier">Mar</span>, <span class="Courier">Apr</span>, <span class="Courier">May</span>, <span class="Courier">Jun</span>, <span class="Courier">Jul</span>, <span class="Courier">Aug</span>, <span class="Courier">Sep</span>, <span class="Courier">Oct</span>, <span class="Courier">Nov</span>, or <span class="Courier">Dec</span>)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">MM</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the month number (1-12)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">YYYY</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">the year (A.D.)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">hh</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the hour (0-23)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">mm</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">the minute (0-59)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">ss</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the second (0-59)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">ccc</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">the millisecond (0-999)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">uuu</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the microsecond (0-999)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">nnn</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">the nanosecond (0-999)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">ppp</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">the picosecond (0-999)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Courier;font-size: 10pt;letter-spacing: 0em;"><span class="Courier">ttttttttttttttt</span>
+                        </p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">the fraction of the day (<span class="Italic">e.g.</span> 500000000000000 is noon).</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071368_PageTOC_CDF_ENCODE_EPOCH16_"></a>Examples</h2>
+        <p class="Code">test_string = '04-Dec-2005 20:19:18.176.214.648.000' </p>
+        <p class="Code">test_epoch = CDF_PARSE_EPOCH16(test_string) </p>
+        <p class="Code">PRINT, CDF_ENCODE_EPOCH16(test_epoch)</p>
+        <p>IDL Output </p>
+        <p class="Code">04-Dec-2005 20:19:18.176.214.648.000</p>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071374_PageTOC_CDF_ENCODE_EPOCH16_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">6.3</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="NoTOC"><a name="CDF_1744428779_1071381_PageTOC_CDF_ENCODE_EPOCH16_"></a>See Also</h2>
+        <p><a class="MCXref" href="CDF_EPOCH16.html#CDF_1744428779_1007399">CDF_EPOCH16</a>, <a class="MCXref" href="CDF_PARSE_EPOCH16.html#CDF_1744428779_1008112">CDF_PARSE_EPOCH16</a></p>
+        <script type="text/javascript" src="../../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

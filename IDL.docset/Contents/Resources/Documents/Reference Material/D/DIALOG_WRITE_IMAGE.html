@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: D" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>DIALOG_WRITE_IMAGE </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Figure_Format.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/D/DIALOG_WRITE_IMAGE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="DBLARR.html">Routines: D</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">DIALOG_WRITE_IMAGE</span>
+        </div>
+        <h1 class="Routine"><a name="D_843829869_985266"></a><a name="D_843829869_29283"></a>DIALOG_WRITE_IMAGE </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#D_843829869_986248">Syntax</a> | <a class="MCXref" href="#D_843829869_986250">Return Value</a> | <a class="MCXref" href="#D_843829869_986252">Arguments</a> | <a class="MCXref" href="#D_843829869_986257">Keywords</a> | <a class="MCXref" href="#D_843829869_1060460">Examples</a> | <a class="MCXref" href="#D_843829869_990298">Version History</a> | <a class="MCXref" href="#D_843829869_997349">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor677"></a>DIALOG_WRITE_IMAGE function is a graphical user interface allowing you to save an IDL array variable as an image file, selecting a location and image file type. The interface is created as a modal dialog with an optional parent widget.</p>
+        <h2><a name="D_843829869_986248"></a><a name="D_843829869_986248_PageTOC_DIALOG_WRITE_IMAGE_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> =<span class="_Override" style="font-weight: bold;"></span>DIALOG_WRITE_IMAGE ( <i>Image [</i>, <i>R</i>, <i>G</i>, <i>B] </i>[,&#160;<a class="MCXref" href="#D_843829869_986258">DIALOG_PARENT</a>=<span class="_Override" style="font-style: italic;">widget_id</span>] [,&#160;<a class="MCXref" href="#D_843829869_986260">FILENAME</a>=<span class="_Override" style="font-style: italic;">string</span>] [,&#160;/<a class="MCXref" href="#D_843829869_986262">FIX_TYPE</a>] [,&#160;/<a class="MCXref" href="#D_843829869_986264">NOWRITE</a>] [,&#160;<a class="MCXref" href="#D_843829869_986266">OPTIONS</a>=<span class="_Override" style="font-style: italic;">variable</span>] [,&#160;<a class="MCXref" href="#D_843829869_986268">PATH</a>=<span class="_Override" style="font-style: italic;">string</span>] [&#160;,<a class="MCXref" href="#D_843829869_986270">TITLE</a>=<span class="_Override" style="font-style: italic;">string</span>] [,&#160;<a class="MCXref" href="#D_843829869_986272">TYPE</a>=<span class="_Override" style="font-style: italic;">variable</span>] [,&#160;/<a class="MCXref" href="#D_843829869_990326">WARN_EXIST</a>] )</p>
+        <h2><a name="D_843829869_986250"></a><a name="D_843829869_986250_PageTOC_DIALOG_WRITE_IMAGE_"></a>Return Value</h2>
+        <p>This routine returns 1 if the “Save” button was clicked, and 0 if the “Cancel” button was clicked.</p>
+        <h2><a name="D_843829869_986252"></a><a name="D_843829869_986252_PageTOC_DIALOG_WRITE_IMAGE_"></a>Arguments</h2>
+        <h3 class="Argument">Image</h3>
+        <p>The array to be written to the image file.</p>
+        <h3 class="Argument">R, G, B</h3>
+        <p>These are optional arguments defining the Red, Green, and Blue color tables to be associated with the image array.</p>
+        <h2><a name="D_843829869_986257"></a><a name="D_843829869_986257_PageTOC_DIALOG_WRITE_IMAGE_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="D_843829869_986258"></a><a name="D_843829869_986258_Keywords_DIALOG_WRITE_IMAGE__"></a>DIALOG_PARENT</h3>
+        <p>The widget ID of a widget that calls DIALOG_WRITE_IMAGE. When this ID is specified, a death of the caller results in the death of the DIALOG_WRITE_IMAGE dialog. If DIALOG_PARENT is not specified, then the interface is created as a modal, top-level widget.</p>
+        <h3 class="Keyword"><a name="D_843829869_986260"></a><a name="D_843829869_986260_Keywords_DIALOG_WRITE_IMAGE__"></a>FILENAME</h3>
+        <p>Set this keyword to a scalar string that contains the name of the initial file selection. This keyword is useful for specifying a default filename.</p>
+        <h3 class="Keyword"><a name="D_843829869_986262"></a><a name="D_843829869_986262_Keywords_DIALOG_WRITE_IMAGE__"></a>FIX_TYPE</h3>
+        <p>When this keyword is set, only files that satisfy the type can be selected. The user has no ability to modify the type.</p>
+        <h3 class="Keyword"><a name="D_843829869_986264"></a><a name="D_843829869_986264_Keywords_DIALOG_WRITE_IMAGE__"></a>NOWRITE</h3>
+        <p>Set this keyword to prevent the dialog from writing the file when “Save” is clicked. No data conversions will take place when the save type is chosen.</p>
+        <h3 class="Keyword"><a name="D_843829869_986266"></a><a name="D_843829869_986266_Keywords_DIALOG_WRITE_IMAGE__"></a>OPTIONS</h3>
+        <p>Set this keyword to a named variable to contain a structure of the chosen options by the user, including the filename and image type chosen.</p>
+        <h3 class="Keyword"><a name="D_843829869_986268"></a><a name="D_843829869_986268_Keywords_DIALOG_WRITE_IMAGE__"></a>PATH</h3>
+        <p>Set this keyword to a string that contains the initial path from which to select files. If this keyword is not set, the current working directory is used.</p>
+        <h3 class="Keyword"><a name="D_843829869_986270"></a><a name="D_843829869_986270_Keywords_DIALOG_WRITE_IMAGE__"></a>TITLE</h3>
+        <p>Set this keyword to a scalar string to be used for the dialog title. If it is not specified, the default title is “Save Image File”.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>You can use language catalogs to internationalize this value with strings in particular languages.</p>
+        <h3 class="Keyword"><a name="D_843829869_986272"></a><a name="D_843829869_986272_Keywords_DIALOG_WRITE_IMAGE__"></a>TYPE</h3>
+        <p>Set this keyword to a scalar string containing the format type the “Save as type” field should begin with. The default is “TIFF”. The user can modify the type unless the FIX_TYPE keyword is set. Valid values are obtained from the list of supported image types returned from QUERY_IMAGE. The “Save as type” field will reflect the type of the selected file (if one is selected).</p>
+        <h3 class="Keyword"><a name="D_843829869_990326"></a><a name="D_843829869_990326_Keywords_DIALOG_WRITE_IMAGE__"></a>WARN_EXIST</h3>
+        <p>Set this keyword to produce a question dialog if the user selects a file that already exists. The default is to quietly overwrite the file.</p>
+        <h2><a name="D_843829869_1060460"></a><a name="D_843829869_92036"></a>Examples</h2>
+        <p>The following statements create and write a simple image to a .<span class="Courier">tif</span> file name <span class="Courier">myimage.tif</span>:</p>
+        <p class="IDLCode">myimage = DIST(100)<br />result = DIALOG_WRITE_IMAGE(myimage, FILENAME='myimage.tif') <br /></p>
+        <h3>Using the Save Image File Dialog</h3>
+        <p>When you issue the previous statements, the <span class="Bold">Save Image File</span> dialog opens. </p>
+        <table style="width: 517px;caption-side: bottom;mc-table-style: url('../../Resources/TableStyles/Figure_Format.css');" class="TableStyle_Figure_Format" cellspacing="0">
+            <col width="517px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Figure_Format_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">&#160;</p>
+                        <p style="text-align: center;">
+                            <img src="../../images/dialogwriteimg.gif" style="margin-left: 5.99976px;margin-top: 5.99976px;margin-right: 0.9907036px;margin-bottom: 3.3941px;" />
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+            <caption valign="bottom" style="padding-bottom: 12pt;">
+                <p class="FigureTitle">Same Image File Dialog</p>
+            </caption>
+        </table>
+        <p>Use the following fields to configure how the image is saved. </p>
+        <table style="width: 440px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');" class="TableStyle_Keyword_Table" cellspacing="0">
+            <col width="120px" />
+            <col width="320px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Drive</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Select the directory in which to save the image file</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">File name</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Enter the file name</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Save as</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Select the image file format</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">Save</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Save the image file</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">Cancel</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Cancels the save function</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody">Options</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody">Brings up a dialog box of image format save options, which varies depending on image format</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="D_843829869_990298"></a><a name="D_843829869_990298_PageTOC_DIALOG_WRITE_IMAGE_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.3</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="D_843829869_997349"></a><a name="D_843829869_997349_PageTOC_DIALOG_WRITE_IMAGE_"></a>See Also</h2>
+        <p><a class="MCXref" href="DIALOG_READ_IMAGE.html#D_843829869_877160">DIALOG_READ_IMAGE </a>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

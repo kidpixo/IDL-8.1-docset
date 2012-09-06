@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: R" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>R_TEST </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/R/R_TEST.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="R_CORRELATE.html">Routines: R</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">R_TEST</span>
+        </div>
+        <h1 class="Routine"><a name="R_822202989_54044"></a><a name="R_822202989_56098"></a>R_TEST </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#R_822202989_54053">Syntax</a> | <a class="MCXref" href="#R_822202989_1103297">Return Value</a> | <a class="MCXref" href="#R_822202989_54055">Arguments</a> | <a class="MCXref" href="#R_822202989_54058">Keywords</a> | <a class="MCXref" href="#R_822202989_54068">Examples</a> | <a class="MCXref" href="#R_822202989_54083">Version History</a> | <a class="MCXref" href="#R_822202989_1092882">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor2162"></a>R_TEST <a name="kanchor2163"></a>function <a name="kanchor2164"></a>tests the <a name="kanchor2165"></a>hypothesis that a binary population (a sequence of 1s and 0s) represents a “random sampling”. </p>
+        <p>This routine is written in the IDL language. Its source code can be found in the file <span class="Courier">r_test.pro</span> in the <span class="Courier">lib</span> subdirectory of the IDL distribution.</p>
+        <h2><a name="R_822202989_54053"></a><a name="R_822202989_54053_PageTOC_R_TEST_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = R_TEST( <i>X</i> [,&#160;<a class="MCXref" href="#R_822202989_54060">N0</a>=<i>variable</i>] [,&#160;<a class="MCXref" href="#R_822202989_54063">N1</a>=<i>variable</i>] [,&#160;<a class="MCXref" href="#R_822202989_54066">R</a>=<i>variable</i>] )</p>
+        <h2><a name="R_822202989_1103297"></a><a name="R_822202989_95256"></a>Return Value</h2>
+        <p>The result is a two-element vector containing the nearly-normal test statistic Z and its associated probability. This two-tailed test is based on the “theory of runs” and is often referred to as the “<a name="kanchor2166"></a>Runs Test for Randomness.”</p>
+        <h2><a name="R_822202989_54055"></a><a name="R_822202989_54055_PageTOC_R_TEST_"></a>Arguments</h2>
+        <h3 class="Argument">X</h3>
+        <p>An <i>n</i>-element integer, single-, or double-precision floating-point vector. Elements not equal to 0 or 1 are removed and the length of <i>X</i> is correspondingly reduced.</p>
+        <h2><a name="R_822202989_54058"></a><a name="R_822202989_54058_PageTOC_R_TEST_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="R_822202989_54060"></a><a name="R_822202989_54060_Keywords_R_TEST__"></a>N0</h3>
+        <p>Set this keyword to a named variable that will contain the number of 0s in <i>X</i>.</p>
+        <h3 class="Keyword"><a name="R_822202989_54063"></a><a name="R_822202989_54063_Keywords_R_TEST__"></a>N1</h3>
+        <p>Set this keyword to a named variable that will contain the number of 1s in <i>X</i>.</p>
+        <h3 class="Keyword"><a name="R_822202989_54066"></a><a name="R_822202989_54066_Keywords_R_TEST__"></a>R</h3>
+        <p>Set this keyword to a named variable that will contain the number of runs (clusters of 0s and 1s) in <i>X</i>. </p>
+        <h2><a name="R_822202989_54068"></a><a name="R_822202989_54068_PageTOC_R_TEST_"></a>Examples</h2>
+        <p class="IDLCode">; Define a binary population:<br />X = [0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, $<br />&#160;&#160;&#160;1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1]<br /><br />; Test the hypothesis that X represents a random sampling against<br />; the hypothesis that it does not represent a random sampling at<br />; the 0.05 significance level:<br />result = R_TEST(X, R = r, N0 = n0, N1 = n1)<br />PRINT, result</p>
+        <p>IDL prints:</p>
+        <p class="Code">[2.26487, 0.0117604]</p>
+        <p>Print the values of the keyword parameters:</p>
+        <p class="IDLCode">PRINT, 'Runs: ', r &amp; PRINT, 'Zeros: ', n0 &amp; PRINT, 'Ones: ', n1</p>
+        <p class="Code">Runs:&#160;&#160;&#160;&#160;&#160;22</p>
+        <p class="Code">Zeros:&#160;&#160;&#160;&#160;16</p>
+        <p class="Code">Ones:&#160;&#160;&#160;&#160;&#160;14</p>
+        <p>The computed probability (0.0117604) is less than the 0.05 significance level and therefore we reject the hypothesis that <i>X</i> represents a random sampling. The results show that there are too many runs, indicating a non-random cyclical pattern.</p>
+        <h2><a name="R_822202989_54083"></a><a name="R_822202989_54083_PageTOC_R_TEST_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">4.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="R_822202989_1092882"></a><a name="R_822202989_1092882_PageTOC_R_TEST_"></a>See Also</h2>
+        <p><a class="MCXref" href="../C/CTI_TEST.html#C_854643309_53340">CTI_TEST </a>, <a class="MCXref" href="../F/FV_TEST.html#F_848155245_870978">FV_TEST </a>, <a class="MCXref" href="../K/KW_TEST.html#K_837341805_859052">KW_TEST </a>, <a class="MCXref" href="../L/LNP_TEST.html#L_826528365_54526">LNP_TEST </a>, <a class="MCXref" href="../M/MD_TEST.html#M_824365677_888234">MD_TEST </a>, <a class="MCXref" href="RS_TEST.html#R_822202989_1228995">RS_TEST </a>, <a class="MCXref" href="../S/S_TEST.html#S_820040301_1337163">S_TEST </a>, <a class="MCXref" href="../T/TM_TEST.html#T_809226861_1076846">TM_TEST </a>, <a class="MCXref" href="../X/XSQ_TEST.html#X_800576109_137419">XSQ_TEST </a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

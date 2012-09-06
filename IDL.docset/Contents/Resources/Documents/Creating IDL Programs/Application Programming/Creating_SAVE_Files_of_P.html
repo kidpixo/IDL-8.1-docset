@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Tasks|Using Procedures, Functions, SAVE Files" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>Creating SAVE Files of Program Files</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Creating IDL Programs/Application Programming/Creating_SAVE_Files_of_P.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Programming Tasks.html">Tasks</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../IDL Program Types.html">Using Procedures, Functions, SAVE Files</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Creating SAVE Files of Program Files</span>
+        </div>
+        <h1><a name="Save_3439793193_858234"></a><a name="Save_3439793193_62787"></a>Creating SAVE Files of Program Files</h1>
+        <p>The following examples create SAVE files that are stand-alone IDL applications that can be run on any Windows, UNIX or Mac OS&#160;X computer containing the IDL Virtual Machine or a licensed copy of IDL. See the following ex<a name="kanchor3532"></a>amples:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#Save_3439793193_857079" target="" title="" alt="">Example: A SAVE File of a Simple Routine</a> creates two SAVE files. One SAVE file contains variable data, the other SAVE file contains a procedure uses RESTORE to access the variable data in the first SAVE file. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#Save_3439793193_858495" target="" title="" alt="">Example: A Save File of a Simple Widget Application </a>displays an image in a simple widget application. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#Save_3439793193_858793" target="" title="" alt="">Example: Creating a SAVE File of an Object Definition</a> shows the special steps that must be taken when creating a SAVE file of an object that has dependencies upon other objects. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#Save_3439793193_857136" target="" title="" alt="">Example: A SAVE File of a Custom iPlot Display</a> restores variable data and plots it in an iPlot display. </td>
+            </tr>
+        </table>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If you want your customers to run your application on a computer without IDL, you will need to include a runtime version of IDL with a runtime or embedded license in your application distribution. </p>
+        <h2><a name="Save_3439793193_857079"></a><a name="Save_3439793193_48615"></a>Example: A SAVE File of a Simple Routine</h2>
+        <p>The following example creates two SAVE files. One SAVE file contains variable data, loaded from an image file. This SAVE file is then restored by the program in the main SAVE file, which uses a simple call to the ARROW procedure to point out an area of interest within the image. </p>
+        <h3><a name="Save_3439793193_857222"></a><a name="Save_3439793193_11910"></a>Save Image Variable Data</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top"><span class="Bold">Start a fresh session of IDL.</span> This avoids saving unwanted session information.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top"><span class="Bold">Read image data into a variable.</span> Open an image file containing an MRI proton density scan of a human thorax, and read the data into a variable named <span class="Courier">image</span><i style="font-family: Times;font-style: italic;line-height: 13pt;">:</i></td>
+            </tr>
+        </table>
+        <p class="Code_Indented">READ_JPEG, (FILEPATH('pdthorax124.jpg', SUBDIRECTORY= $</p>
+        <p class="Code_Indented">&#160;&#160;&#160;&#160;['examples', 'data'])), image </p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top"><span class="Bold">Create a SAVE file containing the image data.</span> Use the <a class="MCXref" href="../../Reference Material/S/SAVE.html#S_820040301_678623" target="" title="" alt="">SAVE </a>procedure to save the <i>image </i>variable in a SAVE file by entering the following:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">SAVE, image, FILENAME='imagefile.sav'</p>
+        <p class="Indent1">This stores the SAVE file in your current working directory.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>When using the SAVE procedure, some users identify binary files containing variable data using a <span class="Courier">.dat</span> extension instead of a <span class="Courier">.sav</span> extension. While any extension can be used to identify files created with SAVE, it is recommended that you use the <span class="Courier">.sav</span> extension to easily identify files that can be restored.</p>
+        <h3>Save a Procedure that Restores Variable Data</h3>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top"><span class="Bold">Create the program file.</span> Create the following IDL program that first restores the<i> image </i>variable contained within the <span class="Courier">imagefile.sav</span> file. This variable is used in the following program statements defining the size of the window and in the TV routine which displays the image. The ARROW routine then draws an arrow within the window. Enter the following lines in a text editor.</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">PRO draw_arrow</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Restore image data.</p>
+        <p class="Code_Indented">RESTORE, 'imagefile.sav'</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Get the dimensions of the image file.</p>
+        <p class="Code_Indented">s = SIZE(image, /DIMENSIONS)</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Prepare display device and display image.</p>
+        <p class="Code_Indented">DEVICE, DECOMPOSED = 0</p>
+        <p class="Code_Indented">WINDOW, 0, XSIZE=s[0], YSIZE=s[1], TITLE="Point of Interest"</p>
+        <p class="Code_Indented">TV, image</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Draw the arrow.</p>
+        <p class="Code_Indented">ARROW, 40, 20, 165, 115</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; The IDL Virtual Manchine exits IDL when the end of a</p>
+        <p class="Code_Indented">; program is reached if there are not internal events. The </p>
+        <p class="Code_Indented">; WAIT statement here allows the user to view the .sav file </p>
+        <p class="Code_Indented">; results for 10 seconds when executed through the IDL </p>
+        <p class="Code_Indented">; Virtual Machine.</p>
+        <p class="Code_Indented">WAIT, 10</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">END</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top"><span class="Bold">Save the file.</span> Name the saved file <span class="Courier">draw_arrow.pro</span>. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top"><span class="Bold">Reset the IDL session.</span> Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.FULL_RESET_SESSION</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="4. " valign="top"><span class="Bold">Compile the program.</span> Enter the following at the IDL prompt: </td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.COMPILE draw_arrow</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="5. " valign="top"><span class="Bold">Resolve dependencies.</span> Use <a class="MCXref" href="../../Reference Material/R/RESOLVE_ALL.html#R_822202989_678560" target="" title="" alt="">RESOLVE_ALL </a>(or <a class="MCXref" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">IRESOLVE</a> if the routine has any dependencies on iTools components) to iteratively compile any uncompiled user-written or library procedures or functions that are called in any already-compiled procedure or function:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESOLVE_ALL</p>
+        <p class="TableAnchor_Indented">&#160;</p>
+        <p class="Note_Indented" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>RESOLVE_ALL does not resolve procedures or functions that are called via quoted strings such as CALL_PROCEDURE, CALL_FUNCTION, or EXECUTE, or in keywords that can contain procedure names such as TICKFORMAT or EVENT_PRO. You must manually compile these routines.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="6. " valign="top"><span class="Bold">Create the SAVE file. </span>Create a file called <span class="Courier">draw_arrow.sav</span> that contains the user-defined draw_arrow procedure. When the <a class="MCXref" href="../../Reference Material/S/SAVE.html#S_820040301_678623" target="" title="" alt="">SAVE </a>procedure is called with the ROUTINES keyword and no arguments, it create a SAVE file containing all currently compiled routines. Because the procedures within the <span class="Courier">draw_arrow</span> procedure are the only routines that are currently compiled in the IDL session, create the SAVE file as follows:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">SAVE, /ROUTINES, FILENAME='draw_arrow.sav'</p>
+        <p class="Note_Indented" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>When the name of the SAVE file uses the <span class="Courier">.sav</span> extension and has the same base name as the main level program, it can be automatically compiled by IDL. This means that it can be called from another routine or restored from the IDL command line using only the name of the saved routine.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="7. " valign="top"><span class="Bold">Test the SAVE file in the </span><span class="Bold">IDL Virtual Machine</span>. Click on the splash screen and open <span class="Courier">draw_arrow.sav</span>. You could also test the SAVE file from IDL, enter the following at the command prompt. </td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESTORE, 'draw_arrow.sav'</p>
+        <p class="Code_Indented">draw_arrow</p>
+        <p>See <a class="MCXref" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">Executing SAVE Files</a> for all the available ways to run a SAVE file. </p>
+        <h2><a name="Save_3439793193_858495"></a><a name="Save_3439793193_19655"></a>Example: A Save File of a Simple Widget Application </h2>
+        <p>The following example creates a native IDL application that displays an image in a simple widget interface. When any application runs in the IDL Virtual Machine, there must some element (such as widget or interface events, or a WAIT statement) that keeps the application from immediately exiting with the END statement is reached. This example includes a Done button for this reason. The example in <a class="MCXref" href="#Save_3439793193_857079" target="" title="" alt="">Example: A SAVE File of a Simple Routine</a> includes a WAIT statement.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top"><span class="Bold">Create a .pro file.</span> Enter the following in the IDL Editor, and save it as <span class="Courier">myApp.pro</span>:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">PRO done_event, ev</p>
+        <p class="Code_Indented">; When the 'Done' button is pressed, exit</p>
+        <p class="Code_Indented">; the application.</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">WIDGET_CONTROL, ev.TOP, /DESTROY</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">END</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">PRO myApp</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Read an image file.</p>
+        <p class="Code_Indented">READ_JPEG, (FILEPATH('endocell.jpg', SUBDIRECTORY = $</p>
+        <p class="Code_Indented">&#160;&#160;&#160;['examples', 'data'])), image</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Find the dimensions of the image.</p>
+        <p class="Code_Indented">info = SIZE(image,/DIMENSIONS)</p>
+        <p class="Code_Indented">xdim = info[0]</p>
+        <p class="Code_Indented">ydim = info[1]</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Create a base widget containing a draw widget</p>
+        <p class="Code_Indented">; and a 'Done' button.</p>
+        <p class="Code_Indented">wBase = WIDGET_BASE(/COLUMN)</p>
+        <p class="Code_Indented">wDraw = WIDGET_DRAW(wBase, XSIZE=xdim, YSIZE=ydim)</p>
+        <p class="Code_Indented">wButton = WIDGET_BUTTON(wBase, VALUE='Done', EVENT_PRO='done_event')</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Realize the widgets.</p>
+        <p class="Code_Indented">WIDGET_CONTROL, wBase, /REALIZE</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Retrieve the widget ID of the draw widget.</p>
+        <p class="Code_Indented">WIDGET_CONTROL, wDraw, GET_VALUE=index</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Set the current drawable area to the draw widget.</p>
+        <p class="Code_Indented">WSET, index</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Display some data.</p>
+        <p class="Code_Indented">TV, image</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Call XMANAGER to manage the event loop.</p>
+        <p class="Code_Indented">XMANAGER, 'myApp', wBase, /NO_BLOCK</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">END</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top"><span class="Bold">Reset the IDL session.</span> Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.FULL_RESET_SESSION</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top"><span class="Bold">Compile the application</span>. Select <span class="Bold">Run </span>&#160;&gt;&#160;<span class="Bold">Compile</span> to compile the <span class="Courier">.pro</span> file. </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="4. " valign="top"><span class="Bold">Resolve dependencies.</span> Type RESOLVE_ALL at the command line to resolve all procedures and functions that are called in the application:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESOLVE_ALL</p>
+        <p class="TableAnchor_Indented">&#160;</p>
+        <p class="Note_Indented" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If your program relies on iTools components, use <a class="MCXref" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">IRESOLVE</a> instead of RESOLVE_ALL.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="5. " valign="top"><span class="Bold">Create the SAVE file.</span> Enter the following to save the compiled application as a SAVE file:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">SAVE, /ROUTINES, FILENAME = 'myApp.sav'</p>
+        <p>See <a class="MCXref" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">Executing SAVE Files</a> for ways to run the SAVE file.</p>
+        <h2><a name="Save_3439793193_858793"></a><a name="Save_3439793193_62036"></a>Example: Creating a SAVE File of an Object Definition</h2>
+        <p>When you create a SAVE file that contains an object defined in a <span class="Courier">.pro</span> file, you must save the <span class="Courier">.pro</span> file as a SAVE file, just like any other procedure you wish to distribute. However, it is important to note that if the object has any inherited properties from superclasses or other objects, and the object definitions exist in <span class="Courier">.pro</span> files, you must also compile and include these object definition files in your SAVE file. Objects using a <span class="Courier">.pro</span> extension typically exist in the IDL distribution’s <span class="Courier">lib</span> subdirectory and its subdirectories. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>Do not confuse the process of saving an <i>instance</i> of an object with saving its <i>definition</i>. A reference to an instantiated object is stored in an IDL variable, and must be saved in a SAVE file as a variable. An object definition, on the other hand, is an IDL routine, and must be saved in a SAVE file as a routine. <i>It is important to remember that restoring an instance of an object does not restore the object’s definition.</i> If the object is defined in <span class="Courier">.pro</span> code, you must save the object definition routine and the object instance variable in separate SAVE files, and restore both instance and definition in the target IDL session.</p>
+        <p>The IDL distribution includes and example of a composite object composed of an image, a surface, and a contour, which are combined into a single object called the IDLexShow3 object. To see this object being used in an application, run the <span class="Courier">show3_track.pro</span> file in the <span class="Courier">examples/doc/objects</span> directory. This procedure has dependencies on two objects (<span class="Courier">trackball.pro</span> and <span class="Courier">IDLexShow3__define.pro</span>). You must use RESOLVE_ALL and explicitly include these two objects in the CLASS keyword string array in order to create a valid SAVE file. </p>
+        <p>If you fail to resolve all object dependencies, you will receive an error stating that there was an attempt to call and undefined procedure or function when you run the SAVE file. If the error references an object, add the object name to the CLASS keyword string array to resolve the problem. Undefined procedure or function errors are more likely to appear when you restore a SAVE file using the IDL Virtual Machine, which does not search !PATH to resolve routines. Using RESTORE at the command line does search !PATH. Therefore, a SAVE file that can be successfully executed using RESTORE may not succeed when called from the IDL Virtual Machine. If you are distributing SAVE files to users running the IDL Virtual Machine, make sure to test the SAVE file in the Virtual Machine.</p>
+        <p>Complete the following steps to create a save file of an object:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top"><span class="Bold">Reset your session.</span> Either start a new IDL session or enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.FULL_RESET_SESSION</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top"><span class="Bold">Open the main procedure.</span> Open and compile <span class="Courier">show3_track.pro</span> file by entering the following at the IDL command prompt:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.COMPILE Show3_Track.pro</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top"><span class="Bold">Resolve object dependencies.</span> Use the CLASS keyword to resolve dependencies to other object <span class="Courier">.pro</span> files by passing it a string or string array containing the name(s) of the objects:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESOLVE_ALL, CLASS=['Trackball', 'IDLexShow3']</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="4. " valign="top"><span class="Bold">Create the SAVE file.</span> Enter the following at the IDL command prompt:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">SAVE, /ROUTINES, FILENAME='show3_track.sav'</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="5. " valign="top"><span class="Bold">Test the SAVE file</span>. Select <span class="Bold">Start</span>&#160;&gt;&#160;<span class="Bold">Programs</span>&#160;&gt;&#160;<span class="Bold">IDL <span class="Reference MaterialVerIDL">8.0</span></span>&#160;&gt;&#160;<span class="Bold">IDL Virtual Machine</span>. Click on the splash screen and open <span class="Courier">show3_track.sav</span>. You could also test the SAVE file from IDL. Enter the following at the command prompt. </td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESTORE, 'show3_track.sav'</p>
+        <p class="Code_Indented">show3_track</p>
+        <p>See <a class="MCXref" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">Executing SAVE Files</a> for all the available ways to run a SAVE file. </p>
+        <h2><a name="Save_3439793193_857136"></a><a name="Save_3439793193_67775"></a>Example: A SAVE File of a Custom iPlot Display</h2>
+        <p>The following example configures a custom iPlot display and stores the program in a SAVE file. Restoring the SAVE file opens iPlot with the specified data. </p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>When working with iTools, you can create an iTool State (.isv) file that contains data and application state information.You can share this file with other IDL users who have the same version or a newer version of IDL. See the<span class="Link"><i>Tool User’s Guid</i>e for details. This is not the same as packaging iTools functionality into a SAVE file, which is described in this example. When iTools functionality is packaged into a SAVE file, it can be accessed by IDL users or through the IDL Virtual Machine. </span></p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>1. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="1. " valign="top"><span class="Bold">Access and save data.</span> Save variable data from a batch file into a SAVE file:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">@plot01</p>
+        <p class="Code_Indented">SAVE, FILENAME='plotdata01.sav'</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>2. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="2. " valign="top"><span class="Bold">Create the program file.</span> This program restores data, and creates a plot display in an iPlot display. Enter the following lines in a text editor:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">PRO ex_saveiplot </p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Define variables. </p>
+        <p class="Code_Indented">RESTORE, 'plotdata01.sav'</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Use the LINFIT function to fit the data to a line:</p>
+        <p class="Code_Indented">coeff = LINFIT(YEAR, SOCKEYE)</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">;YFIT is the fitted line:</p>
+        <p class="Code_Indented">YFIT = coeff[0] + coeff[1]*YEAR</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Plot the original data points with PSYM = 4, for diamonds:</p>
+        <p class="Code_Indented">iPLOT, YEAR, SOCKEYE, /YNOZERO, SYM_INDEX = 4, $</p>
+        <p class="Code_Indented">   SYM_COLOR=[255,0,0], LINESTYLE=6, $</p>
+        <p class="Code_Indented">   TITLE = 'Quadratic Fit', XTITLE = 'Year', $</p>
+        <p class="Code_Indented">   YTITLE = 'Sockeye Population'</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">; Overplot the smooth curve using a plain line:</p>
+        <p class="Code_Indented">iPLOT, YEAR, YFIT, /OVERPLOT</p>
+        <p class="Code_Indented">&#160;</p>
+        <p class="Code_Indented">END</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>3. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="3. " valign="top"><span class="Bold">Reset you session.</span> Enter the following at the IDL prompt to ensure that no unwanted session information is saved along with the program:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.FULL_RESET_SESSION</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>4. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="4. " valign="top"><span class="Bold">Compile the program.</span> Use the .COMPILE executive command as follows: Compile the main program file:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">.COMPILE ex_saveiplot</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>5. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="5. " valign="top"><span class="Bold">Resolve dependencies.</span> Use <a class="MCXref" href="../../Reference Material/I/IRESOLVE.html" target="" title="" alt="">IRESOLVE</a> to resolve dependencies upon iTool components:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">IRESOLVE</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>6. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="6. " valign="top"><span class="Bold">Create the SAVE file.</span> Use the /ROUTINES keyword to include all currently compiled routines:</td>
+            </tr>
+        </table>
+        <p class="Code_Indented">SAVE, /ROUTINES, FILENAME='ex_saveiplot.sav'</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>7. </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="7. " valign="top"><span class="Bold">Test the SAVE file</span>. Select <span class="Bold">Start</span>&#160;&gt;&#160;<span class="Bold">Programs</span>&#160;&gt;&#160;<span class="Bold">IDL <span class="Reference MaterialVerIDL">8.0</span></span>&#160;&gt;&#160;<span class="Bold">IDL Virtual Machine</span>. Click on the splash screen and open <span class="Courier">ex_saveiplot.sav</span>. You could also run the SAVE file from IDL. Enter the following at the command prompt. </td>
+            </tr>
+        </table>
+        <p class="Code_Indented">RESTORE, 'ex_saveiplot.sav'</p>
+        <p class="Code_Indented">ex_saveiplot</p>
+        <p>See <a class="MCXref" href="Executing_SAVE_Files.html#Save_3439793193_857652" target="" title="" alt="">Executing SAVE Files</a> for all the available ways to run a SAVE file. </p>
+        <h2>Other Exa<a name="kanchor3533"></a>mples of SAVE File Creation</h2>
+        <p>See the following topics for additional SAVE file examples:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="../../Reference Material/A/ASCII_TEMPLATE.html#A_850317933_983117" target="" title="" alt="">ASCII_TEMPLATE </a>contains <a class="MCXref" href="../../Reference Material/A/ASCII_TEMPLATE.html#A_850317933_1024404" target="" title="" alt="">Example: Create a SAVE File of a Custom ASCII Template</a></td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="../../Reference Material/X/XROI.html#X_800576109_976751" target="" title="" alt="">XROI </a>contains the following SAVE file examples:</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="../../Reference Material/X/XROI.html#X_800576109_984959" target="" title="" alt="">Example: Save ROI Data</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 35.99999px;" />
+            <col style="width: 24.00001px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="../../Reference Material/X/XROI.html#X_800576109_1031731" target="" title="" alt="">Example: Save the XROI Utility with ROI Data</a>
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

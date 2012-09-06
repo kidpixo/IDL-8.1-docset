@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: D" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>DIALOG_PRINTERSETUP </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/D/DIALOG_PRINTERSETUP.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="DBLARR.html">Routines: D</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">DIALOG_PRINTERSETUP</span>
+        </div>
+        <h1 class="Routine"><a name="D_843829869_984446"></a><a name="D_843829869_26708"></a>DIALOG_PRINTERSETUP </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#D_843829869_984453">Syntax</a> | <a class="MCXref" href="#D_843829869_1002865">Return Value </a> | <a class="MCXref" href="#D_843829869_984455">Arguments</a> | <a class="MCXref" href="#D_843829869_984458">Keywords</a> | <a class="MCXref" href="#D_843829869_984471">Version History</a> | <a class="MCXref" href="#D_843829869_997337">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor671"></a>DIALOG_PRINTERSETUP function opens a native dialog for setting the applicable <a name="kanchor672"></a>properties for a particular <a name="kanchor673"></a>printer.</p>
+        <h2><a name="D_843829869_984453"></a><a name="D_843829869_984453_PageTOC_DIALOG_PRINTERSETUP_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = DIALOG_PRINTERSETUP( [<i>PrintDestination</i>] [,&#160;<a class="MCXref" href="#D_843829869_984460">DIALOG_PARENT</a>=<i>widget_id</i>] [,&#160;<a class="MCXref" href="#D_843829869_984463">DISPLAY_NAME</a>=<i>string</i>] [,&#160;<a class="MCXref" href="#D_843829869_984466">RESOURCE_NAME</a>=<i>string</i>] [,&#160;<a class="MCXref" href="#D_843829869_984469">TITLE</a>=<i>string</i>] )</p>
+        <h2><a name="D_843829869_1002865"></a><a name="D_843829869_66452"></a>Return Value </h2>
+        <p>DIALOG_PRINTERSETUP returns a nonzero value if the user pressed the “OK” button in the dialog, or zero otherwise. You can programmatically begin printing based on the value returned by this function.</p>
+        <h2><a name="D_843829869_984455"></a><a name="D_843829869_984455_PageTOC_DIALOG_PRINTERSETUP_"></a>Arguments</h2>
+        <h3 class="Argument">PrintDestination</h3>
+        <p>An instance of the IDLgrPrinter object for which setup properties are to be set. If no <i>PrintDestination</i> is specified, the printer used by the IDL Direct Graphics <span class="Courier">printer</span> device is modified. </p>
+        <h2><a name="D_843829869_984458"></a><a name="D_843829869_984458_PageTOC_DIALOG_PRINTERSETUP_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="D_843829869_984460"></a><a name="D_843829869_984460_Keywords_DIALOG_PRINTERSETUP__"></a>DIALOG_PARENT</h3>
+        <p>Set this keyword to the widget ID of a widget to be used as the parent of this dialog.</p>
+        <h3 class="Keyword"><a name="D_843829869_984463"></a><a name="D_843829869_984463_Keywords_DIALOG_PRINTERSETUP__"></a>DISPLAY_NAME</h3>
+        <p>Set this keyword equal to a string indicating the name of the X Windows display on which the dialog is to appear. This keyword is ignored if the DIALOG_PARENT keyword is specified. This keyword is also ignored on Microsoft Windows platforms.</p>
+        <h3 class="Keyword"><a name="D_843829869_984466"></a><a name="D_843829869_984466_Keywords_DIALOG_PRINTERSETUP__"></a>RESOURCE_NAME</h3>
+        <p>Set this keyword equal to a string containing an X Window System resource name to be applied to the dialog.</p>
+        <h3 class="Keyword"><a name="D_843829869_984469"></a><a name="D_843829869_984469_Keywords_DIALOG_PRINTERSETUP__"></a>TITLE</h3>
+        <p>Set this keyword equal to a string to be displayed on the dialog frame. This keyword is ignored on Microsoft Windows platforms.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>You can use language catalogs to internationalize this value with strings in particular languages. </p>
+        <h2><a name="D_843829869_984471"></a><a name="D_843829869_984471_PageTOC_DIALOG_PRINTERSETUP_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="D_843829869_997337"></a><a name="D_843829869_997337_PageTOC_DIALOG_PRINTERSETUP_"></a>See Also</h2>
+        <p><a class="MCXref" href="DIALOG_PRINTJOB.html#D_843829869_863745" target="" title="" alt="">DIALOG_PRINTJOB </a>
+        </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

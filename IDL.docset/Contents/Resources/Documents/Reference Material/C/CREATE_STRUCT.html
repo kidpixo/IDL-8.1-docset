@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: C" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>CREATE_STRUCT </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/C/CREATE_STRUCT.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="CURSOR.html">Routines: C</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">CREATE_STRUCT</span>
+        </div>
+        <h1 class="Routine"><a name="C_854643309_676445"></a><a name="C_854643309_23746"></a>CREATE_STRUCT </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#C_854643309_1100493">Syntax</a> | <a class="MCXref" href="#C_854643309_1076984">Return Value</a> | <a class="MCXref" href="#C_854643309_683055">Arguments</a> | <a class="MCXref" href="#C_854643309_279438">Keywords</a> | <a class="MCXref" href="#C_854643309_683063">Examples</a> | <a class="MCXref" href="#C_854643309_823434">Version History</a> | <a class="MCXref" href="#C_854643309_1052242">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor393"></a>CREATE_STRUCT function creates a struc<a name="kanchor394"></a>ture given pairs of <a name="kanchor395"></a>tag names and values. CREATE_STRUCT can also be used to <a name="kanchor396"></a>concatenate structures.</p>
+        <h2><a name="C_854643309_1100493"></a><a name="C_854643309_683001_PageTOC_CREATE_STRUCT_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = CREATE_STRUCT( <i>[Tag</i><sub class="italic">1</sub>, <i>Values</i><sub class="italic">1</sub><i>, ..., Tag</i><sub class="italic">n</sub><i>, Values</i><sub class="italic">n</sub><i>] [,&#160;Structures</i><sub class="italic">n</sub><i>] </i>[,&#160;<a class="MCXref" href="#C_854643309_279439">NAME</a>=<i>string</i>]) </p>
+        <p>or</p>
+        <p class="Syntax"><i>Result</i> = CREATE_STRUCT( <i>[Tags</i>, <i>Values</i><sub class="italic">1</sub><i>,</i> ..., <i>Values</i><sub class="italic">n</sub><i>]</i><sub></sub><i>[,&#160;Structures</i><sub class="italic">n</sub><i>] </i>[,&#160;<a class="MCXref" href="#C_854643309_279439">NAME</a>=<i>string</i>])</p>
+        <h2><a name="C_854643309_1076984"></a><a name="C_854643309_22634"></a>Return Value</h2>
+        <p>Returns a structure composed of given pairs of tag names and values.</p>
+        <h2><a name="C_854643309_683055"></a><a name="C_854643309_683055_PageTOC_CREATE_STRUCT_"></a>Arguments</h2>
+        <h3 class="Argument">Tags</h3>
+        <p>The structure tag names. Tag names may be specified either as scalar strings or a single string array. If scalar strings are specified, values alternate with the tag names. If a string array is provided, values must still be specified individually. Tag names must be enclosed in quotes. Tag names may not be IDL <a class="MCXref" href="../../Creating IDL Programs/Appendices/reswords.html#reswords_964592964_996918">Reserved Words</a>, and must be unique within a given structure, although the same tag name can be used in more than one structure. Tag names follow the rules of <span class="Reference MaterialProd_name">IDL</span> identifiers: they must begin with a letter; following characters can be letters, digits, or the underscore or dollar sign characters; and case is ignored.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If a tag name contains spaces, CREATE_STRUCT will replace the spaces with underscores. For example, if you specify a tag name of <span class="Courier">'my tag'</span>, the tag will be created with the name <span class="Courier">'my_tag'</span>.</p>
+        <h3 class="Argument">Values</h3>
+        <p>The values for the structure fields. The number of <i>Values</i> arguments must match the number of <i>Tags</i> arguments (if tags are specified as scalar strings) or the number of elements of the <i>Tags</i> array (if tags are specified as a single array.)</p>
+        <h3 class="Argument">Structures</h3>
+        <p>One or more existing structure variables whose tags and values will be inserted into the new structure. When concatenating structures in this manner, the following rules apply:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">All tag names, whether specified via the <i>Tags</i> argument or in an existing structure variable, must be unique.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Names of named structures included via the <i>Structures</i> arguments are not used in the newly-created structure.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><i>Structures</i> arguments can be interspersed with groups of <i>Tags</i> and <i>Values</i> arguments in the call to CREATE_STRUCT. Use caution, however, to ensure that the number of <i>Tags</i> and <i>Values</i> in each group are equal, to avoid inserting a structure variable as the value of a single tag when you mean to include the structure’s data as individual tags and values.</td>
+            </tr>
+        </table>
+        <h2><a name="C_854643309_279438"></a><a name="C_854643309_279438_PageTOC_CREATE_STRUCT_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="C_854643309_279439"></a><a name="C_854643309_279439_Keywords_CREATE_STRUCT__"></a>NAME</h3>
+        <p>To create a named structure, set this keyword equal to a string specifying the structure name. If this keyword is not present, an anonymous structure is created. Structure names must begin with a letter; following characters can be letters, digits, or the underscore or dollar sign characters; and case is ignored.</p>
+        <p>If NAME is specified and no plain arguments (tags, values, or structures) are present, then CREATE_STRUCT will return a structure of known type, either from IDL's internal table of already known named structures or by locating the appropriate __define.pro file for that structure in the current IDL search path (!PATH) and executing it. Hence, the following IDL statements are equivalent: </p>
+        <p class="Code">Result = { mystruct }</p>
+        <p class="Code">Result = CREATE_STRUCT(NAME='mystruct')</p>
+        <p>The CREATE_STRUCT version can be convenient in situations where the name of the structure is computed at runtime, and the <a class="MCXref" href="../E/EXECUTE.html#E_841667181_676755" target="" title="" alt="">EXECUTE </a> function is not available (e.g., code running in the free IDL Virtual Machine environment, in which EXECUTE is disallowed). </p>
+        <h2><a name="C_854643309_683063"></a><a name="C_854643309_683063_PageTOC_CREATE_STRUCT_"></a>Examples</h2>
+        <p>To create the anonymous structure { A: 1, B: <span class="_Override" style="font-family: Courier;font-size: 9pt;line-height: 11pt;">'</span>xxx<span class="_Override" style="font-family: Courier;font-size: 9pt;line-height: 11pt;">'</span>} in the variable <i>P</i>, enter:</p>
+        <p class="Code">p = CREATE_STRUCT('A', 1, 'B', 'xxx')</p>
+        <p>To add the fields “FIRST” and “LAST” to the structure, enter the following:</p>
+        <p class="Code">p = CREATE_STRUCT('FIRST', 0, p, 'LAST', 3)</p>
+        <p>The resulting structure contains { FIRST: 0, A: 1, B: 'xxx', LAST: 3}.</p>
+        <p>Finally, consider the following statements:</p>
+        <p class="Code">s1 = {Struct1, Tag1:'AAA', Tag2:'BBB'}</p>
+        <p class="Code">s2 = {Struct2, TagA:100, TagB:200}</p>
+        <p class="Code">s3 = CREATE_STRUCT(NAME='Struct3', ['A','B','C'], 1, 2, s1, s2)</p>
+        <p>Here, the variable <span class="Courier">s3</span> contains the following named structure:</p>
+        <p>{Struct3, A: 1, B: 2, C:{Struct1, Tag1: 'AAA', Tag2: 'BBB'}, TagA: 100, TagB: 200}</p>
+        <p>Note that the value of <span class="Courier">s3.C</span> is itself a “Struct1” structure, since the structure variable <span class="Courier">s1</span> was interpreted as a <i>Values</i> argument, whereas the structure variable <span class="Courier">s2</span> was interpreted as a <i>Structures</i> argument, thus including the tags from the “Struct2” structure directly in the new structure.</p>
+        <h2><a name="C_854643309_823434"></a><a name="C_854643309_823434_PageTOC_CREATE_STRUCT_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Pre 4.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">6.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Added NAME keyword</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="C_854643309_1052242"></a><a name="C_854643309_1052242_PageTOC_CREATE_STRUCT_"></a>See Also</h2>
+        <p><a class="MCXref" href="../I/IDL_VALIDNAME.html#I_833016429_893464">IDL_VALIDNAME</a>, <a class="MCXref" href="../N/N_TAGS.html#N_830853741_889254">N_TAGS </a>, <a class="MCXref" href="../T/TAG_NAMES.html#T_809226861_679355">TAG_NAMES</a>.</p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

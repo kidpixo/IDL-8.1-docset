@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: C" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>COLORBAR</title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Keyword_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/C/COLORBAR.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="CURSOR.html">Routines: C</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">COLORBAR</span>
+        </div>
+        <h1 class="ClassRoutine"><a name="kanchor315"></a>COLORBAR</h1>
+        <p>The COLORBAR&#160;function adds a colorbar annotation to an existing IDL Graphic.</p>
+        <p>
+            <img src="../images/colorbar_ex.png" class="ImgFloatRight" />
+        </p>
+        <h2>Example
+		</h2>
+        <p>The following lines create the graphic shown at the top of this topic.</p>
+        <p class="Code">; Import and display Maroon Bells data.</p>
+        <p class="Code">file = FILEPATH('surface.dat', $</p>
+        <p class="Code">SUBDIR=['examples','data'])</p>
+        <p class="Code">data = READ_BINARY(file, DATA_DIMS=[350,450], $</p>
+        <p class="Code">DATA_TYPE=2, ENDIAN='little')</p>
+        <p class="Code">im = IMAGE(data, RGB_TABLE=4, $</p>
+        <p class="Code">POSITION=[0.25,0.05,0.95,0.9], $</p>
+        <p class="Code">FONT_COLOR='Blue', FONT_SIZE=16, $</p>
+        <p class="Code">TITLE='Maroon Bells')</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Add a colorbar</p>
+        <p class="Code">c = COLORBAR(TARGET=im, ORIENTATION=1, $</p>
+        <p class="Code">POSITION=[0.22,0.05,0.29,0.9], $</p>
+        <p class="Code">TITLE='Elevation (m)')</p>
+        <p class="Code">&#160;</p>
+        <p class="Code">; Change some properties</p>
+        <p class="Code">c.TEXTPOS = 0</p>
+        <p class="Code">c.TICKDIR = 1</p>
+        <p class="Code">c.BORDER_ON = 1</p>
+        <p class="Code">c.COLOR = 'Blue'</p>
+        <p class="Code">c.FONT_STYLE = 'Italic'</p>
+        <p class="Code">c.FONT_SIZE = 16</p>
+        <h3>Syntax</h3>
+        <p class="Syntax"><i>graphic</i> = COLORBAR(   ) </p>
+        <h2>Methods</h2>
+        <p class="Method"><a href="../../IDL Graphics/Close Method.html">Close </a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/ConvertCoord Method.html">ConvertCoord</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/CopyWindow Method.html">CopyWindow</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Delete Method.html">Delete</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Order Method.html">Order</a>&#160;</p>
+        <p class="Method"><a href="../../IDL Graphics/Print Method.html">Print</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Refresh Method.html">Refresh</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Rotate Method.html">Rotate</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Save Method.html">Save</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Scale Method.html">Scale</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Select Method.html">Select</a>
+        </p>
+        <p class="Method"><a href="../../IDL Graphics/Translate Method.html">Translate</a>
+        </p>
+        <h2>Return Value</h2>
+        <p>The COLORBAR&#160;function returns a reference to the created graphic. Use the returned reference to manipulate the graphic after creation by changing properties or calling methods.</p>
+        <h2>Arguments</h2>
+        <p>None.</p>
+        <h2>Properties</h2>
+        <p>Properties marked as (Init) are applied <i>only</i> during the initial creation of the graphic. All other properties can be set during creation, or retrieved or changed after creation.</p>
+        <h3 class="Keyword">ANTIALIAS</h3>
+        <p class="Body">By default anti-aliasing is used when drawing lines. Set this property to 0 to disable anti-aliasing.</p>
+        <h3 class="Keyword">BORDER_ON</h3>
+        <p>Set this property to display a border around the image portion of the colorbar.</p>
+        <div MadCap:targetName="Common Graphic Keywords">
+            <h3 class="Keyword">COLOR</h3>
+            <p>Set this property to a string or RGB vector giving the color of the border and tickmarks of the colorbar. The default is "black".</p>
+            <h3 class="Keyword">DATA (Init)</h3>
+            <p>Set this keyword if the POSITION units are in data coordinates.</p>
+            <h3 class="Keyword">DEVICE (Init)</h3>
+            <p>Set this keyword if the POSITION units are in device coordinates.</p>
+            <h3 class="Keyword">FONT_NAME</h3>
+            <p>Set this property equal to a string specifying the IDL or system font for the text. The default value is “Helvetica”.</p>
+            <h3 class="Keyword">FONT_SIZE</h3>
+            <p>Set this property equal to an integer specifying the font size for the text. The default value is 16 points.</p>
+            <h3 class="Keyword">FONT_STYLE</h3>
+            <p>Set this property equal to an integer or a string specifying the font style for the text. Allowed values are:</p>
+            <table style="mc-table-style: url('../../Resources/TableStyles/Keyword_Table.css');margin-left: auto;margin-right: auto;" class="TableStyle_Keyword_Table" cellspacing="0">
+                <col style="width: 70px;" />
+                <col style="width: 180px;" />
+                <col style="width: 128px;" />
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellHeading">Integer</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellHeading">String</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellHeading">Resulting Style</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">0</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">"Normal" or "rm"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Default (roman)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">1</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Bold" or "bf"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">2</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColSep">
+                        <p class="CellBody">"Italic" or "it"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_1_0_RowSep_ColEnd">
+                        <p class="CellBody">Italic</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">3</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody">"Bold italic" or "bi"</p>
+                    </td>
+                    <td class="TableStyle_Keyword_Table_Body_0_0_RowSep_ColEnd">
+                        <p class="CellBody">Bold italic</p>
+                    </td>
+                </tr>
+            </table>
+            <h3 class="Keyword">HIDE</h3>
+            <p>Set this property to 1 to hide the graphic. Set HIDE to 0 to show the graphic.</p>
+            <h3 class="Keyword">MAJOR</h3>
+            <p>An integer representing the number of major tick marks. The default value is -1, specifying that IDL will compute the number of tickmarks. Setting MAJOR equal to 0 suppresses major tickmarks entirely.</p>
+            <h3 class="Keyword">MINOR</h3>
+            <p>An integer representing the number of minor tick marks. The default value is -1, specifying that IDL will compute the number of tickmarks. Setting MINOR equal to 0 suppresses minor tickmarks entirely.</p>
+            <h3 class="Keyword">NAME</h3>
+            <p>A string that specifies the name of the graphic. The name can be used to retrieve the graphic using the brackets array notation.  If NAME is not set then a default name is chosen based on the graphic type.</p>
+            <h3 class="Keyword">NORMAL (Init)</h3>
+            <p>Set this keyword if the POSITION units are in normal coordinates (the default).</p>
+            <h3 class="Keyword">ORIENTATION</h3>
+            <p>Set this property to specify whether the colorbar is displayed horizontally (ORIENTATION=0, the default), or vertically (ORIENTATION=1).  Note: Changing the orientation of a colorbar will reset any scaling or rotation that has occurred.</p>
+            <h3 class="Keyword">POSITION</h3>
+            <p>Set this property to set the location of the colorbar. POSITION is specified as a four-element vector: [X1, Y1, X2, Y2], defining the lower left and upper right corners of the image portion of the colorbar. By default the colorbar is centered either underneath (ORIENTATION=0) or on the right side (ORIENTATION=1) of the image.</p>
+            <h3 class="Keyword">SUBTICKLEN</h3>
+            <p>A floating point scale ratio specifying the length of minor tick marks relative to the length of major tick marks. The default value is 0.5, specifying that the minor tick mark is one-half the length of the major tick mark.</p>
+            <h3 class="Keyword">TARGET (Init)</h3>
+            <p>Set this to the visualization to which the colorbar should be associated. If TARGET is not specified any currently selected objects will be used. If the target does not have a color palette then no colorbar will be created.</p>
+            <h3 class="Keyword">TEXT_COLOR</h3>
+            <p>Set this property equal to the text color. The default value is the same color as the COLOR property.</p>
+            <h3 class="Keyword">TEXTPOS</h3>
+            <p>Set this property to 1 to position the tick labels and axis title above the axis. The default is 0, below the axis.</p>
+            <p class="Tip" MadCap:autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>The TICKDIR property may be used to control the direction of axis tick marks.</p>
+            <h3 class="Keyword">THICK</h3>
+            <p>Set this property to a value between 0 and 10 that specifies the line thickness. A thickness of 0 displays a thin hairline on the chosen device. The default value is 1.</p>
+            <h3 class="Keyword">TICKDIR</h3>
+            <p>Set this property to 1 to draw the tickmarks facing outwards. The default is 0, facing inwards.</p>
+            <p class="Tip" MadCap:autonum="&lt;b&gt;Tip: &lt;/b&gt;"><span class="autonumber"><span><b>Tip: </b></span></span>The TEXTPOS property may be used to control the position of tick mark data values and axis titles.</p>
+            <h3 class="Keyword">TICKFORMAT</h3>
+            <p>A string, or an array of strings, in which each string represents a format string or the name of a function to be used to format the tick mark labels. If an array is provided, each string corresponds to a level of the axis. See <a href="../A/AXIS.html" target="" title="" alt="" class="MCXref">AXIS</a> for a detailed description of this property.</p>
+            <h3 class="Keyword">TICKINTERVAL</h3>
+            <p>A floating-point number indicating the interval between major tick marks. The default value is computed according to the axis range and the number of major tick marks (MAJOR). If this property is set then the MAJOR property is ignored.</p>
+            <h3 class="Keyword">TICKLAYOUT</h3>
+            <p>An integer that indicates the tick layout style. Set this property to 0 (the default) to draw the axis line, tick marks, and tick labels. Set to 1 to only draw the labels. Set to 2 to draw a box around the tick labels.</p>
+            <h3 class="Keyword">TICKLEN</h3>
+            <p>Set this property to set the length of the tickmarks. The default is 0.2.</p>
+            <h3 class="Keyword">TICKNAME</h3>
+            <p>A string array of up to 30 elements that controls the annotation of each tick mark.</p>
+            <h3 class="Keyword">TICKVALUES</h3>
+            <p>An array of tick mark locations. If TICKVALUES is set to 0 (the default value), IDL computes the tick values based on the axis range and the number of major ticks.</p>
+            <h3 class="Keyword">TITLE</h3>
+            <p>A string representing the title of the axis. You can also add Greek letters and mathematical symbols using a TeX-like syntax. These symbols need to be enclosed within a pair of "$" characters. See <a href="../T/TEXT.html#Adding" target="" title="" alt="" class="MCXref">Adding Mathematical Symbols and Greek Letters to the Text String</a> for details on the available symbols.</p>
+            <h3 class="Keyword">TRANSPARENCY</h3>
+            <p>An integer between 0 and 100 that specifies the percent transparency of the colorbar. The default value is 0.</p>
+            <h3 class="Keyword">UVALUE</h3>
+            <p>Set this property to an IDL variable of any data type.</p>
+            <h3 class="Keyword">WINDOW (Get Only)</h3>
+            <p>This property retrieves a reference to the <a href="../W/WINDOW.html">WINDOW</a> object which contains the graphic.</p>
+        </div>
+        <h2>Version History</h2>
+        <table style="width: 100%; mc-table-style: url('../../Resources/TableStyles/Version_Table.css'); margin-left: auto; margin-right: auto;" class="TableStyle_Version_Table" cellspacing="0">
+            <col style="width: 84px;" />
+            <col />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColSep">
+                        <p class="CellBody">8.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_ColEnd">
+                        <p class="CellBody">Introduced.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">8.1</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Added the UVALUE property.</p>
+                        <p class="CellBody">Added the Delete method.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>See Also</h2>
+        <p><a href="../I/IMAGE.html" target="" title="" alt="" class="MCXref">IMAGE</a>, 
+		<a href="../S/SURFACE.html" target="" title="" alt="" class="MCXref">SURFACE</a>, <a href="../../GuideMe/Using IDL Graphics.html" target="" title="" alt="" class="MCXref">Using IDL Graphics</a>, <a href="../../LoadingDefaultColorTables.html">Loading Default Color Tables</a></p>
+        <p class="HideSearchTerms">COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR COLORBAR </p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

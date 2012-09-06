@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|Miscellaneous Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDLdbRecordset
+        </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLdbRecordset.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_misc.html">Miscellaneous Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDLdbRecordset
+        </span>
+        </div>
+        <h1 class="ObjClass"><a name="DM_Import_2289256752_1006420"></a><a name="DM_Import_2289256752_22279"></a><a name="kanchor4563"></a>IDLdbRecordset
+        </h1>
+        <p class="Body">The IDLdbRecordset object contains a database table or the results from an SQL query.</p>
+        <h2><a name="DM_Import_2289256752_44307"></a>Superclasses</h2>
+        <p class="Body">None</p>
+        <h2><a name="DM_Import_2289256752_1000388_PageTOC_IDLdbRecordset_"></a>Creation</h2>
+        <p class="Body">To create a recordset object, a valid database object is required. Use the following IDL DataMinercommand to create a new recordset object:</p>
+        <p class="Body"><span class="Italic">RSObj</span> = OBJ_NEW('IDLdbRecordset', <span class="Italic">DBobj, </span>[,&#160;N_BUFFERS=<span class="Italic">integer</span>] [,&#160;SQL=<span class="Italic">string</span>&#160;|&#160;TABLE=<span class="Italic">string</span>])</p>
+        <p class="Body">where <span class="Italic">DBobj</span> is the object reference of the database object and either the SQL or the TABLE property must be specified.</p>
+        <h3>N_BUFFERS</h3>
+        <p class="Body">Set this keyword equal to the number of records to store per database read request in a rapid access memory location. When a IDLdbRecordset object requests records from the datasource it is associated with, the desired records are retrieved from the datasource and cached in the recordset object. The operation to request and transfer the desired records from the datasource can be fairly time consuming, which can impact performance of record access when a large number of records are being requested. Setting this to the optimal number of records can greatly increase IDLdbRecordset::MoveCursor performance and, thus, the overall speed of IDL DataMiner. A higher value is particularly useful, if you are looping through large IDLdbRecordset's with MoveCursor(/NEXT) or MoveCursor(/PREVIOUS) calls. A relatively low value might be called for, if your incremental Dataminer calls are searching for records that are widely dispersed in the target table. The default value is 10 records.</p>
+        <p class="Body">Transferring records from the datasource to the recordset object in a block can drastically increase performance, especially when accessing records in a sequential order. The N_BUFFERS keyword gives the user the ability to modify the size of the block of records the dataminer will transfer from the data sources when a request is being made by the recordset. Increasing the block/buffer size can dramatically increase record access time. You may need to experiment with different values to find the most efficient setting for your application.</p>
+        <h3><a name="DM_Import_2289256752_1006453"></a><a name="DM_Import_2289256752_84829"></a>SQL</h3>
+        <p class="Body">A string that contains a valid SQL statement that selects records from the database. This SQL statement can be a Stored Procedure call that provides a return value.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If the SQL keyword uses SQL statement syntax unrecognized by the DBMS or the ODBC driver, IDL throws an error that stops execution of the program if not caught and handled by the Dataminer programmer.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If the SQL keyword uses an SQL statement that has acceptable syntax, but returns NULL data (because it has filtered out everything in the table it is referencing), then NO ERROR is thrown. The object returned is a valid IDL object. To determine the object returned was actually an “empty” recordset, you must test the recordset with a subsequent call of:<br /><br /><span class="Courier">result = RSObj-&gt;MoveCursor(/FIRST)</span><br /><br />if <span class="Courier">result eq 0</span> (or <span class="Courier">result ne 1</span>), then the recordset returned by OBJ_NEW was an empty (or NULL) recordset.</p>
+        <h3>TABLE</h3>
+        <p class="Body">A string that contains the name of a table in the database. This table must be contained in the database referred to by <span class="Italic">RSObj</span>.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>If the TABLE keyword references a table that does not exist, then IDL throws an error that stops execution of the program if not caught and handled by the Dataminer programmer.</p>
+        <h2><a name="DM_Import_2289256752_1013494_PageTOC_IDLdbRecordset_"></a>Properties</h2>
+        <p class="Body">Objects of this class have the following properties. See <a class="MCXref" href="#DM_Import_2289256752_1015130">IDLdbRecordset Properties</a> for details on individual properties.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015141">CAN_MOVE_ABSOLUTE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015169">CAN_MOVE_FIRST</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015197">CAN_MOVE_LAST</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015225">CAN_MOVE_NEXT</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015253">CAN_MOVE_PRIOR</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015281">CAN_MOVE_RELATIVE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015309">FIELD_INFO</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015354">GET_DATABASE</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015382">IS_READONLY</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015410">N_BUFFERS</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015438">RECORDSET_SOURCE</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a href="javascript:alert('[ /Dest /IDLDBRECORDSETPROPERTIES /DEST')"><a name="DM_Import_2289256752_1015130"></a><a name="DM_Import_2289256752_24563"></a>IDLdbRecordset Properties</a>
+        </h2>
+        <p class="Body"><a name="kanchor4564"></a>IDLdbRecordset objects have the following properties in addition to properties inherited from any superclasses. Properties with the word “Yes” in the “Get” column of the property table can be retrieved via <a class="MCXref" href="IDLdbRecordset__GetPrope.html#DM_Import_2289256752_1007129">IDLdbRecordset::GetProperty
+        </a>. There are no Init or SetProperty methods for the IDLdbRecordset object.</p>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015141"></a><a name="DM_Import_2289256752_56408"></a>CAN_MOVE_ABSOLUTE</h3>
+        <p class="Body">If True, the cursor for the recordset can move to an absolute record number.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015169"></a><a name="DM_Import_2289256752_19927"></a>CAN_MOVE_FIRST</h3>
+        <p class="Body">If True, the cursor for the recordset can move to the first record.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015197"></a><a name="DM_Import_2289256752_74492"></a>CAN_MOVE_LAST</h3>
+        <p class="Body">If True, the cursor for the recordset can move to the last record.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015225"></a><a name="DM_Import_2289256752_42258"></a>CAN_MOVE_NEXT</h3>
+        <p class="Body">If True, the cursor for the recordset can move to the next record.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015253"></a><a name="DM_Import_2289256752_89563"></a>CAN_MOVE_PRIOR</h3>
+        <p class="Body">If True, the cursor for the recordset can move to the previous record.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015281"></a><a name="DM_Import_2289256752_49787"></a>CAN_MOVE_RELATIVE</h3>
+        <p class="Body">If True, the cursor for the recordset can move to a record number relative to the current record number.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody"><b>Property Type</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><b>Name String</b>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody"><i>not displayed</i>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Get:</b> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Set:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><b>Init:</b> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><b>Registered:</b> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015309"></a><a name="DM_Import_2289256752_70655"></a>FIELD_INFO</h3>
+        <p class="Body">An array of field informational structures, one for each field in the result set. Field information is only available if the current recordset was generated from a table (that is, if the TABLE property was set when creating the recordset object). Information structures have the following fields (see the ODBC Manual for more information):</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">TABLE_QUALIFIER: The table qualifier.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">TABLE_OWNER: The name of the table owner.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">TABLE_NAME: The name of the table.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">FIELD_NAME: The name of the field.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">TYPE_NAME: The datasource type name.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">PRECISION: Precision of the field.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">LENGTH: Length in bytes of the data.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">SCALE: The scale of the field.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">IS_NULLABLE: The field can contain null values.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">IS_AUTOINCREMENT: The field is an autoincrement field.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">IS_CASE_SENSITIVE: The value of the field is case sensitive.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">IS_UPDATABLE: The field can be updated.</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">IDL_TYPE: The IDL DataMiner type to which the field is mapped.</td>
+            </tr>
+        </table>
+        <p class="Body">If a field is returned empty, this indicates that the driver doesn’t support the query for that particular information.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Array of structures</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015354"></a><a name="DM_Import_2289256752_62451"></a>GET_DATABASE</h3>
+        <p class="Body">An object reference to the database object used when the current recordset object was created.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Object reference</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015382"></a><a name="DM_Import_2289256752_12920"></a>IS_READONLY</h3>
+        <p class="Body">If True, the table is read-only.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015410"></a><a name="DM_Import_2289256752_68468"></a>N_BUFFERS</h3>
+        <p class="Body">The number of buffers allocated for the recordset.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015438"></a><a name="DM_Import_2289256752_97014"></a>RECORDSET_SOURCE</h3>
+        <p class="Body">A string containing either the table name or SQL statement used to create the recordset.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="DM_Import_2289256752_1008365_PageTOC_IDLdbRecordset_"></a>Methods</h2>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__AddRecor.html#DM_Import_2289256752_1006906">IDLdbRecordset::AddRecord
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__Cleanup.html#DM_Import_2289256752_1006948">IDLdbRecordset::Cleanup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__CurrentR.html#DM_Import_2289256752_1006991">IDLdbRecordset::CurrentRecord
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__DeleteRe.html#DM_Import_2289256752_1007032">IDLdbRecordset::DeleteRecord
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__GetField.html#DM_Import_2289256752_1007072">IDLdbRecordset::GetField
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__GetPrope.html#DM_Import_2289256752_1007129">IDLdbRecordset::GetProperty
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__GetRecor.html#DM_Import_2289256752_1007171">IDLdbRecordset::GetRecord
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__Init.html#DM_Import_2289256752_1007240">IDLdbRecordset::Init</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__MoveCurs.html#DM_Import_2289256752_1007295">IDLdbRecordset::MoveCursor
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__NFields.html#DM_Import_2289256752_1007378">IDLdbRecordset::NFields
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbRecordset__SetField.html#DM_Import_2289256752_1007423">IDLdbRecordset::SetField
+        </a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="DM_Import_2289256752_61948"></a>Version History</h2>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

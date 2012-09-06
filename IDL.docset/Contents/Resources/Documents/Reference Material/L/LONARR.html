@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: L" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>LONARR </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/L/LONARR.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="L64INDGEN.html">Routines: L</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">LONARR</span>
+        </div>
+        <h1 class="Routine"><a name="L_826528365_916547"></a><a name="L_826528365_10219"></a>LONARR </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#L_826528365_916551">Syntax</a> | <a class="MCXref" href="#L_826528365_963068">Return Value</a> | <a class="MCXref" href="#L_826528365_916553">Arguments</a> | <a class="MCXref" href="#L_826528365_916556">Keywords</a> | <a class="MCXref" href="#L_826528365_916560">Examples</a> | <a class="MCXref" href="#L_826528365_928296">Version History</a> | <a class="MCXref" href="#L_826528365_952426">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor1710"></a>LONARR function returns a longword integer vector or array.</p>
+        <h2><a name="L_826528365_916551"></a><a name="L_826528365_916551_PageTOC_LONARR_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = LONARR( <i>D</i><sub class="italic">1 </sub><i>[</i>,<i> ...</i>,<i> D</i><sub class="italic">8</sub><i>]</i> [,&#160;/<a class="MCXref" href="#L_826528365_916558">NOZERO</a>] )</p>
+        <h2><a name="L_826528365_963068"></a><a name="L_826528365_27411"></a>Return Value</h2>
+        <p>Returns a long array of the specified dimensions.</p>
+        <h2><a name="L_826528365_916553"></a><a name="L_826528365_916553_PageTOC_LONARR_"></a>Arguments</h2>
+        <h3 class="Argument">D<sub class="italic">i</sub></h3>
+        <p>Either an array or a series of scalar expressions specifying the dimensions of the result. If a single argument is specified, it can be either a scalar expression or an array of up to eight elements. If multiple arguments are specified, they must all be scalar expressions. Up to eight dimensions can be specified. If the dimension arguments are not integer values, IDL will convert them to integer values before creating the new array.</p>
+        <h2><a name="L_826528365_916556"></a><a name="L_826528365_916556_PageTOC_LONARR_"></a>Keywords</h2>
+        <h3 class="Keyword"><a name="L_826528365_916558"></a><a name="L_826528365_916558_Keywords_LONARR__"></a>NOZERO</h3>
+        <p>Normally, LONARR sets every element of the result to zero. If NOZERO is set, this zeroing is not performed and LONARR executes faster.</p>
+        <h2><a name="L_826528365_916560"></a><a name="L_826528365_916560_PageTOC_LONARR_"></a>Examples</h2>
+        <p>To create L, a 100-element, longword vector with each element set to 0, enter:</p>
+        <p class="Code">L = LONARR(100)</p>
+        <h2><a name="L_826528365_928296"></a><a name="L_826528365_928296_PageTOC_LONARR_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">Original</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="L_826528365_952426"></a><a name="L_826528365_952426_PageTOC_LONARR_"></a>See Also</h2>
+        <p><a class="MCXref" href="../B/BYTARR.html#B_856805997_675870">BYTARR </a>, <a class="MCXref" href="../C/COMPLEXARR.html#C_854643309_676228">COMPLEXARR </a>, <a class="MCXref" href="../D/DBLARR.html#D_843829869_1060809">DBLARR </a>, <a class="MCXref" href="../D/DCOMPLEXARR.html#D_843829869_37687">DCOMPLEXARR </a>, <a class="MCXref" href="../F/FLTARR.html#F_848155245_676939">FLTARR </a>, <a class="MCXref" href="../I/INTARR.html#I_833016429_677245">INTARR </a>, <a class="MCXref" href="LON64ARR.html#L_826528365_983144">LON64ARR </a>, <a class="MCXref" href="../M/MAKE_ARRAY.html#M_824365677_887420" target="" title="" alt="">MAKE_ARRAY </a>, <a class="MCXref" href="../S/STRARR.html#S_820040301_679026">STRARR </a>, <a class="MCXref" href="../U/UINTARR.html#U_807064173_950250">UINTARR </a>, <a class="MCXref" href="../U/ULON64ARR.html#U_807064173_950409">ULON64ARR </a>, <a class="MCXref" href="../U/ULONARR.html#U_807064173_950466">ULONARR </a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

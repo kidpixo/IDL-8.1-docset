@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="IDL Programming|Objects|Miscellaneous Object Classes" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>IDLdbDatabase
+        </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Property_Table.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Object Classes/Miscellaneous/IDLdbDatabase.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../IDL Programming.html">IDL Programming</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../ref_part2.html">Objects</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="objects_misc.html">Miscellaneous Object Classes</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">IDLdbDatabase
+        </span>
+        </div>
+        <h1 class="ObjClass"><a name="DM_Import_2289256752_1008855"></a><a name="DM_Import_2289256752_19150"></a>IDLdbDatabase
+        </h1>
+        <p class="Body">An IDLdbDatabase object represents a connection to a datasource. Use the <a name="kanchor4552"></a>IDLdbDatabase object’s instance data and methods to <a name="kanchor4553"></a>connect to, disconnect from, and perform operations to a Database Management System (DBMS). </p>
+        <h2><a name="DM_Import_2289256752_95137"></a>Superclasses</h2>
+        <p class="Body">None</p>
+        <h2><a name="DM_Import_2289256752_998342_PageTOC_IDLdbDatabase_"></a>Creation</h2>
+        <p class="Body">Use the following IDL DataMiner command to create a new database object:</p>
+        <p class="Body">DBObj = OBJ_NEW('IDLdbDatabase')</p>
+        <p class="Body">Note that the returned database object is not considered valid until a connection to the datasource is made, either via the <a class="MCXref" href="IDLdbDatabase__Connect.html#DM_Import_2289256752_1006059">IDLdbDatabase::Connect
+        </a> method or the <a class="MCXref" href="../../Reference Material/D/DIALOG_DBCONNECT.html#DM_Import_2289256752_1005309">DIALOG_DBCONNECT
+        </a> function.</p>
+        <h2><a name="DM_Import_2289256752_40559"></a>Properties</h2>
+        <p class="Body">Objects of this class have the following properties. See <a class="MCXref" href="#DM_Import_2289256752_1014678">IDLdbDatabase Properties</a> for details on individual properties.</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014688">CAN_GET_TABLES</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014716">DBMS_NAME</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014744">DRIVER_ODBC_LEVEL</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014772">DBMS_VERSION</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014800">DRIVER_VERSION</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014828">IS_CONNECTED</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014856">IS_READONLY</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014884">MAX_CONNECTIONS</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014912">MAX_RECORDSETS</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014940">ODBC_LEVEL</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014968">SQL_LEVEL</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1014996">SQL_SERVER_NAME</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015024">USE_CURSOR_LIB</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015056">USER_NAME</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="#DM_Import_2289256752_1015084">VERBOSE</a>
+                </td>
+            </tr>
+        </table>
+        <h2><a href="javascript:alert('[ /Dest /IDLDBDATABASEPROPERTIES /DEST')"><a name="DM_Import_2289256752_1014678"></a><a name="DM_Import_2289256752_49965"></a>IDLdbDatabase Properties</a>
+        </h2>
+        <p class="Body"><a name="kanchor4554"></a>IDLdbDatabase objects have the following properties in addition to properties inherited from any superclasses. Properties with the word “Yes” in the “Get” column of the property table can be retrieved via <a class="MCXref" href="IDLdbDatabase__GetProper.html#DM_Import_2289256752_1006226">IDLdbDatabase::GetProperty
+        </a>. Properties with the word “Yes” in the “Set” column in the property table can be set via <a class="MCXref" href="IDLdbDatabase__SetProper.html#DM_Import_2289256752_1006374">IDLdbDatabase::SetProperty
+        </a>.</p>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014688"></a><a name="DM_Import_2289256752_58804"></a>CAN_GET_TABLES</h3>
+        <p class="Body">If True, the GetTables method is available for the current driver.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014716"></a><a name="DM_Import_2289256752_11170"></a>DBMS_NAME</h3>
+        <p class="Body">The name of the Database with which the object is associated.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014744"></a><a name="DM_Import_2289256752_35087"></a>DRIVER_ODBC_LEVEL</h3>
+        <p class="Body">The ODBC level supported by the driver being used to connect to the database. </p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014772"></a><a name="DM_Import_2289256752_28297"></a>DBMS_VERSION</h3>
+        <p class="Body">The version number of the Database that the object is associated with.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014800"></a><a name="DM_Import_2289256752_93585"></a>DRIVER_VERSION</h3>
+        <p class="Body">The version number of the ODBC driver being used to connect to the database.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014828"></a><a name="DM_Import_2289256752_98379"></a>IS_CONNECTED</h3>
+        <p class="Body">If True, a connection to a database exists.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014856"></a><a name="DM_Import_2289256752_89381"></a>IS_READONLY</h3>
+        <p class="Body">If True, the database is read-only.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Boolean</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014884"></a><a name="DM_Import_2289256752_48348"></a>MAX_CONNECTIONS</h3>
+        <p class="Body">The maximum number of connections supported by the ODBC driver. If the maximum value is unknown, this property will contain 0.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014912"></a><a name="DM_Import_2289256752_15864"></a>MAX_RECORDSETS</h3>
+        <p class="Body">The maximum number of recordsets supported by the ODBC driver. If the maximum is unknown, this property will contain 0.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">Integer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014940"></a><a name="DM_Import_2289256752_10503"></a>ODBC_LEVEL</h3>
+        <p class="Body">The ODBC level of the driver manager.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014968"></a><a name="DM_Import_2289256752_91334"></a>SQL_LEVEL</h3>
+        <p class="Body">The SQL level supported by the connection.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1014996"></a><a name="DM_Import_2289256752_48668"></a>SQL_SERVER_NAME</h3>
+        <p class="Body">The SQL server name for this database connection.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015024"></a><a name="DM_Import_2289256752_50205"></a>USE_CURSOR_LIB</h3>
+        <p class="Body">If True, the ODBC cursor library will be used. The ODBC cursor library is used to emulate advanced functionality on data sources that don’t support the advanced functions. If you find that advanced functionality is not available using your database’s standard driver, try using the ODBC cursor library. Advanced functionality supported by the cursor library includes positioned updates, positioned deletes, and multi-directional cursor movement.</p>
+        <p class="Note" MadCap:autonum="&lt;b&gt;Note: &lt;/b&gt;"><span class="autonumber"><span><b>Note: </b></span></span>This property must be set (or unset) before the connection to the data source is made. Once the connection is made, this property cannot be changed. The default is to not use the cursor library.</p>
+        <p class="Warning" MadCap:autonum="&lt;b&gt;Warning: &lt;/b&gt;"><span class="autonumber"><span><b>Warning: </b></span></span>To support the above-mentioned operations, the cursor library constructs SQL search statements to locate the desired record. If the WHERE clause of the generated SQL statement selects more than one row, the operation will affect more than one record.</p>
+        <p class="Warning" MadCap:autonum="&lt;b&gt;Warning: &lt;/b&gt;"><span class="autonumber"><span><b>Warning: </b></span></span>On some systems the ODBC cursor library is loaded dynamically. The ODBC system cannot detect whether the library was loaded successfully, so this property may contain a True value if the USE_CURSOR_LIB property was set, <span class="Italic">even if the cursor library was not subsequently loaded</span>.</p>
+        <p class="Body">&#160;</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">BOOLEAN</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015056"></a><a name="DM_Import_2289256752_18286"></a>USER_NAME</h3>
+        <p class="Body">The user name used during the connection to the datasource.</p>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">String</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="Property"><a name="DM_Import_2289256752_1015084"></a><a name="DM_Import_2289256752_54119"></a>VERBOSE</h3>
+        <p class="Body">If True, verbose error messages will be generated. Normal error messages contain a text explanation (normally from the ODBC system) of the error. Verbose message include the following additional information:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The name of the ODBC function that failed,</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The error code from the ODBC system,</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">The error code from the database.</td>
+            </tr>
+        </table>
+        <table class="TableStyle_Property_Table" style="width: 519px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Property_Table.css');" cellspacing="0">
+            <col width="130px" />
+            <col width="122px" />
+            <col width="122px" />
+            <col width="145px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Property Type</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_ColSep">
+                        <p class="CellBody">BOOLEAN</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="margin-bottom: 3pt;font-family: Helvetica;font-weight: bold;letter-spacing: 0em;color: #000000;"><span class="Helvetica_Bold">Name String</span>
+                        </p>
+                    </td>
+                    <td colspan="3" class="TableStyle_Property_Table_Body_0_0_RowSep_ColSep">
+                        <p class="CellBody" style="font-family: Times;font-style: italic;font-size: 11pt;letter-spacing: 0em;color: #000000;"><span class="Italic">not displayed</span>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Get:</span> No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Set:</span> Yes</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColSep">
+                        <p class="CellBody"><span class="Helvetica_Bold">Init:</span><span class="_Override" style="font-family: Symbol;font-size: 12pt;line-height: 14pt;"> <![CDATA[ ]]></span>No</p>
+                    </td>
+                    <td class="TableStyle_Property_Table_Body_1_0_RowEnd_ColEnd">
+                        <p class="CellBody"><span class="Helvetica_Bold">Registered:</span> No</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="DM_Import_2289256752_1008573_PageTOC_IDLdbDatabase_"></a>Methods</h2>
+        <p class="Body">This class has the following methods:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__Cleanup.html#DM_Import_2289256752_1006013">IDLdbDatabase::Cleanup</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__Connect.html#DM_Import_2289256752_1006059">IDLdbDatabase::Connect
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__ExecuteSQ.html#DM_Import_2289256752_1006125">IDLdbDatabase::ExecuteSQL
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__GetDataso.html#DM_Import_2289256752_1006175">IDLdbDatabase::GetDatasources
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__GetProper.html#DM_Import_2289256752_1006226">IDLdbDatabase::GetProperty
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__GetTables.html#DM_Import_2289256752_1006268">IDLdbDatabase::GetTables
+        </a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__Init.html#DM_Import_2289256752_1006319">IDLdbDatabase::Init</a>
+                </td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top"><a class="MCXref" href="IDLdbDatabase__SetProper.html#DM_Import_2289256752_1006374">IDLdbDatabase::SetProperty
+        </a>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="DM_Import_2289256752_1019235_PageTOC_IDLdbDatabase_"></a>Version History</h2>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">5.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

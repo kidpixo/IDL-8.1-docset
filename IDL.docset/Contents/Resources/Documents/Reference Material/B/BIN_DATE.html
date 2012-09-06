@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="3" MadCap:lastHeight="72" MadCap:lastWidth="697" MadCap:disableMasterStylesheet="true" MadCap:tocPath="Routines (alphabetical)|Routines: B" MadCap:medium="non-print" MadCap:InPreviewMode="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="WebHelp" MadCap:PathToHelpSystem="../../../" MadCap:HelpSystemFileName="idl.xml" MadCap:SearchType="Stem">
+    <!-- saved from url=(0014)about:internet -->
+    <head><title>BIN_DATE </title>
+        <link href="../../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../../Resources/TableStyles/Version_Table.css" rel="stylesheet" />
+        <link href="../../Resources/Stylesheets/IDL_style.css" rel="stylesheet" />
+        <script src="../../SkinSupport/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink" style="display: none;"><a href="../../../idl_CSH.html#Reference Material/B/BIN_DATE.html" style="">Open topic with navigation</a>
+        </p>
+        <div class="MCBreadcrumbsBox"><a class="MCBreadcrumbsLink" href="../../images/ref_part1.html">Routines (alphabetical)</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="BANDPASS_FILTER.html">Routines: B</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">BIN_DATE</span>
+        </div>
+        <h1 class="Routine"><a name="B_856805997_762117"></a><a name="B_856805997_74370"></a>BIN_DATE </h1>
+        <p class="CellBody" MadCap:conditions="Reference Material.Online_Help_Only">
+            <MadCap:conditionalText MadCap:conditions="Reference Material.Online_Help_Only"><a class="MCXref" href="#B_856805997_762128">Syntax</a> | <a class="MCXref" href="#B_856805997_996704">Return Value</a> | <a class="MCXref" href="#B_856805997_762130">Arguments</a> | <a class="MCXref" href="#B_856805997_762135">Keywords</a> | <a class="MCXref" href="#B_856805997_996492">Version History</a> | <a class="MCXref" href="#B_856805997_993422">See Also</a></MadCap:conditionalText>
+        </p>
+        <p>The <a name="kanchor131"></a>BIN_DATE function converts a standard form <a name="kanchor132"></a>ASCII date/time string to a binary string.</p>
+        <p>This routine is written in the IDL language. Its source code can be found in the file <span class="Courier">bin_date.pro</span> in the <span class="Courier">lib</span> subdirectory of the IDL distribution.</p>
+        <h2><a name="B_856805997_762128"></a><a name="B_856805997_762128_PageTOC_BIN_DATE_"></a>Syntax</h2>
+        <p class="Syntax"><i>Result</i> = BIN_DATE(<i>Ascii_Time</i>)</p>
+        <h2><a name="B_856805997_996704"></a><a name="B_856805997_41222"></a>Return Value</h2>
+        <p>The function returns a six-element integer array where:</p>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 0 is the year (e.g., 1994)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 1 is the month (1-12)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 2 is the day (1-31)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 3 is the hour (0-23)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 4 is minutes (0-59)</td>
+            </tr>
+        </table>
+        <table class="AutoNumber_p_Bullet" style="width: 100%; margin-left: 0;" cellspacing="0" cellpadding="0">
+            <col style="width: 16px;" />
+            <col style="width: 24px;" />
+            <col style="width: auto;" />
+            <tr>
+                <td valign="top" />
+                <td class="AutoNumber_p_Bullet" valign="top"><span>• </span>
+                </td>
+                <td class="AutoNumber_p_Bullet" MadCap:autonum="• " valign="top">Element 5 is seconds (0-59)</td>
+            </tr>
+        </table>
+        <h2><a name="B_856805997_762130"></a><a name="B_856805997_762130_PageTOC_BIN_DATE_"></a>Arguments</h2>
+        <h3 class="Argument">Ascii_Time</h3>
+        <p>A string containing the date/time to convert in standard ASCII format. If this argument is omitted, the current date/time is used. Standard form is a 24 character string:</p>
+        <p class="Code">DOW MON DD HH:MM:SS YYYY</p>
+        <p>where DOW is the day of the week, MON is the month, DD is the day of month, HH:MM:SS is the time in hours, minutes, second, and YYYY is the year.</p>
+        <h2><a name="B_856805997_762135"></a><a name="B_856805997_88689"></a>Keywords</h2>
+        <p>None.</p>
+        <h2><a name="B_856805997_996492"></a><a name="B_856805997_762135_PageTOC_BIN_DATE_"></a>Version History</h2>
+        <p class="TableAnchor">&#160;</p>
+        <table class="TableStyle_Version_Table" style="width: 499px;caption-side: top;mc-table-style: url('../../Resources/TableStyles/Version_Table.css');" cellspacing="0">
+            <col width="91px" />
+            <col width="408px" />
+            <tbody>
+                <tr>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColSep">
+                        <p class="CellBody">Pre 4.0</p>
+                    </td>
+                    <td class="TableStyle_Version_Table_Body_0_0_RowEnd_ColEnd">
+                        <p class="CellBody">Introduced</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2><a name="B_856805997_993422"></a><a name="B_856805997_993422_PageTOC_BIN_DATE_"></a>See Also</h2>
+        <p><a class="MCXref" href="../C/CALDAT.html#C_854643309_1083750">CALDAT </a>, <a class="MCXref" href="../J/JULDAY.html#J_839504493_762378">JULDAY </a>, <a class="MCXref" href="../S/SYSTIME.html#S_820040301_762665">SYSTIME </a></p>
+        <script type="text/javascript" src="../../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
